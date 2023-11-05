@@ -1,0 +1,26 @@
+{
+  "name": "PWA Tech Talk",
+  "short_name": "PWA Tech Talk",
+  "description": "Best PWA App in the world",
+  "theme_color": "#006fee",
+  "start_url": "/",
+  "id": "/",
+  "background_color": "#ffffff",
+  "icons": [
+    {
+      "purpose": "maskable",
+      "sizes": "512x512",
+      "src": "icons/icon512_maskable.png",
+      "type": "image/png"
+    },
+    {
+      "purpose": "any",
+      "sizes": "512x512",
+      "src": "icons/icon512_rounded.png",
+      "type": "image/png"
+    }
+  ],
+  "display": "standalone",
+  "orientation": "portrait",
+  "lang": "en"
+}

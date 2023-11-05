@@ -9,6 +9,8 @@ export function Index(props: IndexPageProps, ref: IndexPageRef) {
     <PageTransition ref={ref}>
       <div className="flex h-full min-h-screen w-full flex-col items-center justify-center bg-blue-500">
         <h1 className="text-4xl font-bold">Home Page [1]</h1>
+        <br />
+        <h2 className="text-3xl font-semibold">Progressive Web Applications</h2>
       </div>
     </PageTransition>
   );

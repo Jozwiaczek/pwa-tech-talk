@@ -26,12 +26,45 @@
     {
       "files": ["*.ts", "*.tsx"],
       "extends": ["plugin:@nx/typescript"],
-      "rules": {}
+      "rules": {
+        /**
+         * ESLint custom rules
+         * https://eslint.org/docs/latest/rules
+         */
+        "operator-linebreak": ["error", "after", { "overrides": { "?": "before", ":": "before" } }],
+
+        /**
+         * TypeScript custom rules
+         * https://typescript-eslint.io/rules/
+         */
+        "@typescript-eslint/ban-ts-comment": ["error", { "ts-ignore": "allow-with-description" }],
+        "@typescript-eslint/no-use-before-define": [
+          "error",
+          { "functions": false, "classes": true, "variables": true, "typedefs": true }
+        ],
+        "@typescript-eslint/naming-convention": [
+          "error",
+          {
+            "selector": "interface",
+            "format": ["PascalCase"],
+            "custom": {
+              "regex": "^I[A-Z]",
+              "match": false
+            }
+          }
+        ]
+      }
     },
     {
       "files": ["*.js", "*.jsx"],
       "extends": ["plugin:@nx/javascript"],
-      "rules": {}
+      "rules": {
+        /**
+         * TypeScript custom rules
+         * https://typescript-eslint.io/rules/
+         */
+        "@typescript-eslint/ban-ts-comment": ["error", { "ts-ignore": "allow-with-description" }]
+      }
     },
     {
       "files": ["*.spec.ts", "*.spec.tsx", "*.spec.js", "*.spec.jsx"],
