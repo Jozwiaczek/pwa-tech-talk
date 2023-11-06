@@ -22,13 +22,19 @@ type CustomAppProps = AppProps & {
 };
 
 function CustomApp({ Component, pageProps, router }: CustomAppProps) {
+  const isDev = config.NODE_ENV === 'development';
+
   return (
     <NextUIProvider navigate={router.push}>
       <PageHead />
       <AnimatePresence mode="popLayout" initial={false}>
         <div
           key={router.pathname}
-          className={twJoin(inter.className, 'max-h-screen overflow-hidden')}
+          className={twJoin(
+            inter.className,
+            isDev ? 'debug-screens' : '',
+            'max-h-screen overflow-hidden',
+          )}
         >
           <Component {...pageProps} />
           {!Component.hideControls && (

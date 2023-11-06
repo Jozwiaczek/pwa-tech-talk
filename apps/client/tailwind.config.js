@@ -49,6 +49,8 @@ module.exports = {
   },
   darkMode: 'class',
   plugins: [
+    require('tailwindcss-debug-screens'),
+    require('tailwindcss-safe-area'),
     nextui({
       themes: {
         light: {

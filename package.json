@@ -46,6 +46,8 @@
     "prettier": "^3.0.3",
     "prettier-plugin-tailwindcss": "^0.5.6",
     "tailwindcss": "3.2.7",
+    "tailwindcss-debug-screens": "^2.2.1",
+    "tailwindcss-safe-area": "^0.4.1",
     "ts-jest": "^29.1.0",
     "ts-node": "10.9.1",
     "typescript": "~5.1.3"

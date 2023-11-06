@@ -2,8 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+/*noinspection CssInvalidPropertyValue*/
 @layer base {
+  html {
+    height: -webkit-fill-available;
+  }
+
   body {
     @apply bg-content1 text-content1-foreground;
+    height: -webkit-fill-available;
   }
 }
