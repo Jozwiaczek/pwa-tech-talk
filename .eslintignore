@@ -1,2 +1,7 @@
 node_modules
-pwa-output
+
+# PWA output files
+**/public/workbox-*
+**/public/sw.*
+**/public/fallback-*
+**/public/worker-*

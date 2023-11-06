@@ -4,7 +4,12 @@
 dist
 tmp
 /out-tsc
-pwa-output
+
+# PWA output files
+**/public/workbox-*
+**/public/sw.*
+**/public/fallback-*
+**/public/worker-*
 
 # dependencies
 node_modules

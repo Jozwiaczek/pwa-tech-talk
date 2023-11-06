@@ -2,4 +2,9 @@
 /dist
 /coverage
 /.nx/cache
-/pwa-output
+
+# PWA output files
+**/public/workbox-*
+**/public/sw.*
+**/public/fallback-*
+**/public/worker-*
