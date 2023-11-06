@@ -9,18 +9,18 @@ export const ServerInfo = () => {
     <aside className="fixed bottom-4 right-4">
       {isConnected && (
         <Badge content={totalSpectators} color="secondary" shape="circle">
-          <Tooltip content="Total spectators">
-            <UserGroupIcon className="size-9 text-content1 cursor-help" />
+          <Tooltip content={`${totalSpectators} active spectators`}>
+            <UserGroupIcon className="size-8 cursor-help" />
           </Tooltip>
         </Badge>
       )}
       {isConnected ? (
         <Tooltip content="Server is online">
-          <SignalIcon className="size-9 text-success cursor-help" />
+          <SignalIcon className="size-8 text-success cursor-help" />
         </Tooltip>
       ) : (
         <Tooltip content="Server is offline">
-          <SignalSlashIcon className="size-9 text-warning cursor-help" />
+          <SignalSlashIcon className="size-8 text-warning cursor-help" />
         </Tooltip>
       )}
     </aside>

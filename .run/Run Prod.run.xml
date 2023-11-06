@@ -1,8 +1,7 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="Run Prod" type="CompoundRunConfigurationType">
-    <toRun name="api:ngrok" type="js.build_tools.npm" />
+    <toRun name="ngrok api" type="js.build_tools.npm" />
     <toRun name="api:serve:development" type="NxRunConfigurationType" />
-    <toRun name="client:serve:development" type="NxRunConfigurationType" />
     <method v="2" />
   </configuration>
 </component>

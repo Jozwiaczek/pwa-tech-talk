@@ -12,12 +12,12 @@ export const Navigation = () => {
 
   return (
     <nav className="fixed bottom-4 flex w-full items-center justify-center gap-4">
-      <Button onPress={previousSlide} isIconOnly color="secondary">
+      <Button onPress={previousSlide} isIconOnly color="primary">
         <BackwardIcon className="size-6" />
       </Button>
       <Dropdown backdrop="blur">
         <DropdownTrigger>
-          <Button color="secondary" isIconOnly>
+          <Button isIconOnly>
             <ListBulletIcon className="size-6" />
           </Button>
         </DropdownTrigger>
@@ -29,7 +29,7 @@ export const Navigation = () => {
           )}
         </DropdownMenu>
       </Dropdown>
-      <Button onPress={nextSlide} isIconOnly color="secondary">
+      <Button onPress={nextSlide} isIconOnly color="primary">
         <ForwardIcon className="size-6" />
       </Button>
     </nav>

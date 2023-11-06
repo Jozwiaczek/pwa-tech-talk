@@ -8,6 +8,7 @@ import { twJoin } from 'tailwind-merge';
 import { PageHead } from '@/client/components/PageHead/PageHead';
 import { ServerInfo } from '@/client/components/ServerInfo';
 import { Analytics } from '@vercel/analytics/react';
+import { config } from '@/client/config';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -25,7 +26,7 @@ function CustomApp({ Component, pageProps, router }: AppProps) {
           <ServerInfo />
         </div>
       </AnimatePresence>
-      <Analytics />
+      {config.NODE_ENV === 'production' && <Analytics />}
     </NextUIProvider>
   );
 }

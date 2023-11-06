@@ -4,6 +4,6 @@
 
 @layer base {
   body {
-    @apply bg-default-300;
+    @apply bg-content1 text-content1-foreground;
   }
 }

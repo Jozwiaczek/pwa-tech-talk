@@ -9,6 +9,10 @@ export const SLIDES = [
     name: 'Intro',
   },
   {
+    path: '/agenda',
+    name: 'Agenda',
+  },
+  {
     path: '/example',
     name: 'Example',
   },
