@@ -12,7 +12,7 @@ export const PageContainer = forwardRef<HTMLDivElement, PageContainerProps>(
     <PageTransition ref={ref}>
       <div
         className={twMerge(
-          'flex min-h-screen flex-col items-center gap-10 p-10 sm:justify-center',
+          'flex min-h-screen flex-col items-center gap-5 p-5 text-center sm:justify-center sm:gap-10 sm:p-10',
           className,
         )}
       >

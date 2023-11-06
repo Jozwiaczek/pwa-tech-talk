@@ -5,9 +5,9 @@ import { PageContainer } from '@/client/components/PageContainer';
 
 export function Index(props: unknown, ref: React.ForwardedRef<HTMLDivElement>) {
   return (
-    <PageContainer ref={ref}>
+    <PageContainer ref={ref} className="justify-center">
       <h1 className="text-7xl font-bold sm:text-9xl">
-        Fall in <span className="text-primary">❤</span>&nbsp;with
+        Fall in <span className="text-primary">💜</span>&nbsp;with
       </h1>
       <PWALogo className="size-64 sm:size-96" />
       <div className="flex flex-wrap items-center justify-center gap-3 text-4xl font-light">
