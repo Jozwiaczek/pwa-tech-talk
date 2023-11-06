@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@/client/*": ["apps/client/src/*"],
+      "@/api/*": ["apps/api/src/*"],
     }
   },
   "exclude": ["node_modules", "tmp"]

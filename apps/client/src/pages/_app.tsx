@@ -6,6 +6,7 @@ import { NextUIProvider } from '@nextui-org/react';
 import { Inter } from 'next/font/google';
 import { twJoin } from 'tailwind-merge';
 import { PageHead } from '@/client/components/PageHead/PageHead';
+import { ServerInfo } from '@/client/components/ServerInfo';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -20,6 +21,7 @@ function CustomApp({ Component, pageProps, router }: AppProps) {
         >
           <Component {...pageProps} />
           <Navigation />
+          <ServerInfo />
         </div>
       </AnimatePresence>
     </NextUIProvider>

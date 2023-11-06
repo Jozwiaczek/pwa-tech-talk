@@ -7,10 +7,10 @@ type IndexPageRef = React.ForwardedRef<HTMLDivElement>;
 export function Index(props: IndexPageProps, ref: IndexPageRef) {
   return (
     <PageTransition ref={ref}>
-      <div className="flex h-full min-h-screen w-full flex-col items-center justify-center bg-blue-500">
-        <h1 className="text-4xl font-bold">Home Page [1]</h1>
-        <br />
-        <h2 className="text-3xl font-semibold">Progressive Web Applications</h2>
+      <div className="flex h-full min-h-screen w-full flex-col items-center justify-center gap-6 bg-blue-500">
+        <span className="text-6xl">❤️</span>
+        <h1 className="text-content1 text-4xl font-semibold">Fall in love with</h1>
+        <h2 className="text-content1 text-6xl font-bold">Progressive Web Applications</h2>
       </div>
     </PageTransition>
   );

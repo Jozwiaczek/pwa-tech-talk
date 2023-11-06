@@ -6,7 +6,7 @@ const { composePlugins, withNx } = require('@nx/next');
 // @ts-ignore no types available for next-pwa
 const withPWA = require('next-pwa')({
   dest: 'public/pwa-output',
-  // disable: process.env.NODE_ENV !== 'production',
+  disable: process.env.NODE_ENV !== 'production',
   buildExcludes: [/\.svg$/, /middleware-manifest\.json$/], // Workaround for error "bad-precaching-response"
 });
 

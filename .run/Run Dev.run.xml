@@ -1,0 +1,7 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Run Dev" type="CompoundRunConfigurationType">
+    <toRun name="api:serve:development" type="NxRunConfigurationType" />
+    <toRun name="client:serve:development" type="NxRunConfigurationType" />
+    <method v="2" />
+  </configuration>
+</component>
