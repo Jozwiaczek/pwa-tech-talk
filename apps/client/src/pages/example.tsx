@@ -1,16 +1,11 @@
 import React, { forwardRef } from 'react';
-import PageTransition from '@/client/components/PageTransition';
+import { PageContainer } from '@/client/components/PageContainer';
 
-type IndexPageProps = unknown;
-type IndexPageRef = React.ForwardedRef<HTMLDivElement>;
-
-const ExamplePage = (props: IndexPageProps, ref: IndexPageRef) => {
+const ExamplePage = (props: unknown, ref: React.ForwardedRef<HTMLDivElement>) => {
   return (
-    <PageTransition ref={ref}>
-      <div className="flex h-full min-h-screen w-full flex-col items-center justify-center bg-red-500">
-        <h1 className="text-4xl font-bold">Example Page [2]</h1>
-      </div>
-    </PageTransition>
+    <PageContainer ref={ref} className="bg-red-500">
+      <h1 className="text-4xl font-bold">Example Page [2]</h1>
+    </PageContainer>
   );
 };
 

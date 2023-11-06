@@ -9,10 +9,19 @@ import { PageHead } from '@/client/components/PageHead/PageHead';
 import { ServerInfo } from '@/client/components/ServerInfo';
 import { Analytics } from '@vercel/analytics/react';
 import { config } from '@/client/config';
+import { NextComponentType, NextPageContext } from 'next';
 
 const inter = Inter({ subsets: ['latin'] });
 
-function CustomApp({ Component, pageProps, router }: AppProps) {
+type CustomPageComponentProps = NextComponentType<NextPageContext, unknown, unknown> & {
+  hideControls?: boolean;
+};
+
+type CustomAppProps = AppProps & {
+  Component: CustomPageComponentProps;
+};
+
+function CustomApp({ Component, pageProps, router }: CustomAppProps) {
   return (
     <NextUIProvider navigate={router.push}>
       <PageHead />
@@ -22,8 +31,12 @@ function CustomApp({ Component, pageProps, router }: AppProps) {
           className={twJoin(inter.className, 'max-h-screen overflow-hidden')}
         >
           <Component {...pageProps} />
-          <Navigation />
-          <ServerInfo />
+          {!Component.hideControls && (
+            <>
+              <Navigation />
+              <ServerInfo />
+            </>
+          )}
         </div>
       </AnimatePresence>
       {config.NODE_ENV === 'production' && <Analytics />}

@@ -5,19 +5,22 @@ import { toast } from 'react-toastify';
 import { Card, CardBody } from '@nextui-org/react';
 import { Button } from '@/client/components/Button';
 import { ArrowPathIcon } from '@heroicons/react/24/outline';
+import { useNavigation } from '@/client/hooks/useNavigation';
+import { SLIDE_PATHS } from '@/client/constants/slides';
 
 const OfflineFallbackPage = () => {
   const { online } = useNetworkState();
   const router = useRouter();
+  const { goToSlide } = useNavigation();
 
   useEffect(() => {
     const runEffect = async () => {
       if (online) {
-        await router.push('/');
+        await goToSlide(SLIDE_PATHS.Intro);
       }
     };
     void runEffect();
-  }, [online, router]);
+  }, [goToSlide, online, router]);
 
   const reloadPageHandler = async () => {
     await router.replace(router.asPath);
@@ -34,6 +37,7 @@ const OfflineFallbackPage = () => {
           <p>Please check your internet connection and try again.</p>
           <Button
             size="lg"
+            color="primary"
             onPress={reloadPageHandler}
             className="group mt-5"
             endContent={<ArrowPathIcon className="size-6 group-hover:animate-spin" />}
@@ -45,5 +49,7 @@ const OfflineFallbackPage = () => {
     </div>
   );
 };
+
+OfflineFallbackPage.hideControls = true;
 
 export default OfflineFallbackPage;

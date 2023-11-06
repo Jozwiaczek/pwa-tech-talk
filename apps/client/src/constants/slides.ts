@@ -27,6 +27,6 @@ export type SlidePath = Slide['path'];
 export type SlideName = Slide['name'];
 
 export const SLIDE_PATHS = SLIDES.reduce<Record<SlideName, SlidePath>>(
-  (acc, slide) => ({ ...acc, [slide.name]: slide.name }),
+  (acc, slide) => ({ ...acc, [slide.name]: slide.path }),
   {} as Record<SlideName, SlidePath>,
 );

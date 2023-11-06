@@ -1,16 +1,11 @@
 import React, { forwardRef } from 'react';
-import PageTransition from '../components/PageTransition';
+import { PageContainer } from '@/client/components/PageContainer';
 
-type FeedbackPageProps = unknown;
-type FeedbackPageRef = React.ForwardedRef<HTMLDivElement>;
-
-export function Feedback(props: FeedbackPageProps, ref: FeedbackPageRef) {
+export function Feedback(props: unknown, ref: React.ForwardedRef<HTMLDivElement>) {
   return (
-    <PageTransition ref={ref}>
-      <div className="flex h-full w-full flex-col items-center justify-center bg-green-500">
-        <h1 className="text-4xl font-bold">Feedback Page [3]</h1>
-      </div>
-    </PageTransition>
+    <PageContainer ref={ref} className="bg-green-500">
+      <h1 className="text-4xl font-bold">Feedback Page [3]</h1>
+    </PageContainer>
   );
 }
 
