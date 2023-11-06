@@ -1,7 +1,7 @@
 import { z } from 'zod';
 
 const configSchema = z.object({
-  API_URL: z.string().url(),
+  API_URL: z.string(),
   NODE_ENV: z.enum(['development', 'production', 'test']).default('development'),
 });
 

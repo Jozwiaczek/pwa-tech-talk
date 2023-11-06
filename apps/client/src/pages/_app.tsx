@@ -7,6 +7,7 @@ import { Inter } from 'next/font/google';
 import { twJoin } from 'tailwind-merge';
 import { PageHead } from '@/client/components/PageHead/PageHead';
 import { ServerInfo } from '@/client/components/ServerInfo';
+import { Analytics } from '@vercel/analytics/react';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -24,6 +25,7 @@ function CustomApp({ Component, pageProps, router }: AppProps) {
           <ServerInfo />
         </div>
       </AnimatePresence>
+      <Analytics />
     </NextUIProvider>
   );
 }
