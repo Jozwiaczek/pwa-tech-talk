@@ -13,7 +13,7 @@ interface SlideRequirementsGuardProps {
 
 export const ApiRequirementGuard = ({ children, isApiRequired }: SlideRequirementsGuardProps) => {
   const { isConnected, isConnecting } = useEvents();
-  const { nextSlide } = useNavigation();
+  const { nextSlide, currentSlideName } = useNavigation();
 
   const isValid = useMemo(() => {
     if (!isApiRequired) {
@@ -29,10 +29,11 @@ export const ApiRequirementGuard = ({ children, isApiRequired }: SlideRequiremen
         <Tooltip content="Server is offline">
           <SignalSlashIcon className="size-20 text-warning cursor-help" />
         </Tooltip>
-        <h1 className="text-3xl font-bold sm:text-5xl">
+        <h1 className="text-5xl font-bold">{currentSlideName}</h1>
+        <h2 className="text-xl font-semibold sm:text-3xl">
           Oops, current slide requires running server
-        </h1>
-        <p className="text-lg sm:text-2xl">
+        </h2>
+        <p className="text-md sm:text-lg">
           For saving resources and safety reasons it is active only for live presentations.
         </p>
         <Button

@@ -13,6 +13,9 @@ const configSchema = z.object({
   WEB_AUTHN_RP_NAME: z.string().default('PWA'),
   WEB_AUTHN_RP_ID: z.string().default('localhost'),
   WEB_AUTHN_ORIGIN: z.string().url(),
+  WEB_PUSH_CONTACT_EMAIL: z.string().email(),
+  WEB_PUSH_PRIVATE_KEY: z.string(),
+  WEB_PUSH_PUBLIC_KEY: z.string(),
 });
 
 export const config = configSchema.parse({
@@ -28,4 +31,7 @@ export const config = configSchema.parse({
   WEB_AUTHN_RP_NAME: process.env.WEB_AUTHN_RP_NAME,
   WEB_AUTHN_RP_ID: process.env.WEB_AUTHN_RP_ID,
   WEB_AUTHN_ORIGIN: process.env.WEB_AUTHN_ORIGIN,
+  WEB_PUSH_CONTACT_EMAIL: process.env.WEB_PUSH_CONTACT_EMAIL,
+  WEB_PUSH_PRIVATE_KEY: process.env.WEB_PUSH_PRIVATE_KEY,
+  WEB_PUSH_PUBLIC_KEY: process.env.WEB_PUSH_PUBLIC_KEY,
 });

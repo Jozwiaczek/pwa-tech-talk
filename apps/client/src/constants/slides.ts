@@ -15,7 +15,12 @@ export const SLIDES = [
   },
   {
     path: '/passkeys',
-    name: 'Passkey',
+    name: 'Passkeys',
+    serverRequired: true,
+  },
+  {
+    path: '/notifications',
+    name: 'Notifications',
     serverRequired: true,
   },
   {

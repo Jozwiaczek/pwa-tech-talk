@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import { SLIDES, Slide, SlidePath } from '@/client/constants/slides';
+import { useMemo } from 'react';
 
 const isSlidePage = (path: string): path is SlidePath => {
   return SLIDES.some((slide) => slide.path === path);
@@ -31,6 +32,11 @@ export const useNavigation = () => {
   const router = useRouter();
   const currentPathname = router.pathname;
 
+  const currentSlideName = useMemo(() => {
+    const slide = SLIDES.find((slide) => slide.path === currentPathname);
+    return slide?.name;
+  }, [currentPathname]);
+
   const changeSlide = async (getSlide: (path: SlidePath) => Slide) => {
     if (!isSlidePage(currentPathname)) {
       await router.push(SLIDES[0].path);
@@ -51,6 +57,7 @@ export const useNavigation = () => {
 
   return {
     currentPathname,
+    currentSlideName,
     nextSlide,
     previousSlide,
     goToSlide,
