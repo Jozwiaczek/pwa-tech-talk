@@ -1,6 +1,6 @@
-import { useEvents } from '@/client/hooks/useEvents';
 import { Badge, Tooltip } from '@nextui-org/react';
 import { SignalIcon, SignalSlashIcon, UserGroupIcon } from '@heroicons/react/24/outline';
+import { useEvents } from '@/client/context/EventsContext';
 
 export const ServerInfo = () => {
   const { totalSpectators, isConnected } = useEvents();

@@ -1,8 +1,24 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { io } from 'socket.io-client';
 import { config } from '@/client/config';
 
-export const useEvents = () => {
+interface EventsProviderProps {
+  children: React.ReactNode;
+}
+
+interface EventsProviderContext {
+  isConnected: boolean;
+  isConnecting: boolean;
+  totalSpectators: number;
+}
+
+const EventsContext = React.createContext<EventsProviderContext>({
+  isConnected: false,
+  isConnecting: false,
+  totalSpectators: 0,
+});
+
+export const EventsContextProvider = ({ children }: EventsProviderProps) => {
   const [totalSpectators, setTotalSpectators] = useState(0);
   const [isConnected, setIsConnected] = useState(false);
   const [isConnecting, setIsConnecting] = useState(true);
@@ -33,9 +49,16 @@ export const useEvents = () => {
     };
   }, []);
 
-  return {
-    isConnected,
-    isConnecting,
-    totalSpectators,
-  };
+  const contextValue = useMemo(
+    () => ({
+      isConnected,
+      isConnecting,
+      totalSpectators,
+    }),
+    [isConnected, isConnecting, totalSpectators],
+  );
+
+  return <EventsContext.Provider value={contextValue}>{children}</EventsContext.Provider>;
 };
+
+export const useEvents = () => React.useContext(EventsContext);

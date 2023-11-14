@@ -1,11 +1,10 @@
 import React, { useMemo } from 'react';
-import { useEvents } from '@/client/hooks/useEvents';
-import { useMountedState } from 'react-use';
 import { useNavigation } from '@/client/hooks/useNavigation';
 import { Button } from '@/client/components/Button';
 import { SlideContainer } from '@/client/components/layout/SlideContainer';
 import { ForwardIcon, SignalSlashIcon } from '@heroicons/react/24/outline';
 import { Tooltip } from '@nextui-org/react';
+import { useEvents } from '@/client/context/EventsContext';
 
 interface SlideRequirementsGuardProps {
   children: React.ReactNode;
@@ -14,20 +13,17 @@ interface SlideRequirementsGuardProps {
 
 export const ApiRequirementGuard = ({ children, isApiRequired }: SlideRequirementsGuardProps) => {
   const { isConnected, isConnecting } = useEvents();
-  const checkIsMounted = useMountedState();
   const { nextSlide } = useNavigation();
 
-  const meetRequirements = useMemo(() => {
+  const isValid = useMemo(() => {
     if (!isApiRequired) {
       return true;
     }
 
-    const isMounted = checkIsMounted();
-    const isApiConnected = isApiRequired && !isConnecting && !isConnected;
-    return isMounted && isApiConnected;
-  }, [checkIsMounted, isApiRequired, isConnected, isConnecting]);
+    return isApiRequired && !isConnecting && isConnected;
+  }, [isApiRequired, isConnected, isConnecting]);
 
-  if (!meetRequirements) {
+  if (!isValid) {
     return (
       <SlideContainer>
         <Tooltip content="Server is offline">

@@ -7,6 +7,7 @@ import { config } from '@/client/config';
 import { Analytics } from '@vercel/analytics/react';
 import { toast, ToastContainer } from 'react-toastify';
 import { ThemeProvider as NextThemesProvider } from 'next-themes';
+import { EventsContextProvider } from '@/client/context/EventsContext';
 
 interface ProvidersProps {
   children: React.ReactNode;
@@ -16,13 +17,15 @@ interface ProvidersProps {
 
 export const Providers = ({ children, dehydratedState }: ProvidersProps) => (
   <ReactQueryProvider dehydratedState={dehydratedState}>
-    <NextUIProvider>
-      <NextThemesProvider attribute="class" defaultTheme="dark">
-        <AnimatePresence mode="popLayout" initial={false}>
-          {children}
-        </AnimatePresence>
-      </NextThemesProvider>
-    </NextUIProvider>
+    <EventsContextProvider>
+      <NextUIProvider>
+        <NextThemesProvider attribute="class" defaultTheme="dark">
+          <AnimatePresence mode="popLayout" initial={false}>
+            {children}
+          </AnimatePresence>
+        </NextThemesProvider>
+      </NextUIProvider>
+    </EventsContextProvider>
     {config.NODE_ENV === 'production' && <Analytics />}
     <ToastContainer
       position={toast.POSITION.TOP_RIGHT}
