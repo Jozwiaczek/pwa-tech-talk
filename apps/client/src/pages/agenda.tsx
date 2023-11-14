@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
 import { CoverIllustration } from '@/client/assets/illustrations';
-import { SlideContainer } from '@/client/components/SlideContainer';
+import { SlideContainer } from '@/client/components/layout/SlideContainer';
 
 export function Agenda(props: unknown, ref: React.ForwardedRef<HTMLDivElement>) {
   return (

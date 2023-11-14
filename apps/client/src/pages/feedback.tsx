@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import { SlideContainer } from '@/client/components/SlideContainer';
+import { SlideContainer } from '@/client/components/layout/SlideContainer';
 
 export function Feedback(props: unknown, ref: React.ForwardedRef<HTMLDivElement>) {
   return (

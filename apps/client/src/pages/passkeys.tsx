@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { SlideContainer } from '@/client/components/SlideContainer';
+import { SlideContainer } from '@/client/components/layout/SlideContainer';
 import { Divider, Input } from '@nextui-org/react';
 import { Button } from '@/client/components/Button';
 import { KeyIcon } from '@heroicons/react/24/outline';

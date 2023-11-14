@@ -1,4 +1,4 @@
-import { QrLiveLink } from '@/client/components/QrLiveLink';
+import { QrLiveLink } from '@/client/components/layout/controls/QrLiveLink';
 import { Popover, PopoverContent, PopoverTrigger } from '@nextui-org/react';
 import { Button } from '@/client/components/Button';
 import { QrCodeIcon } from '@heroicons/react/24/outline';

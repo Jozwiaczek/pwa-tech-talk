@@ -1,9 +1,9 @@
 import React from 'react';
-import { Navigation } from '@/client/components/Navigation';
-import { ServerInfo } from '@/client/components/ServerInfo';
-import { AccountMenu } from '@/client/components/AccountMenu';
-import { QrLinkPopover } from '@/client/components/QrLinkPopover';
-import { ThemeSwitch } from '@/client/components/ThemeSwitch';
+import { Navigation } from '@/client/components/layout/controls/Navigation';
+import { ServerInfo } from '@/client/components/layout/controls/ServerInfo';
+import { AccountMenu } from '@/client/components/layout/controls/AccountMenu';
+import { QrLinkPopover } from '@/client/components/layout/controls/QrLinkPopover';
+import { ThemeSwitch } from '@/client/components/layout/controls/ThemeSwitch';
 
 interface AppLayoutProps {
   hideControls: boolean | undefined;

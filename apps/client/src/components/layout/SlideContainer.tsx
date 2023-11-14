@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import SlideTransition from '@/client/components/SlideTransition';
+import SlideTransition from '@/client/components/layout/SlideTransition';
 import { twMerge } from 'tailwind-merge';
 
 interface SlideContainerProps {

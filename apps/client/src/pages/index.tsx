@@ -1,8 +1,8 @@
 import React, { forwardRef } from 'react';
 import { PWALogo } from '@/client/assets/logos';
 import { Divider, Link } from '@nextui-org/react';
-import { SlideContainer } from '@/client/components/SlideContainer';
-import { QrLiveLink } from '@/client/components/QrLiveLink';
+import { SlideContainer } from '@/client/components/layout/SlideContainer';
+import { QrLiveLink } from '@/client/components/layout/controls/QrLiveLink';
 
 export function Index(props: unknown, ref: React.ForwardedRef<HTMLDivElement>) {
   return (

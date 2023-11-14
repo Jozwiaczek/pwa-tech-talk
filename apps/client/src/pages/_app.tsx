@@ -6,7 +6,7 @@ import { PageHead } from '@/client/components/PageHead/PageHead';
 import { config } from '@/client/config';
 import { NextComponentType, NextPageContext } from 'next';
 import { Providers } from '@/client/providers/Providers';
-import { AppLayout } from '@/client/components/AppLayout';
+import { AppLayout } from '@/client/components/layout/AppLayout';
 import { ApiRequirementGuard } from '@/client/guards/ApiRequirementGuard';
 
 const inter = Inter({ subsets: ['latin'] });

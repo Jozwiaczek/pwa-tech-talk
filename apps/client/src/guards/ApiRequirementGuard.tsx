@@ -3,7 +3,7 @@ import { useEvents } from '@/client/hooks/useEvents';
 import { useMountedState } from 'react-use';
 import { useNavigation } from '@/client/hooks/useNavigation';
 import { Button } from '@/client/components/Button';
-import { SlideContainer } from '@/client/components/SlideContainer';
+import { SlideContainer } from '@/client/components/layout/SlideContainer';
 import { ForwardIcon, SignalSlashIcon } from '@heroicons/react/24/outline';
 import { Tooltip } from '@nextui-org/react';
 
