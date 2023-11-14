@@ -201,7 +201,6 @@ export class Fido2Service {
       lastUsed: new Date(),
     });
 
-    console.log('L:205 | cookieResponse: ', cookieResponse);
     await this.authService.setSuccessLoginCookies(user, cookieResponse);
 
     return {
