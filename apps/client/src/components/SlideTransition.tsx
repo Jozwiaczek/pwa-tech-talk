@@ -20,8 +20,8 @@ function SlideTransition(
 
     const offset = info.offset.x;
     const velocity = info.velocity.x;
-    const isSwipeLeft = offset < -100 && velocity < -100;
-    const isSwipeRight = offset > 100 && velocity > 100;
+    const isSwipeLeft = offset < -50 && velocity < -50;
+    const isSwipeRight = offset > 50 && velocity > 50;
 
     if (isSwipeLeft) {
       await nextSlide();
@@ -53,7 +53,7 @@ function SlideTransition(
       onPanEnd={onPanEnd}
       drag="x"
       dragDirectionLock
-      dragElastic={0.2}
+      dragElastic={0.1}
       dragSnapToOrigin
       {...rest}
     >
