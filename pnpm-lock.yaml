@@ -204,7 +204,7 @@ devDependencies:
     version: 5.62.0(eslint@8.46.0)(typescript@5.1.6)
   autoprefixer:
     specifier: 10.4.13
-    version: 10.4.13(postcss@8.4.21)
+    version: 10.4.13(postcss@8.4.31)
   babel-jest:
     specifier: ^29.4.1
     version: 29.7.0(@babel/core@7.23.2)
@@ -242,8 +242,8 @@ devDependencies:
     specifier: 17.0.2
     version: 17.0.2(@swc-node/register@1.6.8)(@swc/core@1.3.95)
   postcss:
-    specifier: 8.4.21
-    version: 8.4.21
+    specifier: 8.4.31
+    version: 8.4.31
   prettier:
     specifier: ^3.0.3
     version: 3.0.3
@@ -255,7 +255,7 @@ devDependencies:
     version: 5.5.2
   tailwindcss:
     specifier: 3.2.7
-    version: 3.2.7(postcss@8.4.21)(ts-node@10.9.1)
+    version: 3.2.7(postcss@8.4.31)(ts-node@10.9.1)
   tailwindcss-debug-screens:
     specifier: ^2.2.1
     version: 2.2.1(tailwindcss@3.2.7)
@@ -3531,7 +3531,7 @@ packages:
       lodash.mapkeys: 4.6.0
       lodash.omit: 4.5.0
       tailwind-variants: 0.1.18(tailwindcss@3.2.7)
-      tailwindcss: 3.2.7(postcss@8.4.21)(ts-node@10.9.1)
+      tailwindcss: 3.2.7(postcss@8.4.31)(ts-node@10.9.1)
     dev: false
 
   /@nextui-org/tooltip@2.0.25(@nextui-org/system@2.0.11)(@nextui-org/theme@2.1.11)(framer-motion@10.16.4)(react-dom@18.2.0)(react@18.2.0)(tailwind-variants@0.1.18):
@@ -6966,6 +6966,22 @@ packages:
       normalize-range: 0.1.2
       picocolors: 1.0.0
       postcss: 8.4.21
+      postcss-value-parser: 4.2.0
+    dev: true
+
+  /autoprefixer@10.4.13(postcss@8.4.31):
+    resolution: {integrity: sha512-49vKpMqcZYsJjwotvt4+h/BCjJVnhGwcLpDt5xkcaOG3eLrG/HUYLagrihYsQ+qrIBgIzX1Rw7a6L8I/ZA1Atg==}
+    engines: {node: ^10 || ^12 || >=14}
+    hasBin: true
+    peerDependencies:
+      postcss: ^8.1.0
+    dependencies:
+      browserslist: 4.22.1
+      caniuse-lite: 1.0.30001557
+      fraction.js: 4.3.7
+      normalize-range: 0.1.2
+      picocolors: 1.0.0
+      postcss: 8.4.31
       postcss-value-parser: 4.2.0
     dev: true
 
@@ -12177,17 +12193,29 @@ packages:
       postcss-value-parser: 4.2.0
       read-cache: 1.0.0
       resolve: 1.22.8
+    dev: true
 
-  /postcss-js@4.0.1(postcss@8.4.21):
+  /postcss-import@14.1.0(postcss@8.4.31):
+    resolution: {integrity: sha512-flwI+Vgm4SElObFVPpTIT7SU7R3qk2L7PyduMcokiaVKuWv9d/U+Gm/QAd8NDLuykTWTkcrjOeD2Pp1rMeBTGw==}
+    engines: {node: '>=10.0.0'}
+    peerDependencies:
+      postcss: ^8.0.0
+    dependencies:
+      postcss: 8.4.31
+      postcss-value-parser: 4.2.0
+      read-cache: 1.0.0
+      resolve: 1.22.8
+
+  /postcss-js@4.0.1(postcss@8.4.31):
     resolution: {integrity: sha512-dDLF8pEO191hJMtlHFPRa8xsizHaM82MLfNkUHdUtVEV3tgTp5oj+8qbEqYM57SLfc74KSbw//4SeJma2LRVIw==}
     engines: {node: ^12 || ^14 || >= 16}
     peerDependencies:
       postcss: ^8.4.21
     dependencies:
       camelcase-css: 2.0.1
-      postcss: 8.4.21
+      postcss: 8.4.31
 
-  /postcss-load-config@3.1.4(postcss@8.4.21)(ts-node@10.9.1):
+  /postcss-load-config@3.1.4(postcss@8.4.31)(ts-node@10.9.1):
     resolution: {integrity: sha512-6DiM4E7v4coTE4uzA8U//WhtPwyhiim3eyjEMFCnUpzbrkK9wJHgKDT2mR+HbtSrd/NubVaYTOpSpjUl8NQeRg==}
     engines: {node: '>= 10'}
     peerDependencies:
@@ -12200,7 +12228,7 @@ packages:
         optional: true
     dependencies:
       lilconfig: 2.1.0
-      postcss: 8.4.21
+      postcss: 8.4.31
       ts-node: 10.9.1(@swc/core@1.3.95)(@types/node@18.14.2)(typescript@5.1.6)
       yaml: 1.10.2
 
@@ -12327,13 +12355,13 @@ packages:
       postcss: 8.4.21
     dev: true
 
-  /postcss-nested@6.0.0(postcss@8.4.21):
+  /postcss-nested@6.0.0(postcss@8.4.31):
     resolution: {integrity: sha512-0DkamqrPcmkBDsLn+vQDIrtkSbNkv5AD/M322ySo9kqFkCIYklym2xEmWkwo+Y3/qZo34tzEPNUw4y7yMCdv5w==}
     engines: {node: '>=12.0'}
     peerDependencies:
       postcss: ^8.2.14
     dependencies:
-      postcss: 8.4.21
+      postcss: 8.4.31
       postcss-selector-parser: 6.0.13
 
   /postcss-normalize-charset@6.0.0(postcss@8.4.31):
@@ -12504,6 +12532,7 @@ packages:
       nanoid: 3.3.6
       picocolors: 1.0.0
       source-map-js: 1.0.2
+    dev: true
 
   /postcss@8.4.31:
     resolution: {integrity: sha512-PS08Iboia9mts/2ygV3eLpY5ghnUcfLV/EXTOW1E2qYxJKGGBUtNjN76FYHnMs36RmARn41bC0AZmn+rR0OVpQ==}
@@ -12512,7 +12541,6 @@ packages:
       nanoid: 3.3.6
       picocolors: 1.0.0
       source-map-js: 1.0.2
-    dev: true
 
   /prelude-ls@1.2.1:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
@@ -13973,7 +14001,7 @@ packages:
       tailwindcss: '*'
     dependencies:
       tailwind-merge: 1.14.0
-      tailwindcss: 3.2.7(postcss@8.4.21)(ts-node@10.9.1)
+      tailwindcss: 3.2.7(postcss@8.4.31)(ts-node@10.9.1)
     dev: false
 
   /tailwindcss-debug-screens@2.2.1(tailwindcss@3.2.7):
@@ -13981,7 +14009,7 @@ packages:
     peerDependencies:
       tailwindcss: ^1.0 || ^2.0 || ^3.0.0-alpha.1 || ^3.0
     dependencies:
-      tailwindcss: 3.2.7(postcss@8.4.21)(ts-node@10.9.1)
+      tailwindcss: 3.2.7(postcss@8.4.31)(ts-node@10.9.1)
     dev: true
 
   /tailwindcss-safe-area@0.4.1:
@@ -13989,7 +14017,7 @@ packages:
     engines: {node: '>=16'}
     dev: true
 
-  /tailwindcss@3.2.7(postcss@8.4.21)(ts-node@10.9.1):
+  /tailwindcss@3.2.7(postcss@8.4.31)(ts-node@10.9.1):
     resolution: {integrity: sha512-B6DLqJzc21x7wntlH/GsZwEXTBttVSl1FtCzC8WP4oBc/NKef7kaax5jeihkkCEWc831/5NDJ9gRNDK6NEioQQ==}
     engines: {node: '>=12.13.0'}
     hasBin: true
@@ -14010,11 +14038,11 @@ packages:
       normalize-path: 3.0.0
       object-hash: 3.0.0
       picocolors: 1.0.0
-      postcss: 8.4.21
-      postcss-import: 14.1.0(postcss@8.4.21)
-      postcss-js: 4.0.1(postcss@8.4.21)
-      postcss-load-config: 3.1.4(postcss@8.4.21)(ts-node@10.9.1)
-      postcss-nested: 6.0.0(postcss@8.4.21)
+      postcss: 8.4.31
+      postcss-import: 14.1.0(postcss@8.4.31)
+      postcss-js: 4.0.1(postcss@8.4.31)
+      postcss-load-config: 3.1.4(postcss@8.4.31)(ts-node@10.9.1)
+      postcss-nested: 6.0.0(postcss@8.4.31)
       postcss-selector-parser: 6.0.13
       postcss-value-parser: 4.2.0
       quick-lru: 5.1.1
