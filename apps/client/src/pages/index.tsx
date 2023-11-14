@@ -1,11 +1,11 @@
 import React, { forwardRef } from 'react';
 import { PWALogo } from '@/client/assets/logos';
 import { Link } from '@nextui-org/react';
-import { PageContainer } from '@/client/components/PageContainer';
+import { SlideContainer } from '@/client/components/SlideContainer';
 
 export function Index(props: unknown, ref: React.ForwardedRef<HTMLDivElement>) {
   return (
-    <PageContainer ref={ref} className="justify-center">
+    <SlideContainer ref={ref} className="justify-center">
       <h1 className="text-7xl font-bold sm:text-9xl">
         Fall in <span className="text-primary">💜</span>&nbsp;with
       </h1>
@@ -22,7 +22,7 @@ export function Index(props: unknown, ref: React.ForwardedRef<HTMLDivElement>) {
           Jakub Jóźwiak
         </Link>
       </div>
-    </PageContainer>
+    </SlideContainer>
   );
 }
 

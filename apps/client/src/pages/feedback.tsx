@@ -1,11 +1,11 @@
 import React, { forwardRef } from 'react';
-import { PageContainer } from '@/client/components/PageContainer';
+import { SlideContainer } from '@/client/components/SlideContainer';
 
 export function Feedback(props: unknown, ref: React.ForwardedRef<HTMLDivElement>) {
   return (
-    <PageContainer ref={ref} className="bg-green-500">
+    <SlideContainer ref={ref} className="bg-green-500">
       <h1 className="text-4xl font-bold">Feedback Page [3]</h1>
-    </PageContainer>
+    </SlideContainer>
   );
 }
 

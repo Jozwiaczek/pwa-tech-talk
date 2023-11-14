@@ -6,6 +6,7 @@
     "declaration": false,
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
+    "esModuleInterop": true,
     "experimentalDecorators": true,
     "importHelpers": true,
     "target": "es2015",
@@ -15,8 +16,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@/client/*": ["apps/client/src/*"],
       "@/api/*": ["apps/api/src/*"],
+      "@/client/*": ["apps/client/src/*"],
+      "@/libs/shared/dto/*": ["libs/shared/dto/src/*"],
+      "@/libs/shared/types/*": ["libs/shared/types/src/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]

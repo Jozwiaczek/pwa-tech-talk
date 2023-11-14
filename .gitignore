@@ -5,6 +5,7 @@ dist
 tmp
 /out-tsc
 
+
 # PWA output files
 **/public/workbox-*
 **/public/sw.*

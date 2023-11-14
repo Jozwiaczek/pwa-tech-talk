@@ -1,0 +1,62 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                   String                @id @default(uuid())
+  createdAt            DateTime              @default(now())
+  updatedAt            DateTime              @updatedAt
+  username             String                @unique
+  isVerified           Boolean               @default(false)
+  Authenticator        Authenticator[]
+  currentChallenge     String?
+  refreshTokens        RefreshToken[]
+  webPushSubscriptions WebPushSubscription[]
+}
+
+model RefreshToken {
+  id             String   @id @default(uuid())
+  createdAt      DateTime @default(now())
+  keepMeLoggedIn Boolean  @default(false)
+  expirationDate DateTime
+  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId         String
+}
+
+model WebPushSubscription {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId    String
+  /// Push subscription URL
+  endpoint  String   @unique
+  /// Push encryption key, used to retrieve the public key
+  p256dh    String
+  /// Push encryption key, used to retrieve the authentication secret
+  auth      String
+}
+
+/// A representation of a thing that authenticates user using FIDO protocol.
+model Authenticator {
+  credentialID        String    @id
+  credentialPublicKey Bytes
+  createdAt           DateTime  @default(now())
+  updatedAt           DateTime  @updatedAt
+  lastUsed            DateTime?
+  user                User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId              String
+  /// The number of times the authenticator has been used on this site so far.
+  counter             Int
+  deviceName          String
+  /// "browserName browserVersion, osName osVersion" (eg. Chrome 110.0.0.0, Mac OS 10.15.7)
+  deviceDetails       String
+}

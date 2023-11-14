@@ -1,6 +1,7 @@
 interface SlideSchema {
   path: `/${string}`;
   name: string;
+  serverRequired?: true;
 }
 
 export const SLIDES = [
@@ -13,8 +14,9 @@ export const SLIDES = [
     name: 'Agenda',
   },
   {
-    path: '/example',
-    name: 'Example',
+    path: '/passkeys',
+    name: 'Passkey',
+    serverRequired: true,
   },
   {
     path: '/feedback',

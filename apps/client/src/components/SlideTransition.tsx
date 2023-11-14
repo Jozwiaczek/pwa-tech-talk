@@ -3,13 +3,13 @@ import { motion, HTMLMotionProps } from 'framer-motion';
 import { useRouter } from 'next/router';
 import { SLIDES } from '@/client/constants/slides';
 
-type PageTransitionProps = HTMLMotionProps<'div'>;
-type PageTransitionRef = React.ForwardedRef<HTMLDivElement>;
-
 const inTheCenter = { x: 0 };
 const transition = { duration: 0.6, ease: 'easeInOut' };
 
-function PageTransition({ children, ...rest }: PageTransitionProps, ref: PageTransitionRef) {
+function SlideTransition(
+  { children, ...rest }: HTMLMotionProps<'div'>,
+  ref: React.ForwardedRef<HTMLDivElement>,
+) {
   const router = useRouter();
   const [previousPath] = useState<string>(router.asPath);
   const currentPath = router.asPath;
@@ -35,4 +35,4 @@ function PageTransition({ children, ...rest }: PageTransitionProps, ref: PageTra
   );
 }
 
-export default forwardRef(PageTransition);
+export default forwardRef(SlideTransition);

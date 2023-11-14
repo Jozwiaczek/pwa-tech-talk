@@ -4,6 +4,13 @@
 
 /*noinspection CssInvalidPropertyValue*/
 @layer base {
+  :root {
+    --toastify-color-info: theme('colors.primary') !important;
+    --toastify-color-success: theme('colors.success') !important;
+    --toastify-color-warning: theme('colors.warning') !important;
+    --toastify-color-error: theme('colors.danger') !important;
+  }
+
   html {
     height: -webkit-fill-available;
   }

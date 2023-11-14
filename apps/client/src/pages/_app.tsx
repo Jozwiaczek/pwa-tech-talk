@@ -1,20 +1,19 @@
 import { AppProps } from 'next/app';
 import '../styles/global.css';
-import { AnimatePresence } from 'framer-motion';
-import { Navigation } from '@/client/components/Navigation';
-import { NextUIProvider } from '@nextui-org/react';
 import { Inter } from 'next/font/google';
 import { twJoin } from 'tailwind-merge';
 import { PageHead } from '@/client/components/PageHead/PageHead';
-import { ServerInfo } from '@/client/components/ServerInfo';
-import { Analytics } from '@vercel/analytics/react';
 import { config } from '@/client/config';
 import { NextComponentType, NextPageContext } from 'next';
+import { Providers } from '@/client/providers/Providers';
+import { AppLayout } from '@/client/components/AppLayout';
+import { ApiRequirementGuard } from '@/client/guards/ApiRequirementGuard';
 
 const inter = Inter({ subsets: ['latin'] });
 
 type CustomPageComponentProps = NextComponentType<NextPageContext, unknown, unknown> & {
   hideControls?: boolean;
+  apiRequired?: boolean;
 };
 
 type CustomAppProps = AppProps & {
@@ -25,28 +24,16 @@ function CustomApp({ Component, pageProps, router }: CustomAppProps) {
   const isDev = config.NODE_ENV === 'development';
 
   return (
-    <NextUIProvider navigate={router.push}>
-      <PageHead />
-      <AnimatePresence mode="popLayout" initial={false}>
-        <div
-          key={router.pathname}
-          className={twJoin(
-            inter.className,
-            isDev ? 'debug-screens' : '',
-            'max-h-screen overflow-hidden',
-          )}
-        >
-          <Component {...pageProps} />
-          {!Component.hideControls && (
-            <>
-              <Navigation />
-              <ServerInfo />
-            </>
-          )}
-        </div>
-      </AnimatePresence>
-      {config.NODE_ENV === 'production' && <Analytics />}
-    </NextUIProvider>
+    <Providers navigate={router.push} dehydratedState={pageProps.dehydratedState}>
+      <div key={router.pathname} className={twJoin(inter.className, isDev ? 'debug-screens' : '')}>
+        <PageHead />
+        <AppLayout hideControls={Component.hideControls}>
+          <ApiRequirementGuard isApiRequired={Component.apiRequired}>
+            <Component {...pageProps} />
+          </ApiRequirementGuard>
+        </AppLayout>
+      </div>
+    </Providers>
   );
 }
 
