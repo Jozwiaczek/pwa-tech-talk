@@ -1,7 +1,8 @@
 import React, { forwardRef } from 'react';
 import { PWALogo } from '@/client/assets/logos';
-import { Link } from '@nextui-org/react';
+import { Divider, Link } from '@nextui-org/react';
 import { SlideContainer } from '@/client/components/SlideContainer';
+import { QrLiveLink } from '@/client/components/QrLiveLink';
 
 export function Index(props: unknown, ref: React.ForwardedRef<HTMLDivElement>) {
   return (
@@ -21,6 +22,10 @@ export function Index(props: unknown, ref: React.ForwardedRef<HTMLDivElement>) {
         >
           Jakub Jóźwiak
         </Link>
+      </div>
+      <div className="hidden flex-col items-center justify-center gap-5 sm:flex">
+        <Divider className="bg-primary-400 w-64" />
+        <QrLiveLink />
       </div>
     </SlideContainer>
   );

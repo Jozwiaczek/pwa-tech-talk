@@ -6,7 +6,6 @@ export function Agenda(props: unknown, ref: React.ForwardedRef<HTMLDivElement>) 
   return (
     <SlideContainer ref={ref}>
       <CoverIllustration />
-      <p>TODO: Handle QR code</p>
       <h1 className="text-5xl font-bold">Tech Talk Highlights</h1>
       <ul className="flex flex-col items-center gap-4">
         <li>🌟 Groundbreaking Features: Uncover what makes PWAs stand out in the web landscape.</li>

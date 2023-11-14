@@ -19,9 +19,8 @@ export const AccountMenu = () => {
           <Avatar
             as="button"
             name={currentUser.username}
-            color="primary"
             isBordered
-            className="size-10 transition-size hover:size-11"
+            className="size-9 transition-size hover:size-10"
           />
         </DropdownTrigger>
         <DropdownMenu aria-label="Profile Actions" variant="flat">

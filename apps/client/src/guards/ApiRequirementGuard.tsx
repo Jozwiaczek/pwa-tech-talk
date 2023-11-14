@@ -23,7 +23,7 @@ export const ApiRequirementGuard = ({ children, isApiRequired }: SlideRequiremen
     }
 
     const isMounted = checkIsMounted();
-    const isApiConnected = isApiRequired && !isConnecting && isConnected;
+    const isApiConnected = isApiRequired && !isConnecting && !isConnected;
     return isMounted && isApiConnected;
   }, [checkIsMounted, isApiRequired, isConnected, isConnecting]);
 
@@ -31,10 +31,12 @@ export const ApiRequirementGuard = ({ children, isApiRequired }: SlideRequiremen
     return (
       <SlideContainer>
         <Tooltip content="Server is offline">
-          <SignalSlashIcon className="size-20 text-danger cursor-help" />
+          <SignalSlashIcon className="size-20 text-warning cursor-help" />
         </Tooltip>
-        <h1 className="text-5xl font-bold">Oops, current slide requires running server</h1>
-        <p className="text-2xl">
+        <h1 className="text-3xl font-bold sm:text-5xl">
+          Oops, current slide requires running server
+        </h1>
+        <p className="text-lg sm:text-2xl">
           For saving resources and safety reasons it is active only for live presentations.
         </p>
         <Button
