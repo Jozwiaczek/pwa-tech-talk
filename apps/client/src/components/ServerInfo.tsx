@@ -6,7 +6,7 @@ export const ServerInfo = () => {
   const { totalSpectators, isConnected } = useEvents();
 
   return (
-    <aside className="pb-safe pr-safe fixed bottom-3 right-4">
+    <aside className="flex flex-col items-end justify-center">
       {isConnected && (
         <Badge content={totalSpectators} color="secondary" shape="circle">
           <Tooltip content={`${totalSpectators} active spectators`}>

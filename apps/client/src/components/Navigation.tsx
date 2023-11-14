@@ -11,7 +11,7 @@ export const Navigation = () => {
   useKey('ArrowRight', nextSlide);
 
   return (
-    <nav className="pb-safe fixed bottom-8 flex w-full items-center justify-center gap-4">
+    <nav className="flex items-center justify-center gap-2 sm:gap-4">
       <Button onPress={previousSlide} isIconOnly color="primary">
         <BackwardIcon className="size-6" />
       </Button>

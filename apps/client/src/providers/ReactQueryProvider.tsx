@@ -11,14 +11,14 @@ interface ReactQueryProviderProps {
 const ReactQueryProvider = ({
   children,
   dehydratedState,
-  hideDevtools,
+  hideDevtools = true,
 }: ReactQueryProviderProps) => {
   const queryClient = useMemo(() => new QueryClient(), []);
 
   return (
     <QueryClientProvider client={queryClient}>
       <Hydrate state={dehydratedState}>{children}</Hydrate>
-      {!hideDevtools && <ReactQueryDevtools position="bottom-left" />}
+      {!hideDevtools && <ReactQueryDevtools position="top-left" />}
     </QueryClientProvider>
   );
 };

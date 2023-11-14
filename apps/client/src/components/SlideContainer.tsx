@@ -12,7 +12,7 @@ export const SlideContainer = forwardRef<HTMLDivElement, SlideContainerProps>(
     <SlideTransition ref={ref}>
       <div
         className={twMerge(
-          'pt-safe pb-safe-offset-28 px-safe-offset-5 sm:px-safe-offset-10 sm:pb-safe-offset-0 flex min-h-screen flex-col items-center justify-center gap-5 text-center sm:justify-center sm:gap-10',
+          'pt-safe-offset-10 pb-safe-offset-28 px-safe-offset-5 sm:px-safe-offset-10 sm:pb-safe-offset-24 bg-content1 flex min-h-screen flex-col items-center justify-center gap-5 text-center sm:justify-center sm:gap-10',
           className,
         )}
       >
