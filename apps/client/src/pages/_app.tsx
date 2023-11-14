@@ -22,7 +22,6 @@ type CustomAppProps = AppProps & {
 
 function CustomApp({ Component, pageProps, router }: CustomAppProps) {
   const isDev = config.NODE_ENV === 'development';
-  console.log('L:25 | config: ', config);
 
   return (
     <Providers navigate={router.push} dehydratedState={pageProps.dehydratedState}>
