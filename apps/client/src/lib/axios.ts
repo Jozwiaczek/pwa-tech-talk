@@ -1,10 +1,8 @@
 import baseAxios, { CreateAxiosDefaults } from 'axios';
 import { config } from '@/client/config';
 
-const baseURL = config.NODE_ENV === 'production' ? '/api' : config.API_URL;
-
 const axiosConfig: CreateAxiosDefaults = {
-  baseURL,
+  baseURL: config.API_URL,
   headers: {
     'Content-Type': 'application/json',
   },
