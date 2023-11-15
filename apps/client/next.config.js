@@ -19,6 +19,13 @@ const nextConfig = {
     // See: https://github.com/gregberge/svgr
     svgr: true,
   },
+  redirects: async () => [
+    {
+      source: '/api/:path',
+      destination: `${process.env.REACT_APP_API_URL}/:path`,
+      statusCode: 301,
+    },
+  ],
 };
 
 const plugins = [
