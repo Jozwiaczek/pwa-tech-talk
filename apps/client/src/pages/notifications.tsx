@@ -52,7 +52,6 @@ const NotificationsPage = (props: unknown, ref: React.ForwardedRef<HTMLDivElemen
     const body = data.get('body') as string;
     const icon = data.get('icon') as string;
     const action = data.get('action') as string;
-    const timestamp = data.get('timestamp') as string;
 
     debugSendMutation.mutate({
       title,
@@ -68,7 +67,6 @@ const NotificationsPage = (props: unknown, ref: React.ForwardedRef<HTMLDivElemen
         renotify,
         requireInteraction,
         silent,
-        timestamp: timestamp ? new Date(timestamp).getTime() : undefined,
         vibrate: [200, 100, 200],
       },
     });
@@ -85,14 +83,6 @@ const NotificationsPage = (props: unknown, ref: React.ForwardedRef<HTMLDivElemen
               <Input name="body" label="Body" defaultValue="Example body" />
               <Input name="icon" label="Icon" defaultValue="/icons/icon512_maskable.png" />
               <Input name="action" label="Action" defaultValue="Example action 🚀" />
-              <Input
-                name="timestamp"
-                label="Timestamp"
-                type="datetime-local"
-                defaultValue={
-                  new Date(Date.now() + 1000 * 60 * 60 * 24).toISOString().split('.')[0]
-                }
-              />
               <Checkbox
                 name="requireInteraction"
                 isSelected={requireInteraction}

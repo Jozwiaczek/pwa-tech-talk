@@ -12,7 +12,7 @@ export const ToastProvider = () => {
       theme={resolvedTheme === 'dark' ? 'dark' : 'light'}
       limit={3}
       closeOnClick
-      style={{ zIndex: 10000 }}
+      style={{ zIndex: 10000, marginTop: '3rem' }}
     />
   );
 };
