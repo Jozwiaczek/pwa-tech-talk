@@ -30,14 +30,16 @@ export class CookieService {
   }
 
   private getCookieOptions(): CookieSerializeOptions {
-    const isProd = config.NODE_ENV === 'production';
+    // const isProd = config.NODE_ENV === 'production';
 
     return {
       httpOnly: true,
-      path: '/',
-      secure: isProd,
-      signed: isProd,
-      sameSite: isProd ? 'strict' : undefined,
+      // path: '/',
+      // secure: true,
+      sameSite: 'none',
+      // secure: isProd,
+      // signed: isProd,
+      // sameSite: isProd ? 'strict' : undefined,
     };
   }
 }
