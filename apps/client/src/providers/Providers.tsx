@@ -5,9 +5,9 @@ import { NextUIProvider } from '@nextui-org/react';
 import { AnimatePresence } from 'framer-motion';
 import { config } from '@/client/config';
 import { Analytics } from '@vercel/analytics/react';
-import { toast, ToastContainer } from 'react-toastify';
 import { ThemeProvider as NextThemesProvider } from 'next-themes';
 import { EventsContextProvider } from '@/client/context/EventsContext';
+import { ToastProvider } from '@/client/providers/ToastProvider';
 
 interface ProvidersProps {
   children: React.ReactNode;
@@ -23,17 +23,10 @@ export const Providers = ({ children, dehydratedState }: ProvidersProps) => (
           <AnimatePresence mode="popLayout" initial={false}>
             {children}
           </AnimatePresence>
+          <ToastProvider />
         </NextThemesProvider>
       </NextUIProvider>
     </EventsContextProvider>
     {config.NODE_ENV === 'production' && <Analytics />}
-    <ToastContainer
-      position={toast.POSITION.TOP_RIGHT}
-      autoClose={5000}
-      draggable
-      limit={3}
-      closeOnClick
-      style={{ zIndex: 10000 }}
-    />
   </ReactQueryProvider>
 );

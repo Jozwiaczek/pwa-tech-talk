@@ -1,34 +1,29 @@
 import { Body, Controller, Post } from '@nestjs/common';
 import { WebPushService } from '@/api/modules/web-push/web-push.service';
-import { Auth } from '@/api/modules/auth/decorators/auth.decorator';
-import { User } from '@prisma/client';
-import { UserFromCookiePayloadPipe } from '@/api/modules/auth/cookie/cookieUserPayload.pipe';
-import { CookiePayload } from '@/api/modules/auth/cookie/cookiePayload.decorator';
-import { PushSubscriptionDto } from '@/libs/shared/dto/web-push';
+import { PushClientIdDto, PushSubscriptionDto } from '@/libs/shared/dto/web-push';
+import { PushDebugSendDto } from '@/libs/shared/dto/web-push/push-debug-send.dto';
 
-@Auth()
 @Controller('web-push')
 export class WebPushController {
   constructor(private readonly webPushService: WebPushService) {}
 
   @Post('debug-send')
-  async debugSend(@CookiePayload(UserFromCookiePayloadPipe) user: User): Promise<void> {
-    await this.webPushService.debugSend(user);
+  async debugSend(@Body() dto: PushDebugSendDto): Promise<void> {
+    await this.webPushService.debugSend(dto);
+  }
+
+  @Post('is-subscribed')
+  isSubscribed(@Body() dto: PushClientIdDto): boolean {
+    return this.webPushService.isSubscribed(dto);
   }
 
   @Post('subscribe')
-  async subscribe(
-    @Body() subscription: PushSubscriptionDto,
-    @CookiePayload(UserFromCookiePayloadPipe) user: User,
-  ): Promise<void> {
-    await this.webPushService.subscribe(subscription, user);
+  async subscribe(@Body() { clientId, ...subscription }: PushSubscriptionDto): Promise<void> {
+    await this.webPushService.subscribe(subscription, clientId);
   }
 
   @Post('unsubscribe')
-  async unsubscribe(
-    @Body() subscription: PushSubscriptionDto,
-    @CookiePayload(UserFromCookiePayloadPipe) user: User,
-  ): Promise<void> {
-    await this.webPushService.unsubscribe(subscription, user);
+  async unsubscribe(@Body() { clientId, ...subscription }: PushSubscriptionDto): Promise<void> {
+    await this.webPushService.unsubscribe(subscription, clientId);
   }
 }

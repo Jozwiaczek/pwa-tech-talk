@@ -6,16 +6,21 @@ import {
   isSubscriptionExpired,
   isWebPushGranted,
 } from '@/client/hooks/useWebPush/useWebPush.utils';
-import { useMutation } from '@tanstack/react-query';
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { toast } from 'react-toastify';
 import { config } from '@/client/config';
 import { axios } from '@/client/lib/axios';
+import { useLocalStorage } from 'react-use';
+import { v4 as uuid } from 'uuid';
+import { PushDebugSendDto } from '@/libs/shared/dto/web-push/push-debug-send.dto';
+import { PushNotificationPayload } from '@/libs/shared/types/web-push';
 
 export const useWebPush = () => {
-  const [isSubscribed, setIsSubscribed] = useState<boolean>(false);
+  const queryClient = useQueryClient();
   const [subscriptionInternal, setSubscriptionInternal] = useState<PushSubscription | null>(null);
   const [registrationInternal, setRegistrationInternal] =
     useState<ServiceWorkerRegistration | null>(null);
+  const [clientId] = useLocalStorage('clientId', uuid());
 
   const isWebPushSupported = useMemo(() => checkIsWebPushSupported(), []);
 
@@ -27,7 +32,6 @@ export const useWebPush = () => {
 
         if (sub && !isSubscriptionExpired(sub)) {
           setSubscriptionInternal(sub);
-          setIsSubscribed(true);
         }
         setRegistrationInternal(reg);
       }
@@ -38,7 +42,19 @@ export const useWebPush = () => {
 
   return {
     isWebPushSupported,
-    isSubscribed,
+    isSubscribed: useQuery({
+      queryKey: ['is-subscribed', clientId],
+      queryFn: async () => {
+        if (!isWebPushSupported) {
+          return false;
+        }
+
+        const { data: isSubscribed } = await axios.post<boolean>('/web-push/is-subscribed', {
+          clientId,
+        });
+        return isSubscribed;
+      },
+    }).data,
     subscribeMutation: useMutation({
       mutationFn: async () => {
         const isGranted = await isWebPushGranted();
@@ -57,9 +73,12 @@ export const useWebPush = () => {
           return;
         }
 
-        await axios.post('/web-push/subscribe', getSubscriptionToSend(subscription));
+        await axios.post('/web-push/subscribe', {
+          ...getSubscriptionToSend(subscription),
+          clientId,
+        });
         setSubscriptionInternal(subscription);
-        setIsSubscribed(true);
+        queryClient.setQueryData(['is-subscribed', clientId], true);
 
         toast.success('You have successfully subscribed to notifications');
       },
@@ -71,22 +90,29 @@ export const useWebPush = () => {
           return;
         }
 
-        await axios.post('/web-push/unsubscribe', getSubscriptionToSend(subscriptionInternal));
+        await axios.post('/web-push/unsubscribe', {
+          ...getSubscriptionToSend(subscriptionInternal),
+          clientId,
+        });
         await subscriptionInternal.unsubscribe();
         setSubscriptionInternal(null);
-        setIsSubscribed(false);
+        queryClient.setQueryData(['is-subscribed', clientId], false);
 
         toast.success('You have successfully unsubscribed from notifications');
       },
     }),
     debugSendMutation: useMutation({
-      mutationFn: async () => {
+      mutationFn: async ({ title, options }: PushNotificationPayload) => {
         if (!subscriptionInternal) {
           toast.error('Something went wrong');
           return;
         }
 
-        await axios.post('/web-push/debug-send', getSubscriptionToSend(subscriptionInternal));
+        await axios.post('/web-push/debug-send', {
+          clientId,
+          title,
+          ...options,
+        } as PushDebugSendDto);
       },
     }),
   };

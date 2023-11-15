@@ -19,19 +19,6 @@ const nextConfig = {
     // See: https://github.com/gregberge/svgr
     svgr: true,
   },
-  // redirects: async () => [
-  //   {
-  //     source: '/api/:path*',
-  //     destination: `${process.env.NEXT_PUBLIC_API_URL}/:path*`,
-  //     permanent: true,
-  //   },
-  // ],
-  rewrites: async () => [
-    {
-      source: '/api/:path*',
-      destination: `${process.env.NEXT_PUBLIC_API_URL}/:path*`,
-    },
-  ],
 };
 
 const plugins = [

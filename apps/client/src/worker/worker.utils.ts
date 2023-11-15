@@ -8,7 +8,7 @@ export const focusClient = async () => {
     const client = clientList.find((c) => c.focused) || clientList[0];
 
     if (client) {
-      await client.focus();
+      client.focus();
     } else {
       await self.clients.openWindow('/');
     }
