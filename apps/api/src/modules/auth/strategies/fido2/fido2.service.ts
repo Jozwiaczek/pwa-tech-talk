@@ -77,7 +77,7 @@ export class Fido2Service {
       userName: requestingUser.username,
       attestationType: 'none',
       authenticatorSelection: {
-        residentKey: 'required',
+        residentKey: 'preferred',
         userVerification: 'preferred',
       },
     };
@@ -180,7 +180,7 @@ export class Fido2Service {
       expectedChallenge,
       expectedOrigin: config.WEB_AUTHN_ORIGIN,
       expectedRPID: config.WEB_AUTHN_RP_ID,
-      requireUserVerification: true,
+      requireUserVerification: false,
       authenticator: {
         ...userAuthenticator,
         credentialID: this.convertBase64urlToBuffer(userAuthenticator.credentialID),
@@ -224,7 +224,7 @@ export class Fido2Service {
       expectedChallenge: currentChallenge,
       expectedOrigin: config.WEB_AUTHN_ORIGIN,
       expectedRPID: config.WEB_AUTHN_RP_ID,
-      requireUserVerification: true,
+      requireUserVerification: false,
     };
 
     return await verifyRegistrationResponse(verifyRegistrationResponseOptions);
