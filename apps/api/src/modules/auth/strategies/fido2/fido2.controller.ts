@@ -51,7 +51,6 @@ export class Fido2Controller {
     @Body()
     { username, ...authenticator }: Fido2LoginResponseDto,
   ): Promise<VerifyFido2LoginResponse> {
-    console.log('L:54 | cookieResponse: ', cookieResponse);
     return this.fido2Service.verifyLoginResponse(username, authenticator, cookieResponse);
   }
 }

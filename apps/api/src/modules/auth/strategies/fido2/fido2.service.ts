@@ -213,15 +213,15 @@ export class Fido2Service {
     username: string,
     registrationResponse: RegistrationResponseJSON,
   ): Promise<VerifiedRegistrationResponse> {
-    const { currentChallenge } = await this.usersService.findUnique({ username });
+    const user = await this.usersService.findUnique({ username });
 
-    if (!currentChallenge) {
+    if (!user?.currentChallenge) {
       throw new UnauthorizedException('No challenge found');
     }
 
     const verifyRegistrationResponseOptions: VerifyRegistrationResponseOpts = {
       response: registrationResponse,
-      expectedChallenge: currentChallenge,
+      expectedChallenge: user?.currentChallenge,
       expectedOrigin: config.WEB_AUTHN_ORIGIN,
       expectedRPID: config.WEB_AUTHN_RP_ID,
       requireUserVerification: false,
