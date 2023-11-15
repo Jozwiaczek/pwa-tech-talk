@@ -61,12 +61,12 @@ export class Fido2Service {
       },
       update: {
         isVerified: false,
-        currentChallenge: '',
+        currentChallenge: null,
       },
       create: {
         username,
         isVerified: false,
-        currentChallenge: '',
+        currentChallenge: null,
       },
     });
 
@@ -75,7 +75,6 @@ export class Fido2Service {
       rpID: config.WEB_AUTHN_RP_ID,
       userID: requestingUser.id,
       userName: requestingUser.username,
-      attestationType: 'none',
       authenticatorSelection: {
         residentKey: 'preferred',
         userVerification: 'preferred',

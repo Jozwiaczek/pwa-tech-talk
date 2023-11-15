@@ -13,7 +13,7 @@ export const AccountMenu = () => {
   }
 
   return (
-    <div className="fixed top-4 right-4 z-50">
+    <div className="pt-safe-offset-4 pr-safe-offset-4 fixed top-0 right-0 z-50">
       <Dropdown>
         <DropdownTrigger>
           <Avatar
