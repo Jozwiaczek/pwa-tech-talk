@@ -8,6 +8,7 @@ import { TokenModule } from '@/api/modules/auth/token/token.module';
 import { AuthenticatorsModule } from '@/api/modules/auth/strategies/fido2/authenticators/authenticators.module';
 import { CookieModule } from '@/api/modules/auth/cookie/cookie.module';
 import { WebPushModule } from './web-push/web-push.module';
+import { HealthModule } from './health/health.module';
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import { WebPushModule } from './web-push/web-push.module';
     AuthenticatorsModule,
     CookieModule,
     WebPushModule,
+    HealthModule,
   ],
   controllers: [],
   providers: [],
