@@ -14,6 +14,14 @@ export const SLIDES = [
     name: 'Agenda',
   },
   {
+    path: '/comparison',
+    name: 'Comparison',
+  },
+  {
+    path: '/manifest',
+    name: 'Manifest file',
+  },
+  {
     path: '/passkeys',
     name: 'Passkeys',
     serverRequired: true,
@@ -22,6 +30,14 @@ export const SLIDES = [
     path: '/notifications',
     name: 'Notifications',
     serverRequired: true,
+  },
+  {
+    path: '/fun-facts',
+    name: 'Fun facts',
+  },
+  {
+    path: '/tips-tricks',
+    name: 'Tips & Tricks',
   },
   {
     path: '/feedback',
