@@ -22,9 +22,7 @@
 }
 
 @layer components {
-  .dangerHtml {
-    & a {
-      @apply text-primary hover:underline hover:text-primary-600 transition-all;
-    }
+  .dangerHtml a {
+    @apply text-primary hover:text-primary-600 transition-all hover:underline;
   }
 }

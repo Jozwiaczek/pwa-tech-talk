@@ -1,8 +1,7 @@
 import baseAxios, { CreateAxiosDefaults } from 'axios';
-import { config } from '@/client/config';
 
 const axiosConfig: CreateAxiosDefaults = {
-  baseURL: config.API_URL,
+  baseURL: '/api',
   headers: {
     'Content-Type': 'application/json',
   },
