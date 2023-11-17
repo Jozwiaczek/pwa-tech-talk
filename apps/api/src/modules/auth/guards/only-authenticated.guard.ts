@@ -20,6 +20,7 @@ export class OnlyAuthenticatedGuard implements CanActivate {
       const response = context.switchToHttp().getResponse<CookieResponse>();
 
       const accessToken = this.tokenCookieService.getCookieToken('ACCESS');
+      console.log('L:23 | accessToken: ', accessToken);
       const verifiedAccessToken = this.tokenService.verifyJWTToken(
         'ACCESS',
         accessToken,
@@ -40,6 +41,7 @@ export class OnlyAuthenticatedGuard implements CanActivate {
 
       await this.regenerateAccessToken(accessTokenSubject, response);
     } catch (e) {
+      console.warn('Guard error:', e);
       throw new UnauthorizedException();
     }
     return true;

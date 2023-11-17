@@ -34,10 +34,10 @@ export class CookieService {
 
     return {
       httpOnly: true,
+      secure: true,
       path: '/',
       sameSite: 'none',
-      domain: isProd ? 'pwa-tech-talk.vercel.app' : 'localhost',
-      secure: true,
+      // domain: isProd ? 'pwa-tech-talk.vercel.app' : 'localhost',
       // secure: isProd,
       // signed: isProd,
       // sameSite: isProd ? 'strict' : undefined,
