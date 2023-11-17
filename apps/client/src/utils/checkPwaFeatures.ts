@@ -20,3 +20,6 @@ export const checkIsWebPushSupported = () =>
 
 export const checkIsOnlineStatus = () =>
   checkIsWindowAvailable() && 'onLine' in window.navigator && window.navigator.onLine;
+
+export const checkIsBluetoothSupported = () =>
+  checkIsWindowAvailable() && 'bluetooth' in window.navigator;

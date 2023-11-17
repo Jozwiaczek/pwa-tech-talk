@@ -13,6 +13,7 @@ import { Area, AreaChart, ResponsiveContainer } from 'recharts';
 import { HeartIcon } from '@heroicons/react/24/solid';
 import { Checkbox } from '@nextui-org/react';
 import { useNavigation } from '@/client/hooks/useNavigation';
+import { checkIsBluetoothSupported } from '@/client/utils/checkPwaFeatures';
 
 export function Feedback(props: unknown, ref: React.ForwardedRef<HTMLDivElement>) {
   const { nextSlide } = useNavigation();
@@ -22,7 +23,7 @@ export function Feedback(props: unknown, ref: React.ForwardedRef<HTMLDivElement>
   const currentHeartRate = heartData?.[heartData?.length - 1]?.value || 0;
   const [shouldAcceptAllTypes, setShouldAcceptAllTypes] = useState(false);
 
-  const isBluetoothAvailable = !!navigator?.bluetooth?.getAvailability();
+  const isBluetoothAvailable = checkIsBluetoothSupported();
 
   if (!isBluetoothAvailable) {
     return (
