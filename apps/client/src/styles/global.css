@@ -20,3 +20,11 @@
     height: -webkit-fill-available;
   }
 }
+
+@layer components {
+  .dangerHtml {
+    & a {
+      @apply text-primary hover:underline hover:text-primary-600 transition-all;
+    }
+  }
+}

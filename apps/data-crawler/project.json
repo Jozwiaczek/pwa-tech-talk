@@ -1,0 +1,63 @@
+{
+  "name": "data-crawler",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/data-crawler/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "platform": "node",
+        "outputPath": "dist/apps/data-crawler",
+        "format": ["cjs"],
+        "bundle": false,
+        "main": "apps/data-crawler/src/main.ts",
+        "tsConfig": "apps/data-crawler/tsconfig.app.json",
+        "assets": ["apps/data-crawler/src/assets"],
+        "generatePackageJson": true,
+        "esbuildOptions": {
+          "sourcemap": true,
+          "outExtension": {
+            ".js": ".js"
+          }
+        }
+      },
+      "configurations": {
+        "development": {},
+        "production": {
+          "esbuildOptions": {
+            "sourcemap": false,
+            "outExtension": {
+              ".js": ".js"
+            }
+          }
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "data-crawler:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "data-crawler:build:development"
+        },
+        "production": {
+          "buildTarget": "data-crawler:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/data-crawler/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}

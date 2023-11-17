@@ -1,40 +1,9 @@
 import React from 'react';
 import { SlideContainer } from '@/client/components/layout/SlideContainer';
-import { Accordion, AccordionItem, Card, Tooltip } from '@nextui-org/react';
-import {
-  CheckIcon,
-  ExclamationCircleIcon,
-  ExclamationTriangleIcon,
-} from '@heroicons/react/24/outline';
-import { twJoin } from 'tailwind-merge';
-import { AppSupportType, COMPARE_FEATURES } from '@/client/constants/compare-features';
-
-const AppSupportTypeBadge = ({ type }: { type: AppSupportType }) => {
-  const commonClasses = 'size-7';
-
-  switch (type) {
-    case AppSupportType.Full:
-      return (
-        <Tooltip content="Full support" color="success">
-          <CheckIcon className={twJoin(commonClasses, 'text-success')} />
-        </Tooltip>
-      );
-    case AppSupportType.Partial:
-      return (
-        <Tooltip content="Partial support" color="warning">
-          <ExclamationTriangleIcon className={twJoin(commonClasses, 'text-warning')} />
-        </Tooltip>
-      );
-    case AppSupportType.None:
-      return (
-        <Tooltip content="No support" color="danger">
-          <ExclamationCircleIcon className={twJoin(commonClasses, 'text-danger')} />
-        </Tooltip>
-      );
-    default:
-      return null;
-  }
-};
+import { Accordion, AccordionItem, Card, Link } from '@nextui-org/react';
+import { COMPARE_FEATURES, UPDATED_AT } from '@/client/data/compare-features';
+import { sanitize } from 'isomorphic-dompurify';
+import { AppSupportTypeBadge } from '@/client/components/AppSupportTypeBadge';
 
 const Manifest = (props: unknown, ref: React.ForwardedRef<HTMLDivElement>) => {
   return (
@@ -86,19 +55,40 @@ const Manifest = (props: unknown, ref: React.ForwardedRef<HTMLDivElement>) => {
                   {item.title}
                   <div className="flex flex-1 items-center justify-end">
                     <div className="flex w-16 items-center justify-center text-right sm:w-40 sm:text-center">
-                      <AppSupportTypeBadge type={item.pwaSupport} />
+                      <AppSupportTypeBadge type={item.pwaSupportType} />
                     </div>
                     <div className="flex w-16 items-center justify-center text-right sm:w-40 sm:text-center">
-                      <AppSupportTypeBadge type={item.nativeAppSupport} />
+                      <AppSupportTypeBadge type={item.nativeAppSupportType} />
                     </div>
                   </div>
                 </>
               }
             >
-              {item.description}
+              <div
+                className="dangerHtml"
+                dangerouslySetInnerHTML={{
+                  __html: sanitize(item.description),
+                }}
+              />
             </AccordionItem>
           ))}
         </Accordion>
+        <p className="text-small text-default-500">
+          Last updated on&nbsp;
+          <time dateTime={UPDATED_AT}>
+            {new Date(UPDATED_AT).toLocaleDateString('en-US', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric',
+            })}
+          </time>
+          <br />
+          (Source:&nbsp;
+          <Link href="https://progressier.com/pwa-vs-native-app-comparison-table" isExternal>
+            progressier.com
+          </Link>
+          )
+        </p>
       </div>
     </SlideContainer>
   );
