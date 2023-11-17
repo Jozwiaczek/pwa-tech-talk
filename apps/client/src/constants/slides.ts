@@ -22,6 +22,10 @@ export const SLIDES = [
     name: 'Manifest file',
   },
   {
+    path: '/bluetooth',
+    name: 'Web Bluetooth API',
+  },
+  {
     path: '/passkeys',
     name: 'Passkeys',
     serverRequired: true,

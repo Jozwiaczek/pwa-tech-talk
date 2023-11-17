@@ -132,6 +132,4 @@ const NotificationsPage = (props: unknown, ref: React.ForwardedRef<HTMLDivElemen
   );
 };
 
-NotificationsPage.apiRequired = true;
-
 export default NotificationsPage;
