@@ -37,6 +37,7 @@ export class CookieService {
       secure: true,
       path: '/',
       sameSite: 'none',
+      signed: isProd,
       // domain: isProd ? 'pwa-tech-talk.vercel.app' : 'localhost',
       // secure: isProd,
       // signed: isProd,
