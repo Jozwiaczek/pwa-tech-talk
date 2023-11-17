@@ -3,16 +3,19 @@ import { Inject, Injectable, Scope } from '@nestjs/common';
 import { REQUEST } from '@nestjs/core';
 
 import { CookieRequest, CookieResponse } from './cookie.types';
-import { config } from '@/api/config';
 
 @Injectable({ scope: Scope.REQUEST })
 export class CookieService {
   constructor(@Inject(REQUEST) private request: CookieRequest) {}
 
   public getCookie(key: string): string {
-    if (config.NODE_ENV === 'production') {
-      return this.request.signedCookies[key];
-    }
+    // if (config.NODE_ENV === 'production') {
+    //   return this.request.signedCookies[key];
+    // }
+
+    console.log('L:16 | this.request: ', this.request);
+    console.log('---------------\n\n');
+    console.log('L:16 | this.request.cookies: ', this.request.cookies);
 
     return this.request.cookies[key];
   }
@@ -30,14 +33,14 @@ export class CookieService {
   }
 
   private getCookieOptions(): CookieSerializeOptions {
-    const isProd = config.NODE_ENV === 'production';
+    // const isProd = config.NODE_ENV === 'production';
 
     return {
       httpOnly: true,
       secure: true,
       path: '/',
       sameSite: 'none',
-      signed: isProd,
+      // signed: isProd,
       // domain: isProd ? 'pwa-tech-talk.vercel.app' : 'localhost',
       // secure: isProd,
       // signed: isProd,
