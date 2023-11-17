@@ -10,6 +10,11 @@ export class CookieService {
   constructor(@Inject(REQUEST) private request: CookieRequest) {}
 
   public getCookie(key: string): string {
+    console.log('L:13 | this.request.cookies: ', this.request.cookies);
+    console.log('L:14 | this.request.cookies: ', this.request.signedCookies);
+    if (config.NODE_ENV === 'production') {
+      return this.request.signedCookies[key];
+    }
     return this.request.cookies[key];
   }
 

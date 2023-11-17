@@ -16,7 +16,6 @@ async function bootstrap() {
     }),
   );
   const port = config.PORT;
-  console.log('trigger deployment');
 
   app.enableCors({
     origin: [config.CLIENT_DEVELOPMENT_URL, config.CLIENT_PRODUCTION_URL],
