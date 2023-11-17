@@ -31,7 +31,6 @@ export class CookieService {
     return {
       httpOnly: true,
       path: '/',
-      signed: isProd,
       secure: isProd,
       sameSite: isProd ? 'strict' : undefined,
     };
