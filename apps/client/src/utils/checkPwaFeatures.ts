@@ -32,3 +32,6 @@ export const checkIsWakeLockSupported = () =>
 
 export const checkIsPaymentRequestSupported = () =>
   checkIsWindowAvailable() && 'PaymentRequest' in window;
+
+export const checkIsWebShareSupported = () =>
+  checkIsWindowAvailable() && 'share' in window.navigator;

@@ -3,6 +3,7 @@ const { join } = require('path');
 const { nextui } = require('@nextui-org/react');
 const plugin = require('tailwindcss/plugin');
 
+// https://uicolors.app/create
 const colors = {
   primary: {
     DEFAULT: '#5A0FC8',
@@ -19,7 +20,7 @@ const colors = {
     900: '#3b1676',
   },
   secondary: {
-    DEFAULT: '#EA80FC',
+    DEFAULT: '#cd70dc',
     foreground: '#ECEDEE',
     50: '#fdf5ff',
     100: '#f8d5fe',

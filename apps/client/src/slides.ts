@@ -30,6 +30,10 @@ export const SLIDES = [
     name: 'Payment request',
   },
   {
+    path: '/web-share',
+    name: 'Web share',
+  },
+  {
     path: '/bluetooth',
     name: 'Bluetooth',
   },

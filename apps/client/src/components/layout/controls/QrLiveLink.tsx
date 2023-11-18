@@ -1,12 +1,9 @@
 import { QRCodeSVG } from 'qrcode.react';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { useCurrentUrl } from '@/client/hooks/useCurrentUrl';
 
 export const QrLiveLink = () => {
-  const [currentUrl, setCurrentUrl] = useState<string | null>(null);
-
-  useEffect(() => {
-    setCurrentUrl(window.location.href);
-  }, []);
+  const currentUrl = useCurrentUrl();
 
   if (!currentUrl) {
     return null;
