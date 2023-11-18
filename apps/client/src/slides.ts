@@ -42,6 +42,10 @@ export const SLIDES = [
     name: 'Gamepads',
   },
   {
+    path: '/device-events',
+    name: 'Device events',
+  },
+  {
     path: '/passkeys',
     name: 'Passkeys',
     serverRequired: true,
