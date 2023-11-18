@@ -25,4 +25,12 @@
   .dangerHtml a {
     @apply text-primary hover:text-primary-600 transition-all hover:underline;
   }
+
+  .activeGamepadButton {
+    @apply fill-primary;
+  }
+
+  #analogLeft, #analogRight {
+    @apply relative transition-transform;
+  }
 }

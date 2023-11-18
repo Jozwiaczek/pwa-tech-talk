@@ -23,3 +23,6 @@ export const checkIsOnlineStatus = () =>
 
 export const checkIsBluetoothSupported = () =>
   checkIsWindowAvailable() && 'bluetooth' in window.navigator;
+
+export const checkIsGamepadSupported = () =>
+  checkIsWindowAvailable() && 'getGamepads' in window.navigator;

@@ -23,7 +23,11 @@ export const SLIDES = [
   },
   {
     path: '/bluetooth',
-    name: 'Web Bluetooth API',
+    name: 'Bluetooth',
+  },
+  {
+    path: '/gamepads',
+    name: 'Gamepads',
   },
   {
     path: '/passkeys',
