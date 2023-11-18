@@ -22,6 +22,10 @@ export const SLIDES = [
     name: 'Manifest file',
   },
   {
+    path: '/screen-wake-lock',
+    name: 'Screen wake lock',
+  },
+  {
     path: '/bluetooth',
     name: 'Bluetooth',
   },

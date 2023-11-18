@@ -7,10 +7,10 @@ export const ToastProvider = () => {
   return (
     <ToastContainer
       position={toast.POSITION.TOP_RIGHT}
-      autoClose={5000}
+      autoClose={1500}
       draggable
       theme={resolvedTheme === 'dark' ? 'dark' : 'light'}
-      limit={3}
+      limit={2}
       closeOnClick
       style={{ zIndex: 10000, marginTop: '3rem' }}
     />

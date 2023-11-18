@@ -26,3 +26,6 @@ export const checkIsBluetoothSupported = () =>
 
 export const checkIsGamepadSupported = () =>
   checkIsWindowAvailable() && 'getGamepads' in window.navigator;
+
+export const checkIsWakeLockSupported = () =>
+  checkIsWindowAvailable() && 'wakeLock' in window.navigator;
