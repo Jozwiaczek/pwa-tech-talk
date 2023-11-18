@@ -1,7 +1,7 @@
 import React, { forwardRef, useState } from 'react';
 import { motion, HTMLMotionProps, PanInfo, AnimationProps } from 'framer-motion';
 import { useRouter } from 'next/router';
-import { SLIDES } from '@/client/constants/slides';
+import { SLIDES } from '@/client/slides';
 import { useNavigation } from '@/client/hooks/useNavigation';
 
 const inTheCenter = { x: 0 };

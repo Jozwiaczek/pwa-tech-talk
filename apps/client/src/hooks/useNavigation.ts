@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import { SLIDES, Slide, SlidePath } from '@/client/constants/slides';
+import { SLIDES, Slide, SlidePath } from '@/client/slides';
 import { useMemo } from 'react';
 
 const isSlidePage = (path: string): path is SlidePath => {

@@ -2,7 +2,7 @@ import { Card, CardBody } from '@nextui-org/react';
 import { Button } from '@/client/components/Button';
 import { ArrowUturnLeftIcon } from '@heroicons/react/24/outline';
 import { useNavigation } from '@/client/hooks/useNavigation';
-import { SLIDE_PATHS } from '@/client/constants/slides';
+import { SLIDE_PATHS } from '@/client/slides';
 
 function PageNotFound() {
   const { goToSlide } = useNavigation();
