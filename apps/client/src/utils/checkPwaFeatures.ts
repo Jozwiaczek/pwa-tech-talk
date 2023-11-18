@@ -29,3 +29,6 @@ export const checkIsGamepadSupported = () =>
 
 export const checkIsWakeLockSupported = () =>
   checkIsWindowAvailable() && 'wakeLock' in window.navigator;
+
+export const checkIsPaymentRequestSupported = () =>
+  checkIsWindowAvailable() && 'PaymentRequest' in window;

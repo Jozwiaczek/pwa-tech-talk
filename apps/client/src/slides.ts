@@ -26,6 +26,10 @@ export const SLIDES = [
     name: 'Screen wake lock',
   },
   {
+    path: '/payment-request',
+    name: 'Payment request',
+  },
+  {
     path: '/bluetooth',
     name: 'Bluetooth',
   },
