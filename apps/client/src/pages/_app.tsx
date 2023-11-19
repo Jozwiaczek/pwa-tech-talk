@@ -1,3 +1,4 @@
+import 'regenerator-runtime/runtime'; // Solves "regeneratorRuntime is not defined" error - https://github.com/nrwl/nx/issues/5063
 import { AppProps } from 'next/app';
 import '../styles/global.css';
 import { Inter } from 'next/font/google';

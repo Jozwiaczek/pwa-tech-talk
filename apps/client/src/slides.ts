@@ -26,6 +26,10 @@ export const SLIDES = [
     name: 'Geolocation',
   },
   {
+    path: '/speech-recognition',
+    name: 'Speech recognition',
+  },
+  {
     path: '/screen-wake-lock',
     name: 'Screen wake lock',
   },
