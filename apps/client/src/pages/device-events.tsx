@@ -31,36 +31,26 @@ interface MotionData {
   };
 }
 
-const getOrientationPermission = async () => {
-  if (!window.DeviceOrientationEvent || !window.DeviceOrientationEvent.requestPermission) {
-    return toast.warn('Your current device does not have access to the DeviceOrientation event');
-  }
-
-  const permission = await window.DeviceOrientationEvent.requestPermission();
-  if (permission !== 'granted') {
-    toast.warn("You must grant access to the device's sensor for this demo");
-    return;
-  }
-  toast.info('Device orientation permission granted');
-};
-
-const getMotionPermission = async () => {
+const getDeviceEventsPermission = async () => {
   if (!window.DeviceMotionEvent || !window.DeviceMotionEvent.requestPermission) {
-    return toast.warn('Your current device does not have access to the DeviceMotion event');
+    return toast.warn(
+      'Your current device does not have access to the device motion/orientation events',
+    );
   }
 
   const permission = await window.DeviceMotionEvent.requestPermission();
   if (permission !== 'granted') {
     return toast.warn("You must grant access to the device's sensor for this demo");
   }
-  toast.info('Device motion permission granted');
+
+  toast.info('Device events permission granted');
 };
 
 const getReadableMotionData = (data: number | null | undefined, unit: string) => {
   if (!data) {
     return '0' + unit;
   }
-  return `${data.toFixed(1)}${unit}`;
+  return `${data.toFixed()}${unit}`;
 };
 
 const ORIENTATION_DEFAULT_DATA: OrientationData = {
@@ -136,62 +126,50 @@ export function DeviceEventsPage(props: unknown, ref: React.ForwardedRef<HTMLDiv
         motion, and motion of a device in three-dimensional space to create advanced interactive
         experiences in your PWAs.
       </p>
+      <Button
+        size="lg"
+        onPress={getDeviceEventsPermission}
+        color="primary"
+        endContent={<DevicePhoneMobileIcon className="size-5" />}
+      >
+        Request device events permission
+      </Button>
       <div className="mt-5 flex w-full max-w-2xl flex-wrap justify-center gap-10 md:justify-between">
-        <div className="flex flex-col items-center justify-start gap-5">
-          <Button
-            size="lg"
-            onPress={getOrientationPermission}
-            color="primary"
-            endContent={<DevicePhoneMobileIcon className="size-5" />}
-          >
-            Request orientation permission
-          </Button>
-          <Card>
-            <CardBody className="w-64">
-              <h2 className="mb-3 text-xl font-semibold">Device orientation</h2>
-              <DeviceEventDataItem label="Z axis" value={orientation.zAxis} />
-              <DeviceEventDataItem label="X axis" value={orientation.xAxis} />
-              <DeviceEventDataItem label="Y axis" value={orientation.yAxis} />
-              <DeviceEventDataItem label="Mode" value={orientation.mode} />
-            </CardBody>
-          </Card>
-        </div>
+        <Card>
+          <CardBody className="w-64">
+            <h2 className="mb-3 text-xl font-semibold">Device orientation</h2>
+            <DeviceEventDataItem label="Z axis" value={orientation.zAxis} />
+            <DeviceEventDataItem label="X axis" value={orientation.xAxis} />
+            <DeviceEventDataItem label="Y axis" value={orientation.yAxis} />
+            <DeviceEventDataItem label="Mode" value={orientation.mode} />
+          </CardBody>
+        </Card>
 
-        <div className="flex flex-col items-center justify-start gap-5">
-          <Button
-            size="lg"
-            onPress={getMotionPermission}
-            color="primary"
-            endContent={<DevicePhoneMobileIcon className="size-5" />}
-          >
-            Request motion permission
-          </Button>
-          <Card>
-            <CardBody className="w-64">
-              <h2 className="mb-3 text-xl font-semibold">Device motion</h2>
-              <div className="flex flex-col gap-2">
-                <p>Acceleration:</p>
-                <div className="pl-4">
-                  <DeviceEventDataItem label="x" value={motion.acceleration.x} />
-                  <DeviceEventDataItem label="y" value={motion.acceleration.y} />
-                  <DeviceEventDataItem label="z" value={motion.acceleration.z} />
-                </div>
-                <p>Acceleration including gravity:</p>
-                <div className="pl-4">
-                  <DeviceEventDataItem label="x" value={motion.accelerationIncludingGravity.x} />
-                  <DeviceEventDataItem label="y" value={motion.accelerationIncludingGravity.y} />
-                  <DeviceEventDataItem label="z" value={motion.accelerationIncludingGravity.z} />
-                </div>
-                <p>Rotation rate:</p>
-                <div className="pl-4">
-                  <DeviceEventDataItem label="alpha" value={motion.rotationRate.alpha} />
-                  <DeviceEventDataItem label="beta" value={motion.rotationRate.beta} />
-                  <DeviceEventDataItem label="gamma" value={motion.rotationRate.gamma} />
-                </div>
+        <Card>
+          <CardBody className="w-64">
+            <h2 className="mb-3 text-xl font-semibold">Device motion</h2>
+            <div className="flex flex-col gap-2">
+              <p>Acceleration:</p>
+              <div className="pl-4">
+                <DeviceEventDataItem label="x" value={motion.acceleration.x} />
+                <DeviceEventDataItem label="y" value={motion.acceleration.y} />
+                <DeviceEventDataItem label="z" value={motion.acceleration.z} />
               </div>
-            </CardBody>
-          </Card>
-        </div>
+              <p>Acceleration including gravity:</p>
+              <div className="pl-4">
+                <DeviceEventDataItem label="x" value={motion.accelerationIncludingGravity.x} />
+                <DeviceEventDataItem label="y" value={motion.accelerationIncludingGravity.y} />
+                <DeviceEventDataItem label="z" value={motion.accelerationIncludingGravity.z} />
+              </div>
+              <p>Rotation rate:</p>
+              <div className="pl-4">
+                <DeviceEventDataItem label="alpha" value={motion.rotationRate.alpha} />
+                <DeviceEventDataItem label="beta" value={motion.rotationRate.beta} />
+                <DeviceEventDataItem label="gamma" value={motion.rotationRate.gamma} />
+              </div>
+            </div>
+          </CardBody>
+        </Card>
       </div>
     </SlideContainer>
   );
