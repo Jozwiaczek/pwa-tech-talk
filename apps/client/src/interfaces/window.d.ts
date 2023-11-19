@@ -6,11 +6,16 @@ interface DeviceOrientationEventiOS extends DeviceOrientationEvent {
   requestPermission?: () => Promise<'granted' | 'denied'>;
 }
 
+interface DeviceMotionEventiOS extends DeviceMotionEvent {
+  requestPermission?: () => Promise<'granted' | 'denied'>;
+}
+
 export {};
 declare global {
   interface Window {
     workbox: Workbox;
     DeviceOrientationEvent: DeviceOrientationEventiOS | undefined;
+    DeviceMotionEvent: DeviceMotionEventiOS | undefined;
   }
 }
 
