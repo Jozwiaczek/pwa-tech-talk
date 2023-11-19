@@ -60,7 +60,7 @@ const getReadableMotionData = (data: number | null | undefined, unit: string) =>
   if (!data) {
     return '0' + unit;
   }
-  return `${data.toFixed(2)}${unit}`;
+  return `${data.toFixed(1)}${unit}`;
 };
 
 const ORIENTATION_DEFAULT_DATA: OrientationData = {
@@ -140,6 +140,26 @@ export function DeviceEventsPage(props: unknown, ref: React.ForwardedRef<HTMLDiv
         <div className="flex flex-col items-center justify-start gap-5">
           <Button
             size="lg"
+            onPress={getOrientationPermission}
+            color="primary"
+            endContent={<DevicePhoneMobileIcon className="size-5" />}
+          >
+            Request orientation permission
+          </Button>
+          <Card>
+            <CardBody className="w-64">
+              <h2 className="mb-3 text-xl font-semibold">Device orientation</h2>
+              <DeviceEventDataItem label="Z axis" value={orientation.zAxis} />
+              <DeviceEventDataItem label="X axis" value={orientation.xAxis} />
+              <DeviceEventDataItem label="Y axis" value={orientation.yAxis} />
+              <DeviceEventDataItem label="Mode" value={orientation.mode} />
+            </CardBody>
+          </Card>
+        </div>
+
+        <div className="flex flex-col items-center justify-start gap-5">
+          <Button
+            size="lg"
             onPress={getMotionPermission}
             color="primary"
             endContent={<DevicePhoneMobileIcon className="size-5" />}
@@ -169,26 +189,6 @@ export function DeviceEventsPage(props: unknown, ref: React.ForwardedRef<HTMLDiv
                   <DeviceEventDataItem label="gamma" value={motion.rotationRate.gamma} />
                 </div>
               </div>
-            </CardBody>
-          </Card>
-        </div>
-
-        <div className="flex flex-col items-center justify-start gap-5">
-          <Button
-            size="lg"
-            onPress={getOrientationPermission}
-            color="primary"
-            endContent={<DevicePhoneMobileIcon className="size-5" />}
-          >
-            Request orientation permission
-          </Button>
-          <Card>
-            <CardBody className="w-64">
-              <h2 className="mb-3 text-xl font-semibold">Device orientation</h2>
-              <DeviceEventDataItem label="Z axis" value={orientation.zAxis} />
-              <DeviceEventDataItem label="X axis" value={orientation.xAxis} />
-              <DeviceEventDataItem label="Y axis" value={orientation.yAxis} />
-              <DeviceEventDataItem label="Mode" value={orientation.mode} />
             </CardBody>
           </Card>
         </div>
