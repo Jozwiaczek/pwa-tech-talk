@@ -22,6 +22,10 @@ export const SLIDES = [
     name: 'Manifest file',
   },
   {
+    path: '/geolocation',
+    name: 'Geolocation',
+  },
+  {
     path: '/screen-wake-lock',
     name: 'Screen wake lock',
   },

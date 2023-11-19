@@ -128,8 +128,8 @@ export function DeviceEventsPage(props: unknown, ref: React.ForwardedRef<HTMLDiv
       </p>
       <Button
         size="lg"
-        onPress={getDeviceEventsPermission}
         color="primary"
+        onPress={getDeviceEventsPermission}
         endContent={<DevicePhoneMobileIcon className="size-5" />}
       >
         Request device events permission
