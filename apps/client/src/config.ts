@@ -15,7 +15,7 @@ const configSchema = z
   });
 
 export const config = configSchema.parse({
-  SITE_URL: process.env.SITE_URL,
+  SITE_URL: process.env.NEXT_PUBLIC_SITE_URL,
   API_URL: process.env.NEXT_PUBLIC_API_URL,
   NODE_ENV: process.env.NODE_ENV,
   WEB_PUSH_PUBLIC_KEY: process.env.NEXT_PUBLIC_WEB_PUSH_PUBLIC_KEY,

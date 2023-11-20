@@ -1,5 +1,13 @@
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
+
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: process.env.SITE_URL,
+  siteUrl,
   generateRobotsTxt: true,
+  sitemapSize: 7000,
+  robotsTxtOptions: {
+    additionalSitemaps: [`${siteUrl}/server-sitemap.xml`],
+  },
+  sourceDir: 'dist/apps/client/.next',
+  outDir: 'dist/apps/client/public',
 };
