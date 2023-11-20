@@ -72,6 +72,10 @@ export const SLIDES = [
     name: 'Offline mode',
   },
   {
+    path: '/battery-manager',
+    name: 'Battery manager',
+  },
+  {
     path: '/fun-facts',
     name: 'Fun facts',
   },
