@@ -76,8 +76,8 @@ export const SLIDES = [
     name: 'Battery manager',
   },
   {
-    path: '/fun-facts',
-    name: 'Fun facts',
+    path: '/example-apps',
+    name: 'Example apps',
   },
   {
     path: '/tips-tricks',

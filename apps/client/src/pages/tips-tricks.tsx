@@ -6,6 +6,7 @@ const LINKS = [
   'https://progressier.com/pwa-screenshots-generator',
   'https://progressier.com/pwa-manifest-generator',
   'https://github.com/shadowwalker/next-pwa',
+  'https://web.dev/articles/pwas-on-oculus-2',
 ];
 
 const TipsTricks = (props: unknown, ref: React.ForwardedRef<HTMLDivElement>) => {
@@ -15,7 +16,7 @@ const TipsTricks = (props: unknown, ref: React.ForwardedRef<HTMLDivElement>) => 
       <ul>
         {LINKS.map((link) => (
           <li key={link}>
-            <Link href={link} isExternal showAnchorIcon>
+            <Link href={link} isExternal showAnchorIcon color="secondary">
               {link}
             </Link>
           </li>
