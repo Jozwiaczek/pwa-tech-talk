@@ -3,6 +3,7 @@ import { motion, HTMLMotionProps, PanInfo, AnimationProps } from 'framer-motion'
 import { useRouter } from 'next/router';
 import { SLIDES } from '@/client/slides';
 import { useNavigation } from '@/client/hooks/useNavigation';
+import { useWindowSize } from 'react-use';
 
 const inTheCenter = { x: 0 };
 const transition = { duration: 0.6, ease: 'easeInOut' };
@@ -15,14 +16,16 @@ function SlideTransition(
   { children, disableSwipeNav, ...rest }: SlideTransitionProps,
   ref: React.ForwardedRef<HTMLDivElement>,
 ) {
+  const { width } = useWindowSize();
   const router = useRouter();
   const { nextSlide, previousSlide } = useNavigation();
   const [previousPath] = useState<string>(router.asPath);
+  const isMobile = width < 768;
+
+  const isSwipeNavDisabled = !isMobile || disableSwipeNav;
 
   const onPanEnd = async (event: PointerEvent, info: PanInfo) => {
-    event.stopPropagation();
-
-    if (disableSwipeNav) {
+    if (isSwipeNavDisabled) {
       return;
     }
 
@@ -59,7 +62,7 @@ function SlideTransition(
       transition={transition}
       className="h-screen overflow-auto"
       onPanEnd={onPanEnd}
-      drag={disableSwipeNav ? false : 'x'}
+      drag={isSwipeNavDisabled ? false : 'x'}
       dragDirectionLock
       dragElastic={0.1}
       dragSnapToOrigin
