@@ -54,10 +54,6 @@ export const InstallAppModal = () => {
     }
   }, [isIosInstallationHidden, onClose, onOpen]);
 
-  if (!isOpen) {
-    return null;
-  }
-
   return (
     <Modal
       size="lg"

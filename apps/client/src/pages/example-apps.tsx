@@ -4,7 +4,7 @@ import { Link } from '@nextui-org/react';
 
 const LINKS = ['https://web.dev/articles/pwas-on-oculus-2'];
 
-const FunFacts = (props: unknown, ref: React.ForwardedRef<HTMLDivElement>) => {
+const ExampleApps = (_: unknown, ref: React.ForwardedRef<HTMLDivElement>) => {
   return (
     <SlideContainer ref={ref}>
       <h1 className="text-5xl font-bold">Fun Facts</h1>
@@ -21,4 +21,4 @@ const FunFacts = (props: unknown, ref: React.ForwardedRef<HTMLDivElement>) => {
   );
 };
 
-export default FunFacts;
+export default ExampleApps;

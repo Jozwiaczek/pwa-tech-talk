@@ -32,10 +32,10 @@ function CustomApp({ Component, pageProps, router }: CustomAppProps) {
         <AppLayout hideControls={Component.hideControls}>
           <ApiRequirementGuard isApiRequired={Component.apiRequired}>
             <Component {...pageProps} />
+            <InstallAppModal />
           </ApiRequirementGuard>
         </AppLayout>
       </div>
-      <InstallAppModal />
     </Providers>
   );
 }
