@@ -15,7 +15,7 @@ export function Index(props: unknown, ref: React.ForwardedRef<HTMLDivElement>) {
         <p>Tech Talk Series</p>
         <span className="hidden sm:inline-block">|</span>
         <Link
-          className="text-primary-300 text-3xl font-light"
+          className="text-primary-800 dark:text-primary-300 text-3xl font-light"
           isExternal
           showAnchorIcon
           href="https://github.com/Jozwiaczek"
