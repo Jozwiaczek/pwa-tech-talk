@@ -48,6 +48,7 @@
       "src": "screenshots/3.jpg",
       "sizes": "1080x1920",
       "type": "image/png",
+      "form_factor": "wide",
       "label": "Compare PWA vs Native Apps ⚖️"
     },
     {

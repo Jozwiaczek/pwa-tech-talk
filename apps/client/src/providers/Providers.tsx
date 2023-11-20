@@ -3,8 +3,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import ReactQueryProvider from '@/client/providers/ReactQueryProvider';
 import { NextUIProvider } from '@nextui-org/react';
 import { AnimatePresence } from 'framer-motion';
-import { config } from '@/client/config';
-import { Analytics } from '@vercel/analytics/react';
 import { ThemeProvider as NextThemesProvider } from 'next-themes';
 import { EventsContextProvider } from '@/client/context/EventsContext';
 import { ToastProvider } from '@/client/providers/ToastProvider';
@@ -27,6 +25,5 @@ export const Providers = ({ children, dehydratedState }: ProvidersProps) => (
         </NextThemesProvider>
       </NextUIProvider>
     </EventsContextProvider>
-    {config.NODE_ENV === 'production' && <Analytics />}
   </ReactQueryProvider>
 );
