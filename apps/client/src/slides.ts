@@ -68,6 +68,10 @@ export const SLIDES = [
     serverRequired: true,
   },
   {
+    path: '/offline-mode',
+    name: 'Offline mode',
+  },
+  {
     path: '/fun-facts',
     name: 'Fun facts',
   },
