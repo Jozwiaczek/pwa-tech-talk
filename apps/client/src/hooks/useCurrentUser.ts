@@ -1,13 +1,19 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
-import { useNetworkState } from 'react-use';
+import { useLocalStorage, useNetworkState } from 'react-use';
 import { axios } from '@/client/lib/axios';
 import { ApiAuthCheckResponse } from '@/libs/shared/types/api-responses';
 import { AxiosError } from 'axios';
 import { toast } from 'react-toastify';
+import { useNavigation } from '@/client/hooks/useNavigation';
+import { LOCAL_STORAGE_KEYS } from '@/client/constants/local-storage-keys';
 
 export const useCurrentUser = () => {
   const { online } = useNetworkState();
   const queryClient = useQueryClient();
+  const { currentSlideName } = useNavigation();
+  const [localUsername] = useLocalStorage<string | undefined>(LOCAL_STORAGE_KEYS.AUTH_USERNAME);
+
+  const isCheckAuthEnabled = !!(localUsername || currentSlideName === 'Passkeys');
 
   const baseLogoutUser = async () => {
     await queryClient.invalidateQueries(['currentUser']);
@@ -33,6 +39,7 @@ export const useCurrentUser = () => {
         throw error;
       }
     },
+    enabled: isCheckAuthEnabled,
     refetchInterval: (data) => {
       if (data && online) {
         return 1000 * 60 * 5; // 5 minutes
