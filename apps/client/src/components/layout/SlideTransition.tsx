@@ -7,8 +7,12 @@ import { useNavigation } from '@/client/hooks/useNavigation';
 const inTheCenter = { x: 0 };
 const transition = { duration: 0.6, ease: 'easeInOut' };
 
+interface SlideTransitionProps extends HTMLMotionProps<'div'> {
+  disableSwipeNav?: boolean;
+}
+
 function SlideTransition(
-  { children, ...rest }: HTMLMotionProps<'div'>,
+  { children, disableSwipeNav, ...rest }: SlideTransitionProps,
   ref: React.ForwardedRef<HTMLDivElement>,
 ) {
   const router = useRouter();
@@ -17,6 +21,10 @@ function SlideTransition(
 
   const onPanEnd = async (event: PointerEvent, info: PanInfo) => {
     event.stopPropagation();
+
+    if (disableSwipeNav) {
+      return;
+    }
 
     const offset = info.offset.x;
     const velocity = info.velocity.x;
@@ -51,7 +59,7 @@ function SlideTransition(
       transition={transition}
       className="h-screen overflow-auto"
       onPanEnd={onPanEnd}
-      drag="x"
+      drag={disableSwipeNav ? false : 'x'}
       dragDirectionLock
       dragElastic={0.1}
       dragSnapToOrigin

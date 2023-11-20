@@ -30,6 +30,10 @@ export const SLIDES = [
     name: 'Speech recognition',
   },
   {
+    path: '/speech-synthesis',
+    name: 'Speech synthesis',
+  },
+  {
     path: '/screen-wake-lock',
     name: 'Screen wake lock',
   },

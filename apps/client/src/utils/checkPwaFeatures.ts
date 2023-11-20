@@ -35,3 +35,6 @@ export const checkIsPaymentRequestSupported = () =>
 
 export const checkIsWebShareSupported = () =>
   checkIsWindowAvailable() && 'share' in window.navigator;
+
+export const checkIsSynthesisSpeechSupported = () =>
+  checkIsWindowAvailable() && 'speechSynthesis' in window && 'SpeechSynthesisUtterance' in window;

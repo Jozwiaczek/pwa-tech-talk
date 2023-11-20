@@ -19,6 +19,7 @@ import {
   SPEECH_RECOGNITION_LANGUAGES,
   SupportedLanguage,
 } from '@/client/data/speech-recognition-languages';
+import { getISO3166CountryCode } from '@/client/utils/getISO3166CountryCode';
 
 interface SupportedListeningOptions extends Omit<ListeningOptions, 'language'> {
   language?: SupportedLanguage | null;
@@ -26,11 +27,6 @@ interface SupportedListeningOptions extends Omit<ListeningOptions, 'language'> {
 
 const isSupportedLanguage = (language: string): language is SupportedLanguage => {
   return SPEECH_RECOGNITION_LANGUAGES.some((lang) => lang.tag === language);
-};
-
-const getISO3166CountryCode = (language: SupportedLanguage) => {
-  const [languageCode, countryCode, regionCode] = language.toLowerCase().split('-');
-  return regionCode || countryCode || languageCode;
 };
 
 export function SpeechRecognitionPage(props: unknown, ref: React.ForwardedRef<HTMLDivElement>) {
