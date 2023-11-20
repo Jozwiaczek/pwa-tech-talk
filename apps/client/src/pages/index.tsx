@@ -3,6 +3,7 @@ import { PWALogo } from '@/client/assets/logos';
 import { Divider, Link } from '@nextui-org/react';
 import { SlideContainer } from '@/client/components/layout/SlideContainer';
 import { QrLiveLink } from '@/client/components/layout/controls/QrLiveLink';
+import { InstallAppModal } from '@/client/components/modals/InstallAppModal';
 
 export function Index(props: unknown, ref: React.ForwardedRef<HTMLDivElement>) {
   return (
@@ -27,6 +28,7 @@ export function Index(props: unknown, ref: React.ForwardedRef<HTMLDivElement>) {
         <Divider className="bg-primary-400 w-64" />
         <QrLiveLink />
       </div>
+      <InstallAppModal />
     </SlideContainer>
   );
 }

@@ -12,6 +12,19 @@ export const checkIsIosDevice = () => {
   return /iphone|ipad|ipod/.test(userAgent);
 };
 
+export const checkIsSafari = () => {
+  if (!checkIsWindowAvailable()) {
+    return false;
+  }
+
+  const userAgent = window.navigator.userAgent.toLowerCase();
+
+  const isIos = checkIsIosDevice();
+  const isWebkit = /webkit/.test(userAgent);
+  const isCriOS = /crios/.test(userAgent);
+  return isIos && isWebkit && !isCriOS;
+};
+
 export const checkIsInStandaloneMode = () =>
   checkIsWindowAvailable() && 'standalone' in window.navigator && window.navigator.standalone;
 
