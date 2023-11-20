@@ -4,6 +4,12 @@
   "sourceRoot": "apps/client",
   "projectType": "application",
   "targets": {
+    "generate-sitemap": {
+      "command": "next-sitemap",
+      "options": {
+        "cwd": "apps/client"
+      }
+    },
     "build": {
       "executor": "@nx/next:build",
       "outputs": ["{options.outputPath}"],

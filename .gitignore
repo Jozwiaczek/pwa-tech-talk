@@ -5,6 +5,11 @@ dist
 tmp
 /out-tsc
 
+# next-sitemap
+robots.txt
+sitemap.xml
+sitemap-0.xml
+
 
 # PWA output files
 **/public/workbox-*
