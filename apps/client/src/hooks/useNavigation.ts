@@ -37,6 +37,8 @@ export const useNavigation = () => {
     return slide?.name;
   }, [currentPathname]);
 
+  const isFirstSlide = currentPathname === SLIDES[0].path;
+
   const changeSlide = async (getSlide: (path: SlidePath) => Slide) => {
     if (!isSlidePage(currentPathname)) {
       await router.push(SLIDES[0].path);
@@ -56,6 +58,7 @@ export const useNavigation = () => {
   };
 
   return {
+    isFirstSlide,
     currentPathname,
     currentSlideName,
     nextSlide,

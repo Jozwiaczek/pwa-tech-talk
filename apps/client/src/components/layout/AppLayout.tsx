@@ -4,6 +4,7 @@ import { ServerInfo } from '@/client/components/layout/controls/ServerInfo';
 import { AccountMenu } from '@/client/components/layout/controls/AccountMenu';
 import { QrLinkPopover } from '@/client/components/layout/controls/QrLinkPopover';
 import { ThemeSwitch } from '@/client/components/layout/controls/ThemeSwitch';
+import { Socials } from '@/client/components/layout/controls/Socials';
 
 interface AppLayoutProps {
   hideControls: boolean | undefined;
@@ -12,6 +13,7 @@ interface AppLayoutProps {
 
 export const AppLayout = ({ hideControls, children }: AppLayoutProps) => (
   <div className="bg-content1 max-h-screen overflow-hidden">
+    <Socials />
     <AccountMenu />
     {children}
     {!hideControls && (

@@ -22,7 +22,7 @@ export const ServerInfo = () => {
         </Tooltip>
       )}
       {isConnected && (
-        <Badge content={totalSpectators} color="secondary" shape="circle">
+        <Badge content={totalSpectators} className="bg-primary-400" shape="circle">
           <Tooltip content={`${totalSpectators} active spectators`}>
             <UserGroupIcon className="size-8 cursor-help" />
           </Tooltip>

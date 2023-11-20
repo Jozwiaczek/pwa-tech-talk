@@ -3,15 +3,16 @@ import { useKey } from 'react-use';
 import { BackwardIcon, ForwardIcon, ListBulletIcon } from '@heroicons/react/24/outline';
 import { Button, Dropdown, DropdownItem, DropdownMenu, DropdownTrigger } from '@nextui-org/react';
 import { SLIDES } from '@/client/slides';
+import { twJoin } from 'tailwind-merge';
 
 export const Navigation = () => {
-  const { previousSlide, nextSlide, goToSlide, currentPathname } = useNavigation();
+  const { previousSlide, nextSlide, goToSlide, currentPathname, isFirstSlide } = useNavigation();
   useKey('ArrowLeft', previousSlide);
   useKey('ArrowRight', nextSlide);
 
   return (
     <nav className="flex items-center justify-center gap-2 sm:gap-4">
-      <Button onPress={previousSlide} isIconOnly color="primary">
+      <Button onPress={previousSlide} isIconOnly color="primary" isDisabled={isFirstSlide}>
         <BackwardIcon className="size-6" />
       </Button>
       <Dropdown backdrop="blur">
@@ -28,7 +29,12 @@ export const Navigation = () => {
           )}
         </DropdownMenu>
       </Dropdown>
-      <Button onPress={nextSlide} isIconOnly color="primary">
+      <Button
+        onPress={nextSlide}
+        isIconOnly
+        color="primary"
+        className={twJoin(isFirstSlide && 'animate-pulse')}
+      >
         <ForwardIcon className="size-6" />
       </Button>
     </nav>

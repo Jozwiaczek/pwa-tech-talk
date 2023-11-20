@@ -11,7 +11,7 @@ export const QrLiveLink = () => {
 
   return (
     <div className="flex flex-col items-center justify-center gap-5">
-      <QRCodeSVG value={currentUrl} fgColor="#5A0FC8" bgColor="transparent" />
+      <QRCodeSVG value={currentUrl} fgColor="#a379e7" bgColor="transparent" />
       <p className="font-thin">Scan QR code using your mobile for live experience</p>
     </div>
   );
