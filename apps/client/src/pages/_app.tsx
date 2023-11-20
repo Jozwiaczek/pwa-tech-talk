@@ -9,6 +9,7 @@ import { NextComponentType, NextPageContext } from 'next';
 import { Providers } from '@/client/providers/Providers';
 import { AppLayout } from '@/client/components/layout/AppLayout';
 import { ApiRequirementGuard } from '@/client/guards/ApiRequirementGuard';
+import { InstallAppModal } from '@/client/components/modals/InstallAppModal';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -34,6 +35,7 @@ function CustomApp({ Component, pageProps, router }: CustomAppProps) {
           </ApiRequirementGuard>
         </AppLayout>
       </div>
+      <InstallAppModal />
     </Providers>
   );
 }
