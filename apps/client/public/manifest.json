@@ -25,6 +25,42 @@
       "type": "image/png"
     }
   ],
+  "screenshots": [
+    {
+      "src": "screenshots/screenshot1.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "formFactor": "narrow",
+      "label": "Live tech talk 💜"
+    },
+    {
+      "src": "screenshots/screenshot2.png",
+      "sizes": "1920x1080",
+      "type": "image/png",
+      "formFactor": "narrow",
+      "label": "Simple, fast and smooth ⚡️"
+    },
+    {
+      "src": "screenshots/screenshot3.png",
+      "sizes": "1920x1080",
+      "type": "image/png",
+      "formFactor": "narrow",
+      "label": "Compare PWA vs Native Apps ⚖️"
+    },
+    {
+      "src": "screenshots/screenshot4.png",
+      "sizes": "1920x1080",
+      "type": "image/png",
+      "formFactor": "wide",
+      "label": "Live examples 🚀"
+    },
+    {
+      "src": "screenshots/screenshot5.png",
+      "sizes": "1920x1080",
+      "type": "image/png",
+      "label": "Dark Mode 🌙"
+    }
+  ],
   "display": "standalone",
   "orientation": "portrait",
   "lang": "en"
