@@ -43,7 +43,7 @@ export const BatteryManagerState = () => {
       <CardBody className="flex flex-col items-center">
         <CircularProgress
           label="Battery level"
-          color="secondary"
+          color="primary"
           size="lg"
           value={batteryState.level * 100}
           showValueLabel
