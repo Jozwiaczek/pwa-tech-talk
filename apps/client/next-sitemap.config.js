@@ -5,9 +5,6 @@ module.exports = {
   siteUrl,
   generateRobotsTxt: true,
   sitemapSize: 7000,
-  robotsTxtOptions: {
-    additionalSitemaps: [`${siteUrl}/server-sitemap.xml`],
-  },
-  sourceDir: 'dist/apps/client/.next',
-  outDir: 'dist/apps/client/public',
+  sourceDir: '../../dist/apps/client/.next',
+  outDir: '../../dist/apps/client/public',
 };
