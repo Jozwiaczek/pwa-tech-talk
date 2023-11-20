@@ -50,6 +50,7 @@ const Manifest = (props: unknown, ref: React.ForwardedRef<HTMLDivElement>) => {
           {COMPARE_FEATURES.map((item) => (
             <AccordionItem
               key={item.title}
+              textValue={item.title}
               title={
                 <>
                   {item.title}
