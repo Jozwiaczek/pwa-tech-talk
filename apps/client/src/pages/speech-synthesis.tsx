@@ -13,6 +13,8 @@ import {
 import { Button } from '@/client/components/Button';
 import dynamic from 'next/dynamic';
 import { toast } from 'react-toastify';
+import { useLocalStorage } from 'react-use';
+import { LOCAL_STORAGE_KEYS } from '@/client/constants/local-storage-keys';
 
 const SpeechSynthesisVoiceSelect = dynamic(
   () => import('@/client/components/SpeechSynthesisVoiceSelect'),
@@ -29,7 +31,10 @@ const DEFAULT_VOLUME = 1;
 export function SpeechSynthesisPage(_: unknown, ref: React.ForwardedRef<HTMLDivElement>) {
   const isSupported = checkIsSynthesisSpeechSupported();
   const isMounted = useIsMounted();
-  const [text, setText] = useState(DEFAULT_TEXT_TO_SPEAK);
+  const [storedFinalTranscript] = useLocalStorage<string>(
+    LOCAL_STORAGE_KEYS.SPEECH_RECOGNITION_FINAL_TRANSCRIPT,
+  );
+  const [text, setText] = useState(storedFinalTranscript || DEFAULT_TEXT_TO_SPEAK);
   const [rate, setRate] = useState<SliderValue>(DEFAULT_RATE);
   const [pitch, setPitch] = useState<SliderValue>(DEFAULT_PITCH);
   const [volume, setVolume] = useState<SliderValue>(DEFAULT_VOLUME);

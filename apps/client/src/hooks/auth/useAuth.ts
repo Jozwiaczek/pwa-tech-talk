@@ -10,10 +10,13 @@ import { startAuthentication, startRegistration } from '@simplewebauthn/browser'
 import { toast } from 'react-toastify';
 import { AxiosError } from 'axios';
 import { PublicKeyCredentialRequestOptionsJSON } from '@simplewebauthn/typescript-types';
+import { LOCAL_STORAGE_KEYS } from '@/client/constants/local-storage-keys';
 
 export const useAuth = () => {
   const queryClient = useQueryClient();
-  const [localUsername, setUsername] = useLocalStorage<string | undefined>('username');
+  const [localUsername, setUsername] = useLocalStorage<string | undefined>(
+    LOCAL_STORAGE_KEYS.AUTH_USERNAME,
+  );
 
   const baseLogoutUser = async () => {
     await queryClient.invalidateQueries(['currentUser']);

@@ -1,4 +1,4 @@
-import React, { forwardRef, useState } from 'react';
+import React, { forwardRef, useEffect, useState } from 'react';
 import { SlideContainer } from '@/client/components/layout/SlideContainer';
 import {
   Autocomplete,
@@ -20,6 +20,8 @@ import {
   SupportedLanguage,
 } from '@/client/data/speech-recognition-languages';
 import { getISO3166CountryCode } from '@/client/utils/getISO3166CountryCode';
+import { useLocalStorage } from 'react-use';
+import { LOCAL_STORAGE_KEYS } from '@/client/constants/local-storage-keys';
 
 interface SupportedListeningOptions extends Omit<ListeningOptions, 'language'> {
   language?: SupportedLanguage | null;
@@ -39,8 +41,20 @@ export function SpeechRecognitionPage(props: unknown, ref: React.ForwardedRef<HT
     resetTranscript,
     browserSupportsSpeechRecognition,
   } = useSpeechRecognition();
-  const [listeningOptions, setListeningOptions] = useState<SupportedListeningOptions>({});
-  const [isAutoLanguage, setIsAutoLanguage] = useState(true);
+  const [listeningOptions, setListeningOptions] = useState<SupportedListeningOptions>({
+    continuous: false,
+    language: 'en-US',
+  });
+  const [isAutoLanguage, setIsAutoLanguage] = useState(false);
+  const [, setStoredFinalTranscript] = useLocalStorage<string>(
+    LOCAL_STORAGE_KEYS.SPEECH_RECOGNITION_FINAL_TRANSCRIPT,
+  );
+
+  useEffect(() => {
+    if (finalTranscript) {
+      setStoredFinalTranscript(finalTranscript);
+    }
+  }, [finalTranscript, setStoredFinalTranscript]);
 
   const reset = async () => {
     resetTranscript();
@@ -63,11 +77,15 @@ export function SpeechRecognitionPage(props: unknown, ref: React.ForwardedRef<HT
       toast.success('Recording stopped');
       return;
     }
+    if (!listeningOptions.language && !isAutoLanguage) {
+      toast.warn('You must select a language');
+      return;
+    }
 
     toast.info('Recording started');
     await SpeechRecognition.startListening({
       ...listeningOptions,
-      language: listeningOptions.language || undefined,
+      language: isAutoLanguage ? undefined : listeningOptions.language || undefined,
     });
   };
 
@@ -86,14 +104,7 @@ export function SpeechRecognitionPage(props: unknown, ref: React.ForwardedRef<HT
     setListeningOptions((prev) => ({ ...prev, language: value }));
   };
 
-  const clearSelectedLanguage = () => {
-    setListeningOptions((prev) => ({ ...prev, language: null }));
-  };
-
   const toggleAutoLanguage = (newValue: boolean) => {
-    if (newValue) {
-      clearSelectedLanguage();
-    }
     setIsAutoLanguage(newValue);
   };
 
@@ -121,6 +132,7 @@ export function SpeechRecognitionPage(props: unknown, ref: React.ForwardedRef<HT
           </Checkbox>
           <Autocomplete
             className="w-full"
+            isRequired={!isAutoLanguage}
             isDisabled={isAutoLanguage}
             defaultItems={SPEECH_RECOGNITION_LANGUAGES}
             label="Listening language"

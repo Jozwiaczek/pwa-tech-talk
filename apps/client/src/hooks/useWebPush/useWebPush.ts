@@ -14,13 +14,14 @@ import { useLocalStorage } from 'react-use';
 import { v4 as uuid } from 'uuid';
 import { PushDebugSendDto } from '@/libs/shared/dto/web-push/push-debug-send.dto';
 import { PushNotificationPayload } from '@/libs/shared/types/web-push';
+import { LOCAL_STORAGE_KEYS } from '@/client/constants/local-storage-keys';
 
 export const useWebPush = () => {
   const queryClient = useQueryClient();
   const [subscriptionInternal, setSubscriptionInternal] = useState<PushSubscription | null>(null);
   const [registrationInternal, setRegistrationInternal] =
     useState<ServiceWorkerRegistration | null>(null);
-  const [clientId] = useLocalStorage('clientId', uuid());
+  const [clientId] = useLocalStorage(LOCAL_STORAGE_KEYS.WEB_PUSH_CLIENT_ID, uuid());
 
   const isWebPushSupported = useMemo(() => checkIsWebPushSupported(), []);
 
