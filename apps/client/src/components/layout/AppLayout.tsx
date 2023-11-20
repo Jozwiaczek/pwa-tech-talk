@@ -15,8 +15,8 @@ export const AppLayout = ({ hideControls, children }: AppLayoutProps) => (
     <AccountMenu />
     {children}
     {!hideControls && (
-      <div className="pb-safe-offset-4 px-safe-offset-5 bg-content2/10 dark:bg-content2/50 h-26 fixed bottom-0 z-50 grid w-full grid-cols-3 items-center pt-4 shadow-[0_0_16px_0_rgba(0,0,0,0.25)] backdrop-blur lg:bg-transparent lg:shadow-none lg:backdrop-blur-none lg:dark:bg-transparent">
-        <div className="flex flex-col items-start justify-center">
+      <div className="pb-safe-offset-4 px-safe-offset-5 bg-content2 h-26 fixed bottom-0 z-50 grid w-full grid-cols-3 items-center pt-4 lg:bg-transparent">
+        <div className="flex h-16 flex-col items-start justify-center sm:h-auto">
           <QrLinkPopover />
           <ThemeSwitch />
         </div>

@@ -1,8 +1,7 @@
 import { useNavigation } from '@/client/hooks/useNavigation';
 import { useKey } from 'react-use';
 import { BackwardIcon, ForwardIcon, ListBulletIcon } from '@heroicons/react/24/outline';
-import { Button } from '@/client/components/Button';
-import { Dropdown, DropdownItem, DropdownMenu, DropdownTrigger } from '@nextui-org/react';
+import { Button, Dropdown, DropdownItem, DropdownMenu, DropdownTrigger } from '@nextui-org/react';
 import { SLIDES } from '@/client/slides';
 
 export const Navigation = () => {
