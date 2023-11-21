@@ -1,7 +1,20 @@
 {
   "name": "@pwa-tech-talk/source",
-  "version": "0.0.0",
-  "license": "MIT",
+  "description": "Live presentation about progressive web applications, including the most usable or interesting functionalities. Real-world use cases with popular examples, tips and tricks.",
+  "version": "1.0.0",
+  "license": "GNU General Public License v3.0",
+  "author": "Jakub Jóźwiak <kubencki@gmail.com>",
+  "homepage": "https://pwa-tech-talk.vercel.app/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jozwiaczek/smart-gate.git"
+  },
+  "keywords": [
+    "PWA",
+    "Progressive web application",
+    "Web APIs",
+    "PWA Comparison"
+  ],
   "scripts": {
     "api:ngrok": ". ./tools/scripts/api-ngrok-tunnel.sh",
     "prisma:format": "prisma format",
@@ -125,5 +138,9 @@
   },
   "prisma": {
     "schema": "apps/api/prisma/schema.prisma"
+  },
+  "engines": {
+    "npm": "Please use pnpm",
+    "yarn": "Please use pnpm"
   }
 }

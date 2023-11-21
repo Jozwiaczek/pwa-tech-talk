@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+title: PWA Tech Talk
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Jakub
+    family-names: Jóźwiak
+    email: kubencki@gmail.com
+repository-code: 'https://github.com/Jozwiaczek/pwa-tech-talk'
+url: 'https://pwa-tech-talk.vercel.app/'
+abstract: >
+  Live presentation about progressive web applications,
+  including the most usable or interesting functionalities.
+  Real-world use cases with popular examples, tips and
+  tricks.
+keywords:
+  - PWA
+  - Progressive web application
+  - Web APIs
+  - PWA Comparison
