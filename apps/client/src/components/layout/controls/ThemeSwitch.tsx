@@ -11,7 +11,7 @@ export const ThemeSwitch = () => {
   };
 
   return (
-    <Button isIconOnly onPress={toggleTheme} variant="light">
+    <Button isIconOnly onPress={toggleTheme} variant="light" aria-label="Toggle theme">
       {resolvedTheme === 'light' ? <MoonIcon className="size-7" /> : <SunIcon className="size-7" />}
     </Button>
   );

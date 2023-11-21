@@ -12,12 +12,18 @@ export const Navigation = () => {
 
   return (
     <nav className="flex items-center justify-center gap-2 sm:gap-4">
-      <Button onPress={previousSlide} isIconOnly color="primary" isDisabled={isFirstSlide}>
+      <Button
+        onPress={previousSlide}
+        isIconOnly
+        color="primary"
+        isDisabled={isFirstSlide}
+        aria-label="Previous Slide"
+      >
         <BackwardIcon className="size-6" />
       </Button>
       <Dropdown backdrop="blur">
         <DropdownTrigger>
-          <Button isIconOnly>
+          <Button isIconOnly aria-label="Slides menu">
             <ListBulletIcon className="size-6" />
           </Button>
         </DropdownTrigger>
@@ -34,6 +40,7 @@ export const Navigation = () => {
         isIconOnly
         color="primary"
         className={twJoin(isFirstSlide && 'animate-pulse')}
+        aria-label="Next Slide"
       >
         <ForwardIcon className="size-6" />
       </Button>

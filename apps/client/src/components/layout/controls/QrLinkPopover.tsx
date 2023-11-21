@@ -7,7 +7,11 @@ export const QrLinkPopover = () => (
   <div className="hidden sm:inline-block">
     <Popover showArrow placement="bottom-start" offset={20}>
       <PopoverTrigger>
-        <Button isIconOnly variant="light">
+        <Button
+          isIconOnly
+          variant="light"
+          aria-label="Scan QR code using your mobile for live experience"
+        >
           <QrCodeIcon className="size-8" />
         </Button>
       </PopoverTrigger>
