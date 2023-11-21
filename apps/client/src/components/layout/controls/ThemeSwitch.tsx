@@ -1,6 +1,7 @@
 import { useTheme } from 'next-themes';
 import { Button } from '@/client/components/Button';
-import { MoonIcon, SunIcon } from '@heroicons/react/24/outline';
+import { SunIcon } from '@heroicons/react/24/outline';
+import { MoonIcon } from '@heroicons/react/24/solid';
 
 export const ThemeSwitch = () => {
   const { resolvedTheme, setTheme } = useTheme();
