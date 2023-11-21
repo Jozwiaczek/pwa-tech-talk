@@ -28,14 +28,14 @@
   "screenshots": [
     {
       "src": "screenshots/preview.gif",
-      "sizes": "401x827",
+      "sizes": "1080x1920",
       "type": "image/gif",
       "form_factor": "narrow",
       "label": "App preview 📱"
     },
     {
       "src": "screenshots/preview.gif",
-      "sizes": "401x827",
+      "sizes": "1080x1920",
       "type": "image/gif",
       "form_factor": "wide",
       "label": "App preview 📱"
@@ -53,13 +53,6 @@
       "type": "image/png",
       "form_factor": "wide",
       "label": "Live tech talk 💜"
-    },
-    {
-      "src": "screenshots/mobile/2.jpg",
-      "sizes": "1080x1920",
-      "type": "image/png",
-      "form_factor": "narrow",
-      "label": "Simple, fast and smooth ⚡️"
     },
     {
       "src": "screenshots/desktop/2.jpg",
@@ -101,13 +94,6 @@
       "sizes": "1080x1920",
       "type": "image/png",
       "form_factor": "narrow",
-      "label": "Dark Mode 🌙"
-    },
-    {
-      "src": "screenshots/desktop/5.jpg",
-      "sizes": "1080x1920",
-      "type": "image/png",
-      "form_factor": "wide",
       "label": "Dark Mode 🌙"
     }
   ],
