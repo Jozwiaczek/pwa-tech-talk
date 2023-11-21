@@ -10,8 +10,8 @@ export const SLIDES = [
     name: 'Intro',
   },
   {
-    path: '/agenda',
-    name: 'Agenda',
+    path: '/table-of-contents',
+    name: 'Table of contents',
   },
   {
     path: '/comparison',
