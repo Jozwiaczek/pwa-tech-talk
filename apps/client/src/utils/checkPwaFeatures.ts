@@ -51,3 +51,6 @@ export const checkIsWebShareSupported = () =>
 
 export const checkIsSynthesisSpeechSupported = () =>
   checkIsWindowAvailable() && 'speechSynthesis' in window && 'SpeechSynthesisUtterance' in window;
+
+export const checkIsGeolocationSupported = () =>
+  checkIsWindowAvailable() && 'geolocation' in window.navigator;

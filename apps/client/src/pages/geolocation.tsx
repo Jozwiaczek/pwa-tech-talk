@@ -6,6 +6,7 @@ import { MapPinIcon } from '@heroicons/react/24/outline';
 import dynamic from 'next/dynamic';
 import { LatLngExpression } from 'leaflet';
 import { SlideTitle } from '@/client/components/SlideTitle';
+import { checkIsGeolocationSupported } from '@/client/utils/checkPwaFeatures';
 
 const Map = dynamic(() => import('@/client/components/Map'), { ssr: false });
 
@@ -26,22 +27,27 @@ export function GeolocationPage(_: unknown, ref: React.ForwardedRef<HTMLDivEleme
   };
 
   const requestGeolocation = async () => {
-    if (!navigator.geolocation) {
+    if (!checkIsGeolocationSupported()) {
       toast.error('Geolocation is not supported by your browser');
       return;
     }
 
     const permission = await navigator.permissions?.query({ name: 'geolocation' });
-    if (permission?.state === 'denied') {
+    if (permission.state === 'denied') {
       toast.error('Geolocation permission is denied');
       return;
     }
 
+    if (permission?.state === 'prompt') {
+      toast.error(`Geolocation permission is not granted yet. Please click "Allow" in the prompt.`);
+      return;
+    }
+
     setIsLoading(true);
+
     navigator.geolocation.getCurrentPosition(
       currentPositionSuccessHandler,
       currentPositionErrorHandler,
-      { enableHighAccuracy: true, timeout: 5000, maximumAge: 0 },
     );
   };
 

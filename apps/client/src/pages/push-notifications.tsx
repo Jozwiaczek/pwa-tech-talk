@@ -22,7 +22,7 @@ const NotificationsPage = (_: unknown, ref: React.ForwardedRef<HTMLDivElement>) 
   if (!isWebPushSupported) {
     return (
       <SlideContainer ref={ref}>
-        <SlideTitle>Notifications API</SlideTitle>
+        <SlideTitle>Push Notifications API</SlideTitle>
         <p className="text-xl font-semibold">
           Oops, looks like your browser does not support web push notifications.
         </p>
@@ -75,7 +75,7 @@ const NotificationsPage = (_: unknown, ref: React.ForwardedRef<HTMLDivElement>) 
 
   return (
     <SlideContainer ref={ref}>
-      <SlideTitle>Notifications API</SlideTitle>
+      <SlideTitle>Push Notifications API</SlideTitle>
       <div className="flex w-full flex-col gap-4 md:max-w-lg">
         {isSubscribed ? (
           <>

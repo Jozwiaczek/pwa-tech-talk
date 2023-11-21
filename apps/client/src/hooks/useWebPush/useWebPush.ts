@@ -21,7 +21,10 @@ export const useWebPush = () => {
   const [subscriptionInternal, setSubscriptionInternal] = useState<PushSubscription | null>(null);
   const [registrationInternal, setRegistrationInternal] =
     useState<ServiceWorkerRegistration | null>(null);
-  const [clientId] = useLocalStorage(LOCAL_STORAGE_KEYS.WEB_PUSH_CLIENT_ID, uuid());
+  const [clientId, setClientId] = useLocalStorage<string>(
+    LOCAL_STORAGE_KEYS.WEB_PUSH_CLIENT_ID,
+    uuid(),
+  );
 
   const isWebPushSupported = useMemo(() => checkIsWebPushSupported(), []);
 
@@ -79,9 +82,12 @@ export const useWebPush = () => {
           clientId,
         });
         setSubscriptionInternal(subscription);
-        queryClient.setQueryData(['is-subscribed', clientId], true);
+        queryClient.setQueryData(['is-subscribed', clientId], () => true);
 
         toast.success('You have successfully subscribed to notifications');
+      },
+      onError: () => {
+        setClientId(uuid());
       },
     }),
     unsubscribeMutation: useMutation({
@@ -97,7 +103,7 @@ export const useWebPush = () => {
         });
         await subscriptionInternal.unsubscribe();
         setSubscriptionInternal(null);
-        queryClient.setQueryData(['is-subscribed', clientId], false);
+        queryClient.setQueryData(['is-subscribed', clientId], () => false);
 
         toast.success('You have successfully unsubscribed from notifications');
       },
