@@ -1,6 +1,6 @@
 import { NextRouter } from 'next/dist/shared/lib/router/router';
 import { useMemo } from 'react';
-import { Slide, SlidePath, SLIDES } from '@/client/slides';
+import { Slide, SlidePath, SLIDES, SlideSeo } from '@/client/slides';
 
 const isSlidePage = (path: string): path is SlidePath => {
   return SLIDES.some((slide) => slide.path === path);
@@ -31,12 +31,9 @@ const getPreviousSlide = (path: SlidePath): Slide => {
 export const useBaseNavigation = (router: NextRouter) => {
   const currentPathname = router.pathname;
 
-  const currentSlideKeywords = useMemo<ReadonlyArray<string>>(() => {
+  const currentSlideSeo = useMemo<SlideSeo | undefined>(() => {
     const slide = SLIDES.find((slide) => slide.path === currentPathname);
-    if (slide && 'keywords' in slide) {
-      return slide.keywords;
-    }
-    return [];
+    return slide?.seo;
   }, [currentPathname]);
 
   const currentSlideName = useMemo(() => {
@@ -68,7 +65,7 @@ export const useBaseNavigation = (router: NextRouter) => {
     isFirstSlide,
     currentPathname,
     currentSlideName,
-    currentSlideKeywords,
+    currentSlideSeo,
     nextSlide,
     previousSlide,
     goToSlide,
