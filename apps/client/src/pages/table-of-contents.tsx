@@ -29,8 +29,7 @@ export function TableOfContents(_: unknown, ref: React.ForwardedRef<HTMLDivEleme
             {firstHalfSlides.map((slide) => (
               <li key={slide.name}>
                 <Link
-                  color="secondary"
-                  className="hover:cursor-pointer"
+                  className="dark:text-secondary hover:cursor-pointer"
                   showAnchorIcon
                   onPress={() => goToSlide(slide.path)}
                 >
@@ -43,8 +42,7 @@ export function TableOfContents(_: unknown, ref: React.ForwardedRef<HTMLDivEleme
             {secondHalfSlides.map((slide) => (
               <li key={slide.name}>
                 <Link
-                  color="secondary"
-                  className="hover:cursor-pointer"
+                  className="dark:text-secondary hover:cursor-pointer"
                   showAnchorIcon
                   onPress={() => goToSlide(slide.path)}
                 >
