@@ -1,18 +1,11 @@
 import { z } from 'zod';
 
-const configSchema = z
-  .object({
-    API_URL: z.string(),
-    SITE_URL: z.string().url().optional(),
-    NODE_ENV: z.enum(['development', 'production', 'test']).default('development'),
-    WEB_PUSH_PUBLIC_KEY: z.string(),
-  })
-  .refine((data) => {
-    if (data.NODE_ENV === 'production' && !data.SITE_URL) {
-      throw new Error('SITE_URL is required in production');
-    }
-    return true;
-  });
+const configSchema = z.object({
+  API_URL: z.string(),
+  SITE_URL: z.string().url(),
+  NODE_ENV: z.enum(['development', 'production', 'test']).default('development'),
+  WEB_PUSH_PUBLIC_KEY: z.string(),
+});
 
 export const config = configSchema.parse({
   SITE_URL: process.env.NEXT_PUBLIC_SITE_URL,

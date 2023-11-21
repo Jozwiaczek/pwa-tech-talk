@@ -128,6 +128,7 @@
     "recharts": "^2.9.3",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.8.0",
+    "sharp": "^0.32.6",
     "socket.io": "^4.7.2",
     "socket.io-client": "^4.7.2",
     "tailwind-merge": "^2.0.0",

@@ -28,7 +28,7 @@ function CustomApp({ Component, pageProps, router }: CustomAppProps) {
   return (
     <Providers navigate={router.push} dehydratedState={pageProps.dehydratedState}>
       <div key={router.pathname} className={twJoin(inter.className, isDev ? 'debug-screens' : '')}>
-        <PageHead />
+        <PageHead router={router} />
         <AppLayout hideControls={Component.hideControls}>
           <ApiRequirementGuard isApiRequired={Component.apiRequired}>
             <Component {...pageProps} />
