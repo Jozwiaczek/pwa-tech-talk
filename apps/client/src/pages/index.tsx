@@ -3,6 +3,7 @@ import { PWALogo } from '@/client/assets/logos';
 import { Divider, Link } from '@nextui-org/react';
 import { SlideContainer } from '@/client/components/layout/SlideContainer';
 import { QrLiveLink } from '@/client/components/layout/controls/QrLiveLink';
+import { GitHubStarButton } from '@/client/components/GitHubStarButton';
 
 export function Index(_: unknown, ref: React.ForwardedRef<HTMLDivElement>) {
   return (
@@ -23,6 +24,8 @@ export function Index(_: unknown, ref: React.ForwardedRef<HTMLDivElement>) {
           Jakub Jóźwiak
         </Link>
       </div>
+
+      <GitHubStarButton />
       <div className="hidden flex-col items-center justify-center gap-5 sm:flex">
         <Divider className="bg-primary-400 w-64" />
         <QrLiveLink />

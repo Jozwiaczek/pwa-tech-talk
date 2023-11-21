@@ -4,10 +4,10 @@ import { Link } from '@nextui-org/react';
 import { SlideTitle } from '@/client/components/SlideTitle';
 
 const LINKS = [
-  'https://progressier.com/pwa-screenshots-generator',
-  'https://progressier.com/pwa-manifest-generator',
   'https://github.com/shadowwalker/next-pwa',
+  'https://github.com/GoogleChrome/workbox',
   'https://web.dev/articles/pwas-on-oculus-2',
+  'https://progressier.com/pwa-manifest-generator/',
 ];
 
 const TipsTricks = (_: unknown, ref: React.ForwardedRef<HTMLDivElement>) => {

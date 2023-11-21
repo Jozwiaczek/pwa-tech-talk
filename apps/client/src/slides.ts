@@ -103,8 +103,8 @@ export const SLIDES = [
     keywords: ['pwa tips', 'pwa tricks'],
   },
   {
-    path: '/feedback',
-    name: 'Feedback',
+    path: '/finale',
+    name: 'Finale',
   },
 ] as const satisfies ReadonlyArray<SlideSchema>;
 
