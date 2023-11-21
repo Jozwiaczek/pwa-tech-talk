@@ -32,6 +32,14 @@ export const useNavigation = () => {
   const router = useRouter();
   const currentPathname = router.pathname;
 
+  const currentSlideKeywords = useMemo<ReadonlyArray<string>>(() => {
+    const slide = SLIDES.find((slide) => slide.path === currentPathname);
+    if (slide && 'keywords' in slide) {
+      return slide.keywords;
+    }
+    return [];
+  }, [currentPathname]);
+
   const currentSlideName = useMemo(() => {
     const slide = SLIDES.find((slide) => slide.path === currentPathname);
     return slide?.name;
@@ -61,6 +69,7 @@ export const useNavigation = () => {
     isFirstSlide,
     currentPathname,
     currentSlideName,
+    currentSlideKeywords,
     nextSlide,
     previousSlide,
     goToSlide,

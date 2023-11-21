@@ -1,7 +1,7 @@
 {
   "name": "PWA Tech Talk",
   "short_name": "PWA Tech Talk",
-  "description": "Best PWA App in the world",
+  "description": "A live presentation about progressive web applications, including the most usable or interesting functionalities and Real-world use cases with popular examples.",
   "theme_color": "#5A0FC8",
   "start_url": "/",
   "id": "/",

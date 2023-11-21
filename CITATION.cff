@@ -11,10 +11,7 @@ authors:
 repository-code: 'https://github.com/Jozwiaczek/pwa-tech-talk'
 url: 'https://pwa-tech-talk.vercel.app/'
 abstract: >
-  Live presentation about progressive web applications,
-  including the most usable or interesting functionalities.
-  Real-world use cases with popular examples, tips and
-  tricks.
+  A live presentation about progressive web applications, including the most usable or interesting functionalities and Real-world use cases with popular examples.
 keywords:
   - PWA
   - Progressive web application
