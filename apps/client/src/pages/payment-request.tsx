@@ -3,6 +3,7 @@ import { SlideContainer } from '@/client/components/layout/SlideContainer';
 import { Button } from '@/client/components/Button';
 import { CreditCardIcon } from '@heroicons/react/24/outline';
 import { checkIsPaymentRequestSupported } from '@/client/utils/checkPwaFeatures';
+import { toast } from 'react-toastify';
 
 async function startPayment() {
   const checkoutDetails = {
@@ -56,10 +57,11 @@ async function startPayment() {
 
   const paymentRequest = new PaymentRequest(paymentMethods, checkoutDetails);
   const response = await paymentRequest.show();
-  console.log(response);
+  await response.complete('success');
+  toast.success('Payment completed');
 }
 
-export function PaymentRequestPage(props: unknown, ref: React.ForwardedRef<HTMLDivElement>) {
+export function PaymentRequestPage(_: unknown, ref: React.ForwardedRef<HTMLDivElement>) {
   const isPaymentRequestSupported = checkIsPaymentRequestSupported();
 
   if (!isPaymentRequestSupported) {

@@ -15,6 +15,7 @@ import dynamic from 'next/dynamic';
 import { toast } from 'react-toastify';
 import { useLocalStorage } from 'react-use';
 import { LOCAL_STORAGE_KEYS } from '@/client/constants/local-storage-keys';
+import { SlideTitle } from '@/client/components/SlideTitle';
 
 const SpeechSynthesisVoiceSelect = dynamic(
   () => import('@/client/components/SpeechSynthesisVoiceSelect'),
@@ -79,7 +80,7 @@ export function SpeechSynthesisPage(_: unknown, ref: React.ForwardedRef<HTMLDivE
   if (!isSupported) {
     return (
       <SlideContainer ref={ref}>
-        <h1 className="text-4xl font-bold">Speech Synthesis API</h1>
+        <SlideTitle>Speech Synthesis API</SlideTitle>
         <p className="max-w-2xl">
           The SpeechSynthesis API can be integrated into a PWA to convert text into spoken language
           and generate natural-sounding speech output.
@@ -145,7 +146,7 @@ export function SpeechSynthesisPage(_: unknown, ref: React.ForwardedRef<HTMLDivE
   return (
     <SlideContainer ref={ref} disableSwipeNav>
       <div className="flex max-w-2xl flex-col items-center justify-center gap-5 sm:gap-10">
-        <h1 className="text-4xl font-bold">Speech Synthesis API</h1>
+        <SlideTitle>Speech Synthesis API</SlideTitle>
         <p className="text-warning flex flex-col items-center justify-center gap-1 font-semibold">
           <ExclamationTriangleIcon className="size-5" />
           Slide swipe navigation is disabled for this slide. Use bottom navigation instead.{' '}

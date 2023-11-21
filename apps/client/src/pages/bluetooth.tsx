@@ -14,8 +14,9 @@ import { HeartIcon } from '@heroicons/react/24/solid';
 import { Checkbox } from '@nextui-org/react';
 import { useNavigation } from '@/client/hooks/useNavigation';
 import { checkIsBluetoothSupported } from '@/client/utils/checkPwaFeatures';
+import { SlideTitle } from '@/client/components/SlideTitle';
 
-export function Feedback(props: unknown, ref: React.ForwardedRef<HTMLDivElement>) {
+export function Feedback(_: unknown, ref: React.ForwardedRef<HTMLDivElement>) {
   const { nextSlide } = useNavigation();
   const [heartData, setHeartData] = useState<Array<{ time: number; value: number }>>();
   const [device, setDevice] = useState<BluetoothDevice | undefined>();
@@ -28,7 +29,7 @@ export function Feedback(props: unknown, ref: React.ForwardedRef<HTMLDivElement>
   if (!isBluetoothAvailable) {
     return (
       <SlideContainer ref={ref}>
-        <h1 className="text-4xl font-bold">Web Bluetooth API</h1>
+        <SlideTitle>Bluetooth API</SlideTitle>
         <p className="font-semibold">
           Your device does not support the Web Bluetooth API.
           <br />
@@ -104,7 +105,7 @@ export function Feedback(props: unknown, ref: React.ForwardedRef<HTMLDivElement>
 
   return (
     <SlideContainer ref={ref}>
-      <h1 className="text-4xl font-bold">Web Bluetooth API</h1>
+      <SlideTitle>Bluetooth API</SlideTitle>
       {device ? (
         <>
           <div className="flex items-center gap-10">

@@ -6,6 +6,7 @@ import { formatDate } from '@/client/utils/formatDate';
 import { Card, CardBody, CardHeader } from '@nextui-org/react';
 import { Tooltip } from '@/client/components/Tooltip';
 import { useIsMounted } from '@/client/hooks/useIsMounted';
+import { SlideTitle } from '@/client/components/SlideTitle';
 
 interface NetworkStateItemProps {
   label: string;
@@ -40,7 +41,7 @@ export function OfflineModePage(_: unknown, ref: React.ForwardedRef<HTMLDivEleme
 
   return (
     <SlideContainer ref={ref}>
-      <h1 className="text-4xl font-bold">Offline Mode</h1>
+      <SlideTitle>Offline Mode</SlideTitle>
       <p className="max-w-2xl">
         PWAs can work offline by utilizing a combination of service workers and offline storage
         technologies.

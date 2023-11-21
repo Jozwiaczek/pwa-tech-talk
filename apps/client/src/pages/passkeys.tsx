@@ -6,6 +6,7 @@ import { KeyIcon } from '@heroicons/react/24/outline';
 import { toast } from 'react-toastify';
 import { useNavigation } from '@/client/hooks/useNavigation';
 import { useAuth } from '@/client/hooks/auth/useAuth';
+import { SlideTitle } from '@/client/components/SlideTitle';
 
 const LoginToExistingAccount = () => {
   const { localUsername, loginMutation } = useAuth();
@@ -31,7 +32,7 @@ const LoginToExistingAccount = () => {
   );
 };
 
-const PasskeysPage = (props: unknown, ref: React.ForwardedRef<HTMLDivElement>) => {
+const PasskeysPage = (_: unknown, ref: React.ForwardedRef<HTMLDivElement>) => {
   const { nextSlide } = useNavigation();
   const { registerMutation, loginMutation } = useAuth();
 
@@ -61,7 +62,7 @@ const PasskeysPage = (props: unknown, ref: React.ForwardedRef<HTMLDivElement>) =
 
   return (
     <SlideContainer ref={ref} className="gap-12">
-      <h1 className="text-5xl font-bold">Passkeys</h1>
+      <SlideTitle>Passkeys</SlideTitle>
       <p>This step enables showcase of PWA features like passkeys or push notifications.</p>
       <form className="flex w-full max-w-xs flex-col gap-6 sm:max-w-sm" onSubmit={handleRegister}>
         <Input name="username" placeholder="Username" />

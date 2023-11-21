@@ -1,11 +1,12 @@
 import React, { forwardRef } from 'react';
 import { SlideContainer } from '@/client/components/layout/SlideContainer';
 import { BatteryManagerState } from '@/client/containers/BatteryManagerState';
+import { SlideTitle } from '@/client/components/SlideTitle';
 
 export function BatteryManagerPage(_: unknown, ref: React.ForwardedRef<HTMLDivElement>) {
   return (
     <SlideContainer ref={ref}>
-      <h1 className="text-4xl font-bold">Battery Manager API</h1>
+      <SlideTitle>Battery Manager API</SlideTitle>
       <p className="max-w-2xl">
         The Battery Manager API provides information about the system&apos;s battery charge level
         and lets you be notified by events that are sent when the battery level or charging status

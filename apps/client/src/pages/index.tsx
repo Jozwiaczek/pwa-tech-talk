@@ -4,7 +4,7 @@ import { Divider, Link } from '@nextui-org/react';
 import { SlideContainer } from '@/client/components/layout/SlideContainer';
 import { QrLiveLink } from '@/client/components/layout/controls/QrLiveLink';
 
-export function Index(props: unknown, ref: React.ForwardedRef<HTMLDivElement>) {
+export function Index(_: unknown, ref: React.ForwardedRef<HTMLDivElement>) {
   return (
     <SlideContainer ref={ref} className="justify-center">
       <h1 className="text-7xl font-bold sm:text-9xl">

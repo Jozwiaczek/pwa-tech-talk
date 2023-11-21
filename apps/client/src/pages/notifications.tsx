@@ -4,8 +4,9 @@ import { useWebPush } from '@/client/hooks/useWebPush/useWebPush';
 import { Button, Checkbox, Divider, Input } from '@nextui-org/react';
 import { useNavigation } from '@/client/hooks/useNavigation';
 import { ForwardIcon } from '@heroicons/react/24/outline';
+import { SlideTitle } from '@/client/components/SlideTitle';
 
-const NotificationsPage = (props: unknown, ref: React.ForwardedRef<HTMLDivElement>) => {
+const NotificationsPage = (_: unknown, ref: React.ForwardedRef<HTMLDivElement>) => {
   const { nextSlide } = useNavigation();
   const {
     isSubscribed,
@@ -21,7 +22,7 @@ const NotificationsPage = (props: unknown, ref: React.ForwardedRef<HTMLDivElemen
   if (!isWebPushSupported) {
     return (
       <SlideContainer ref={ref}>
-        <h1 className="text-5xl font-bold">Notifications</h1>
+        <SlideTitle>Notifications API</SlideTitle>
         <p className="text-xl font-semibold">
           Oops, looks like your browser does not support web push notifications.
         </p>
@@ -74,7 +75,7 @@ const NotificationsPage = (props: unknown, ref: React.ForwardedRef<HTMLDivElemen
 
   return (
     <SlideContainer ref={ref}>
-      <h1 className="text-5xl font-bold">Notifications</h1>
+      <SlideTitle>Notifications API</SlideTitle>
       <div className="flex w-full flex-col gap-4 md:max-w-lg">
         {isSubscribed ? (
           <>

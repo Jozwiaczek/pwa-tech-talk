@@ -4,6 +4,7 @@ import { SlideContainer } from '@/client/components/layout/SlideContainer';
 import { SLIDES } from '@/client/slides';
 import { Link } from '@nextui-org/react';
 import { useNavigation } from '@/client/hooks/useNavigation';
+import { SlideTitle } from '@/client/components/SlideTitle';
 
 const TABLE_OF_CONTENTS = SLIDES.slice(2, SLIDES.length);
 
@@ -20,7 +21,7 @@ export function TableOfContents(_: unknown, ref: React.ForwardedRef<HTMLDivEleme
     <SlideContainer ref={ref}>
       <CoverIllustration />
       <div className="flex w-full max-w-xl flex-col items-center gap-10">
-        <h1 className="text-5xl font-bold">Table of contents</h1>
+        <SlideTitle>Table of contents</SlideTitle>
         <ol
           start={3}
           className="flex w-full list-decimal flex-wrap justify-around gap-x-16 gap-y-3 text-left sm:text-center"

@@ -3,6 +3,7 @@ import { SlideContainer } from '@/client/components/layout/SlideContainer';
 import { GamepadController } from '@/client/components/GamepadController';
 import { checkIsGamepadSupported } from '@/client/utils/checkPwaFeatures';
 import { useGamepads } from 'react-gamepads';
+import { SlideTitle } from '@/client/components/SlideTitle';
 
 const calcDirectionVertical = (axe: number) => {
   if (axe < -0.2) {
@@ -24,7 +25,7 @@ const calcDirectionHorizontal = (axe: number) => {
 
 const ANALOG_VELOCITY = 0.3;
 
-export function Gamepads(props: unknown, ref: React.ForwardedRef<HTMLDivElement>) {
+export function Gamepads(_: unknown, ref: React.ForwardedRef<HTMLDivElement>) {
   const [isMounted, setIsMounted] = useState(false);
   const [gamepad, setGamepad] = useState<Gamepad | null>(null);
   const isGamepadSupported = checkIsGamepadSupported();
@@ -42,7 +43,7 @@ export function Gamepads(props: unknown, ref: React.ForwardedRef<HTMLDivElement>
   if (!isGamepadSupported) {
     return (
       <SlideContainer ref={ref}>
-        <h1 className="text-4xl font-bold">Gamepads</h1>
+        <SlideTitle>Gamepads API</SlideTitle>
         <p className="text-2xl">Gamepads are not supported on this device.</p>
       </SlideContainer>
     );
@@ -51,7 +52,7 @@ export function Gamepads(props: unknown, ref: React.ForwardedRef<HTMLDivElement>
   if (!gamepad) {
     return (
       <SlideContainer ref={ref}>
-        <h1 className="text-4xl font-bold">Gamepads</h1>
+        <SlideTitle>Gamepads API</SlideTitle>
         <p className="text-2xl">Connect a gamepad to your device (using bluetooth or USB)</p>
       </SlideContainer>
     );
@@ -59,7 +60,7 @@ export function Gamepads(props: unknown, ref: React.ForwardedRef<HTMLDivElement>
 
   return (
     <SlideContainer ref={ref}>
-      <h1 className="text-4xl font-bold">Gamepads</h1>
+      <SlideTitle>Gamepads API</SlideTitle>
       <GamepadController
         buttonDown={gamepad.buttons[0].pressed}
         buttonRight={gamepad.buttons[1].pressed}

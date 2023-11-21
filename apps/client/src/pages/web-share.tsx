@@ -5,15 +5,16 @@ import { useCurrentUrl } from '@/client/hooks/useCurrentUrl';
 import { Button } from '@/client/components/Button';
 import { ShareIcon } from '@heroicons/react/24/outline';
 import { Input } from '@nextui-org/react';
+import { SlideTitle } from '@/client/components/SlideTitle';
 
-export function WebSharePage(props: unknown, ref: React.ForwardedRef<HTMLDivElement>) {
+export function WebSharePage(_: unknown, ref: React.ForwardedRef<HTMLDivElement>) {
   const currentUrl = useCurrentUrl();
   const isSupported = checkIsWebShareSupported();
 
   if (!isSupported) {
     return (
       <SlideContainer ref={ref}>
-        <h1 className="text-4xl font-bold">Web Share API</h1>
+        <SlideTitle>Web Share API</SlideTitle>
         <p className="md:max-w-2xl">
           Your device does not support the Web Share API. Try on an iPhone or Android phone!
         </p>
@@ -42,7 +43,7 @@ export function WebSharePage(props: unknown, ref: React.ForwardedRef<HTMLDivElem
 
   return (
     <SlideContainer ref={ref}>
-      <h1 className="text-4xl font-bold">Web Share API</h1>
+      <SlideTitle>Web Share API</SlideTitle>
       <p className="md:max-w-2xl">
         Share text content, files and links from your PWA to other apps with the Web Share API.
       </p>

@@ -22,14 +22,15 @@ import {
 } from '@/client/assets/examples/smart-table-football';
 import Image from 'next/image';
 import { POPULAR_PWA_APPS } from '@/client/data/popular-pwa-apps';
+import { SlideTitle } from '@/client/components/SlideTitle';
 
 const ExampleApps = (_: unknown, ref: React.ForwardedRef<HTMLDivElement>) => {
   return (
     <SlideContainer ref={ref} className="justify-start">
-      <h1 className="text-5xl font-bold">Example Apps</h1>
+      <SlideTitle>Example Apps</SlideTitle>
       <div className="flex w-full flex-col items-center gap-20">
         <div className="flex flex-col items-center gap-5">
-          <h2 className="text-4xl font-semibold">Popular PWAs</h2>
+          <h2 className="text-3xl font-semibold">Popular PWAs</h2>
           <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-6">
             {POPULAR_PWA_APPS.map((app) => (
               <Link
@@ -50,7 +51,7 @@ const ExampleApps = (_: unknown, ref: React.ForwardedRef<HTMLDivElement>) => {
           </div>
         </div>
         <div className="flex w-full max-w-4xl flex-col items-center gap-5">
-          <h2 className="text-4xl font-semibold">My PWAs</h2>
+          <h2 className="text-3xl font-semibold">My PWAs</h2>
           <div className="flex h-full w-full flex-col">
             <Tabs
               aria-label="Example PWAs"
@@ -72,7 +73,7 @@ const ExampleApps = (_: unknown, ref: React.ForwardedRef<HTMLDivElement>) => {
               >
                 <Card>
                   <CardBody className="items-center gap-5 text-center">
-                    <h3 className="text-2xl font-semibold">Guitar Book</h3>
+                    <h3 className="text-xl font-semibold">Guitar Book</h3>
                     <Link
                       color="secondary"
                       href="https://guitar-book-pjatk.netlify.app/"
@@ -121,7 +122,7 @@ const ExampleApps = (_: unknown, ref: React.ForwardedRef<HTMLDivElement>) => {
               >
                 <Card>
                   <CardBody className="items-center gap-5 text-center">
-                    <h3 className="text-2xl font-semibold">Budget Guard</h3>
+                    <h3 className="text-xl font-semibold">Budget Guard</h3>
                     <p>
                       Budget Guard is a web-based, progressive application for forecasting,
                       maintaining, and smartly analyzing the future condition of a budget.
@@ -153,7 +154,7 @@ const ExampleApps = (_: unknown, ref: React.ForwardedRef<HTMLDivElement>) => {
               >
                 <Card>
                   <CardBody className="items-center gap-5 text-center">
-                    <h3 className="text-2xl font-semibold">Smart Gate</h3>
+                    <h3 className="text-xl font-semibold">Smart Gate</h3>
                     <Link
                       color="secondary"
                       href="https://smart-gate.netlify.app"
@@ -206,7 +207,7 @@ const ExampleApps = (_: unknown, ref: React.ForwardedRef<HTMLDivElement>) => {
               >
                 <Card>
                   <CardBody className="items-center gap-5 text-center">
-                    <h3 className="text-2xl font-semibold">Smart Table Football</h3>
+                    <h3 className="text-xl font-semibold">Smart Table Football</h3>
                     <p>
                       System for managing smart table football. Player and Admin panel on top of the
                       PWA and real-time connection with physical playing field.

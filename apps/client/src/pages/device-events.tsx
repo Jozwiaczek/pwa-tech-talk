@@ -5,6 +5,7 @@ import { Card, CardBody } from '@nextui-org/react';
 import { DevicePhoneMobileIcon } from '@heroicons/react/24/outline';
 import { toast } from 'react-toastify';
 import { DeviceEventDataItem } from '@/client/components/DeviceEventDataItem';
+import { SlideTitle } from '@/client/components/SlideTitle';
 
 interface OrientationData {
   zAxis: string;
@@ -78,7 +79,7 @@ const MOTION_DEFAULT_DATA: MotionData = {
   },
 };
 
-export function DeviceEventsPage(props: unknown, ref: React.ForwardedRef<HTMLDivElement>) {
+export function DeviceEventsPage(_: unknown, ref: React.ForwardedRef<HTMLDivElement>) {
   const [orientation, setOrientation] = useState<OrientationData>(ORIENTATION_DEFAULT_DATA);
   const [motion, setMotion] = useState<MotionData>(MOTION_DEFAULT_DATA);
 
@@ -120,7 +121,7 @@ export function DeviceEventsPage(props: unknown, ref: React.ForwardedRef<HTMLDiv
 
   return (
     <SlideContainer ref={ref}>
-      <h1 className="text-4xl font-bold">Device Events APIs</h1>
+      <SlideTitle>Device Events APIs</SlideTitle>
       <p className="max-w-2xl">
         With the DeviceOrientation and DeviceMotion event, you can detect the orientation, physical
         motion, and motion of a device in three-dimensional space to create advanced interactive

@@ -5,8 +5,9 @@ import { useIsMounted } from '@/client/hooks/useIsMounted';
 import { Button } from '@/client/components/Button';
 import { toast } from 'react-toastify';
 import { LockClosedIcon, LockOpenIcon } from '@heroicons/react/24/outline';
+import { SlideTitle } from '@/client/components/SlideTitle';
 
-export function ScreenWakeLock(props: unknown, ref: React.ForwardedRef<HTMLDivElement>) {
+export function ScreenWakeLock(_: unknown, ref: React.ForwardedRef<HTMLDivElement>) {
   const isMounted = useIsMounted();
   const isSupported = checkIsWakeLockSupported();
   const [currentWakeLock, setCurrentWakeLock] = useState<WakeLockSentinel | null>();
@@ -18,7 +19,7 @@ export function ScreenWakeLock(props: unknown, ref: React.ForwardedRef<HTMLDivEl
   if (!isSupported) {
     return (
       <SlideContainer ref={ref}>
-        <h1 className="text-4xl font-bold">Screen Wake Lock</h1>
+        <SlideTitle>Wake Lock API</SlideTitle>
         <p className="text-xl">This feature is not supported on your device.</p>
       </SlideContainer>
     );
@@ -44,7 +45,7 @@ export function ScreenWakeLock(props: unknown, ref: React.ForwardedRef<HTMLDivEl
 
   return (
     <SlideContainer ref={ref}>
-      <h1 className="text-4xl font-bold">Screen Wake Lock</h1>
+      <SlideTitle>Wake Lock API</SlideTitle>
       <p className="max-w-2xl">
         The Screen Wake Lock API allows PWAs to request a device to stay awake and prevent the
         screen or system from entering sleep mode, ensuring continuous operation and display

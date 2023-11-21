@@ -22,6 +22,7 @@ import {
 import { getISO3166CountryCode } from '@/client/utils/getISO3166CountryCode';
 import { useLocalStorage } from 'react-use';
 import { LOCAL_STORAGE_KEYS } from '@/client/constants/local-storage-keys';
+import { SlideTitle } from '@/client/components/SlideTitle';
 
 interface SupportedListeningOptions extends Omit<ListeningOptions, 'language'> {
   language?: SupportedLanguage | null;
@@ -31,7 +32,7 @@ const isSupportedLanguage = (language: string): language is SupportedLanguage =>
   return SPEECH_RECOGNITION_LANGUAGES.some((lang) => lang.tag === language);
 };
 
-export function SpeechRecognitionPage(props: unknown, ref: React.ForwardedRef<HTMLDivElement>) {
+export function SpeechRecognitionPage(_: unknown, ref: React.ForwardedRef<HTMLDivElement>) {
   const {
     transcript,
     interimTranscript,
@@ -111,7 +112,7 @@ export function SpeechRecognitionPage(props: unknown, ref: React.ForwardedRef<HT
   return (
     <SlideContainer ref={ref}>
       <div className="flex max-w-2xl flex-col items-center justify-center gap-5 sm:gap-10">
-        <h1 className="text-4xl font-bold">Speech Recognition API</h1>
+        <SlideTitle>Speech Recognition API</SlideTitle>
         <p className="max-w-2xl">
           Natively integrate the SpeechRecognition API into your PWA to recognize and transcribe
           spoken language into text, allowing for voice-based input and interactions.

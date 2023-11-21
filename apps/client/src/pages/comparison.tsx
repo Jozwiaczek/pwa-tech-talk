@@ -4,15 +4,16 @@ import { Accordion, AccordionItem, Card, Link } from '@nextui-org/react';
 import { COMPARE_FEATURES, UPDATED_AT } from '@/client/data/compare-features';
 import { sanitize } from 'isomorphic-dompurify';
 import { AppSupportTypeBadge } from '@/client/components/AppSupportTypeBadge';
+import { SlideTitle } from '@/client/components/SlideTitle';
 
-const Manifest = (props: unknown, ref: React.ForwardedRef<HTMLDivElement>) => {
+const Manifest = (_: unknown, ref: React.ForwardedRef<HTMLDivElement>) => {
   return (
     <SlideContainer ref={ref} className="justify-start">
-      <h1 className="text-3xl font-bold sm:text-5xl">
+      <SlideTitle>
         PWA vs Native App
         <br />
         Comparison Table
-      </h1>
+      </SlideTitle>
       <div className="flex flex-col items-center gap-2 sm:flex-row sm:gap-11">
         <span className="flex items-center gap-2">
           <AppSupportTypeBadge type="Full" />

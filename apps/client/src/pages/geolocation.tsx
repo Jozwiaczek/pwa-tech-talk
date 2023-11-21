@@ -5,12 +5,13 @@ import { Button } from '@/client/components/Button';
 import { MapPinIcon } from '@heroicons/react/24/outline';
 import dynamic from 'next/dynamic';
 import { LatLngExpression } from 'leaflet';
+import { SlideTitle } from '@/client/components/SlideTitle';
 
 const Map = dynamic(() => import('@/client/components/Map'), { ssr: false });
 
 const DEFAULT_POSITION: LatLngExpression = [40.67696305938522, -73.92457132156235]; // Doctor Strange's Sanctum Sanctorum 🧙🏻
 
-export function GeolocationPage(props: unknown, ref: React.ForwardedRef<HTMLDivElement>) {
+export function GeolocationPage(_: unknown, ref: React.ForwardedRef<HTMLDivElement>) {
   const [isLoading, setIsLoading] = useState(false);
   const [mapPosition, setMapPosition] = useState<LatLngExpression>(DEFAULT_POSITION);
 
@@ -40,7 +41,7 @@ export function GeolocationPage(props: unknown, ref: React.ForwardedRef<HTMLDivE
 
   return (
     <SlideContainer ref={ref}>
-      <h1 className="text-4xl font-bold">Geolocation</h1>
+      <SlideTitle>Geolocation API</SlideTitle>
       <p className="max-w-2xl">
         The Geolocation API enables your app to ask users to share their location. For privacy
         reasons, the user is asked for permission before their geolocation data is shared with your

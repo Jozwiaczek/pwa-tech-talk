@@ -1,6 +1,7 @@
 import React from 'react';
 import { SlideContainer } from '@/client/components/layout/SlideContainer';
 import { Link } from '@nextui-org/react';
+import { SlideTitle } from '@/client/components/SlideTitle';
 
 const LINKS = [
   'https://progressier.com/pwa-screenshots-generator',
@@ -9,10 +10,10 @@ const LINKS = [
   'https://web.dev/articles/pwas-on-oculus-2',
 ];
 
-const TipsTricks = (props: unknown, ref: React.ForwardedRef<HTMLDivElement>) => {
+const TipsTricks = (_: unknown, ref: React.ForwardedRef<HTMLDivElement>) => {
   return (
     <SlideContainer ref={ref}>
-      <h1 className="text-5xl font-bold">Tips & Tricks</h1>
+      <SlideTitle>Tips & Tricks</SlideTitle>
       <ul>
         {LINKS.map((link) => (
           <li key={link}>

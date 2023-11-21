@@ -1,14 +1,15 @@
 import React from 'react';
 import { SlideContainer } from '@/client/components/layout/SlideContainer';
 import manifest from '../../public/manifest.json';
-import { Code, Link } from '@nextui-org/react';
+import { Link } from '@nextui-org/react';
 import { ComplexCodeBlock } from '@/client/components/ComplexCodeBlock';
 import { CODE_BLOCK_LANGUAGE } from '@/client/data/code-block-languages';
+import { SlideTitle } from '@/client/components/SlideTitle';
 
-const Manifest = (props: unknown, ref: React.ForwardedRef<HTMLDivElement>) => {
+const Manifest = (_: unknown, ref: React.ForwardedRef<HTMLDivElement>) => {
   return (
     <SlideContainer ref={ref}>
-      <h1 className="text-5xl font-bold">Manifest File</h1>
+      <SlideTitle>Manifest File</SlideTitle>
       <p className="max-w-2xl">
         An app manifest (also known as &quot;manifest file&quot; or &quot;PWA manifest&quot;) is a
         structured configuration JSON file used by web apps to provide essential information about
@@ -21,8 +22,8 @@ const Manifest = (props: unknown, ref: React.ForwardedRef<HTMLDivElement>) => {
         HTML.
       </p>
       <p className="max-w-2xl">
-        Add <Code>{'<link rel="manifest" href="manifest.json">'}</Code> in the{' '}
-        <Code>{'</head>'}</Code> tag.
+        Add <code>{'<link rel="manifest" href="manifest.json">'}</code> in the{' '}
+        <code>{'</head>'}</code> tag.
       </p>
       <p className="max-w-2xl">
         <strong className="text-secondary">name</strong>,{' '}
