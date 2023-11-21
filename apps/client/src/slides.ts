@@ -22,6 +22,10 @@ export const SLIDES = [
     name: 'Manifest file',
   },
   {
+    path: '/offline-mode',
+    name: 'Offline mode',
+  },
+  {
     path: '/geolocation',
     name: 'Geolocation',
   },
@@ -32,18 +36,6 @@ export const SLIDES = [
   {
     path: '/speech-synthesis',
     name: 'Speech synthesis',
-  },
-  {
-    path: '/screen-wake-lock',
-    name: 'Screen wake lock',
-  },
-  {
-    path: '/payment-request',
-    name: 'Payment request',
-  },
-  {
-    path: '/web-share',
-    name: 'Web share',
   },
   {
     path: '/bluetooth',
@@ -58,9 +50,8 @@ export const SLIDES = [
     name: 'Device events',
   },
   {
-    path: '/passkeys',
-    name: 'Passkeys',
-    serverRequired: true,
+    path: '/payment-request',
+    name: 'Payment request',
   },
   {
     path: '/notifications',
@@ -68,8 +59,17 @@ export const SLIDES = [
     serverRequired: true,
   },
   {
-    path: '/offline-mode',
-    name: 'Offline mode',
+    path: '/passkeys',
+    name: 'Passkeys',
+    serverRequired: true,
+  },
+  {
+    path: '/web-share',
+    name: 'Web share',
+  },
+  {
+    path: '/screen-wake-lock',
+    name: 'Screen wake lock',
   },
   {
     path: '/battery-manager',
