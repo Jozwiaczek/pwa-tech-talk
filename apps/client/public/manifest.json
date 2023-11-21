@@ -27,20 +27,6 @@
   ],
   "screenshots": [
     {
-      "src": "screenshots/preview.gif",
-      "sizes": "1080x1920",
-      "type": "image/gif",
-      "form_factor": "narrow",
-      "label": "App preview 📱"
-    },
-    {
-      "src": "screenshots/preview.gif",
-      "sizes": "1080x1920",
-      "type": "image/gif",
-      "form_factor": "wide",
-      "label": "App preview 📱"
-    },
-    {
       "src": "screenshots/mobile/1.jpg",
       "sizes": "1080x1920",
       "type": "image/png",
