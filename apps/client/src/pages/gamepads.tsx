@@ -44,7 +44,11 @@ export function Gamepads(_: unknown, ref: React.ForwardedRef<HTMLDivElement>) {
     return (
       <SlideContainer ref={ref}>
         <SlideTitle>Gamepads API</SlideTitle>
-        <p className="text-2xl">Gamepads are not supported on this device.</p>
+        <p className="max-w-2xl">
+          With this API, you can easily read input from a variety of game controllers and map those
+          inputs to in-game actions.
+        </p>
+        <p className="text-2xl font-thin">Gamepads are not supported on this device.</p>
       </SlideContainer>
     );
   }
@@ -53,7 +57,13 @@ export function Gamepads(_: unknown, ref: React.ForwardedRef<HTMLDivElement>) {
     return (
       <SlideContainer ref={ref}>
         <SlideTitle>Gamepads API</SlideTitle>
-        <p className="text-2xl">Connect a gamepad to your device (using bluetooth or USB)</p>
+        <p className="max-w-2xl">
+          With this API, you can easily read input from a variety of game controllers and map those
+          inputs to in-game actions.
+        </p>
+        <p className="text-2xl font-thin">
+          Connect a gamepad to your device (using bluetooth or USB)
+        </p>
       </SlideContainer>
     );
   }
@@ -61,6 +71,10 @@ export function Gamepads(_: unknown, ref: React.ForwardedRef<HTMLDivElement>) {
   return (
     <SlideContainer ref={ref}>
       <SlideTitle>Gamepads API</SlideTitle>
+      <p className="max-w-2xl">
+        With this API, you can easily read input from a variety of game controllers and map those
+        inputs to in-game actions.
+      </p>
       <GamepadController
         buttonDown={gamepad.buttons[0].pressed}
         buttonRight={gamepad.buttons[1].pressed}

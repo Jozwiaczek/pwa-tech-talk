@@ -51,7 +51,7 @@ const ExampleApps = (_: unknown, ref: React.ForwardedRef<HTMLDivElement>) => {
           </div>
         </div>
         <div className="flex w-full max-w-4xl flex-col items-center gap-5">
-          <h2 className="text-3xl font-semibold">My PWAs</h2>
+          <h2 className="text-3xl font-semibold">My side projects with PWA</h2>
           <div className="flex h-full w-full flex-col">
             <Tabs
               aria-label="Example PWAs"
@@ -123,7 +123,7 @@ const ExampleApps = (_: unknown, ref: React.ForwardedRef<HTMLDivElement>) => {
                 <Card>
                   <CardBody className="items-center gap-5 text-center">
                     <h3 className="text-xl font-semibold">Budget Guard</h3>
-                    <p>
+                    <p className="max-w-2xl">
                       Budget Guard is a web-based, progressive application for forecasting,
                       maintaining, and smartly analyzing the future condition of a budget.
                     </p>
@@ -179,7 +179,7 @@ const ExampleApps = (_: unknown, ref: React.ForwardedRef<HTMLDivElement>) => {
                     >
                       Source code
                     </Link>
-                    <p>
+                    <p className="max-w-2xl">
                       Smart Gate is a secure self-hosted system for opening electric gates or doors.
                       Based on Raspberry Pi, Node.js, React and built as a complete PWA.
                     </p>
@@ -208,20 +208,20 @@ const ExampleApps = (_: unknown, ref: React.ForwardedRef<HTMLDivElement>) => {
                 <Card>
                   <CardBody className="items-center gap-5 text-center">
                     <h3 className="text-xl font-semibold">Smart Table Football</h3>
-                    <p>
-                      System for managing smart table football. Player and Admin panel on top of the
-                      PWA and real-time connection with physical playing field.
+                    <p className="max-w-2xl">
+                      System for managing smart table football. Players app with separate admin
+                      panel on top of the PWA and real-time connection with physical playing field.
                     </p>
-                    <div className="flex w-full flex-wrap items-center justify-around gap-6">
+                    <div className="flex w-full flex-col items-center justify-around gap-10 px-10">
                       <Image
                         src={exampleStf1}
                         alt="Smart Table Football application view"
-                        className="w-64 md:w-80"
+                        className="w-full"
                       />
                       <Image
                         src={exampleStf2}
                         alt="Smart Table Football admin view"
-                        className="w-64 md:w-80"
+                        className="w-full"
                       />
                     </div>
                   </CardBody>

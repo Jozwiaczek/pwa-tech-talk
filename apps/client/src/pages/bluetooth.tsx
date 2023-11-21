@@ -11,7 +11,7 @@ import {
 import { toast } from 'react-toastify';
 import { Area, AreaChart, ResponsiveContainer } from 'recharts';
 import { HeartIcon } from '@heroicons/react/24/solid';
-import { Checkbox } from '@nextui-org/react';
+import { Checkbox, Link } from '@nextui-org/react';
 import { useNavigation } from '@/client/hooks/useNavigation';
 import { checkIsBluetoothSupported } from '@/client/utils/checkPwaFeatures';
 import { SlideTitle } from '@/client/components/SlideTitle';
@@ -106,6 +106,19 @@ export function Feedback(_: unknown, ref: React.ForwardedRef<HTMLDivElement>) {
   return (
     <SlideContainer ref={ref}>
       <SlideTitle>Bluetooth API</SlideTitle>
+      <p className="max-w-2xl">
+        Web Bluetooth API specification allows websites, running in the Central role, to connect to
+        remote GATT Servers over a BLE connection. It supports communication among devices that
+        implement Bluetooth 4.0 or later.
+      </p>
+      <Link
+        href="https://github.com/WebBluetoothCG/registries/blob/master/gatt_assigned_services.txt"
+        color="secondary"
+        isExternal
+        showAnchorIcon
+      >
+        List of GATT service UUIDs
+      </Link>
       {device ? (
         <>
           <div className="flex items-center gap-10">

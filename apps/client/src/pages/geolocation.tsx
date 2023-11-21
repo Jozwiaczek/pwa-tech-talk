@@ -25,9 +25,15 @@ export function GeolocationPage(_: unknown, ref: React.ForwardedRef<HTMLDivEleme
     setIsLoading(false);
   };
 
-  const requestGeolocation = () => {
+  const requestGeolocation = async () => {
     if (!navigator.geolocation) {
       toast.error('Geolocation is not supported by your browser');
+      return;
+    }
+
+    const permission = await navigator.permissions?.query({ name: 'geolocation' });
+    if (permission?.state === 'denied') {
+      toast.error('Geolocation permission is denied');
       return;
     }
 

@@ -15,7 +15,10 @@ export function WebSharePage(_: unknown, ref: React.ForwardedRef<HTMLDivElement>
     return (
       <SlideContainer ref={ref}>
         <SlideTitle>Web Share API</SlideTitle>
-        <p className="md:max-w-2xl">
+        <p className="max-w-2xl">
+          Share text content, files and links from your PWA to other apps with the Web Share API.
+        </p>
+        <p className="max-w-2xl font-thin">
           Your device does not support the Web Share API. Try on an iPhone or Android phone!
         </p>
       </SlideContainer>
@@ -44,7 +47,7 @@ export function WebSharePage(_: unknown, ref: React.ForwardedRef<HTMLDivElement>
   return (
     <SlideContainer ref={ref}>
       <SlideTitle>Web Share API</SlideTitle>
-      <p className="md:max-w-2xl">
+      <p className="max-w-2xl">
         Share text content, files and links from your PWA to other apps with the Web Share API.
       </p>
       <form onSubmit={shareHandler} className="flex w-full flex-col gap-6 md:max-w-lg">

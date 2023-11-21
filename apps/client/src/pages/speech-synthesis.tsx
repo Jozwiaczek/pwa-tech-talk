@@ -147,7 +147,7 @@ export function SpeechSynthesisPage(_: unknown, ref: React.ForwardedRef<HTMLDivE
     <SlideContainer ref={ref} disableSwipeNav>
       <div className="flex max-w-2xl flex-col items-center justify-center gap-5 sm:gap-10">
         <SlideTitle>Speech Synthesis API</SlideTitle>
-        <p className="text-warning flex flex-col items-center justify-center gap-1 font-semibold">
+        <p className="text-warning flex flex-col items-center justify-center gap-1 font-semibold sm:hidden">
           <ExclamationTriangleIcon className="size-5" />
           Slide swipe navigation is disabled for this slide. Use bottom navigation instead.{' '}
         </p>
