@@ -8,16 +8,15 @@ interface WhatArePasskeysModalProps {
 
 export const WhatArePasskeysModal = ({ isOpen, onOpenChange }: WhatArePasskeysModalProps) => (
   <Modal
-    size="xl"
+    size="lg"
+    isOpen={isOpen}
+    backdrop="blur"
+    placement="center"
     closeButton
     aria-labelledby="modal-title"
     aria-describedby="modal-description"
-    isOpen={isOpen}
     scrollBehavior="inside"
     onOpenChange={onOpenChange}
-    classNames={{
-      base: 'max-h-[95%] m-3',
-    }}
   >
     <ModalContent>
       <ModalHeader className="mt-5 flex justify-center text-center">

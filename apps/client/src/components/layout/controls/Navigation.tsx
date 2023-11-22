@@ -27,7 +27,14 @@ export const Navigation = () => {
             <ListBulletIcon className="size-6" />
           </Button>
         </DropdownTrigger>
-        <DropdownMenu aria-label="Dynamic Actions" items={SLIDES} disabledKeys={[currentPathname]}>
+        <DropdownMenu
+          aria-label="Dynamic Actions"
+          items={SLIDES}
+          disabledKeys={[currentPathname]}
+          classNames={{
+            base: 'max-h-96 overflow-y-auto',
+          }}
+        >
           {(slide) => (
             <DropdownItem key={slide.path} onPress={() => goToSlide(slide.path)}>
               {SLIDES.indexOf(slide) + 1}.) {slide.name}
