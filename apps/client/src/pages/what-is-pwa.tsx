@@ -15,7 +15,7 @@ export function FinalePage(_: unknown, ref: React.ForwardedRef<HTMLDivElement>) 
         <h2 className="text-2xl font-bold sm:text-3xl">Intro</h2>
         <p>
           <Link
-            color="secondary"
+            className="dark:text-secondary text-primary"
             isExternal
             showAnchorIcon
             href="https://infrequently.org/2015/06/progressive-apps-escaping-tabs-without-losing-our-soul/"
@@ -94,11 +94,10 @@ export function FinalePage(_: unknown, ref: React.ForwardedRef<HTMLDivElement>) 
             <li>
               Optional but required for{' '}
               <Link
-                color="secondary"
                 href="https://developer.chrome.com/blog/richer-pwa-installation/"
                 isExternal
                 showAnchorIcon
-                className="text-small sm:text-medium"
+                className="text-small sm:text-medium dark:text-secondary text-primary"
               >
                 Richer Installation
               </Link>
@@ -127,8 +126,7 @@ export function FinalePage(_: unknown, ref: React.ForwardedRef<HTMLDivElement>) 
             <Link
               isExternal
               showAnchorIcon
-              color="secondary"
-              className="text-small sm:text-medium"
+              className="text-small sm:text-medium dark:text-secondary text-primary"
               href="https://chromeos.dev/en/publish/pwa-in-play"
             >
               How to publish a PWA to the&nbsp;<strong>Google Play Store</strong>
@@ -138,8 +136,7 @@ export function FinalePage(_: unknown, ref: React.ForwardedRef<HTMLDivElement>) 
             <Link
               isExternal
               showAnchorIcon
-              color="secondary"
-              className="text-small sm:text-medium"
+              className="text-small sm:text-medium dark:text-secondary text-primary"
               href="https://learn.microsoft.com/en-us/microsoft-edge/progressive-web-apps-chromium/how-to/microsoft-store"
             >
               How to publish a PWA to the&nbsp;<strong>Microsoft Store</strong>
@@ -149,8 +146,7 @@ export function FinalePage(_: unknown, ref: React.ForwardedRef<HTMLDivElement>) 
             <Link
               isExternal
               showAnchorIcon
-              color="secondary"
-              className="text-small sm:text-medium"
+              className="text-small sm:text-medium dark:text-secondary text-primary"
               href="https://developer.oculus.com/documentation/web/pwa-submit-app/"
             >
               How to publish a PWA to the&nbsp;<strong>Meta Quest Store</strong>
@@ -160,8 +156,7 @@ export function FinalePage(_: unknown, ref: React.ForwardedRef<HTMLDivElement>) 
             <Link
               isExternal
               showAnchorIcon
-              color="secondary"
-              className="text-small sm:text-medium"
+              className="text-small sm:text-medium dark:text-secondary text-primary"
               href="https://docs.pwabuilder.com/#/builder/app-store"
             >
               How to publish a PWA to the&nbsp;<strong>Apple App Store</strong>
@@ -173,7 +168,7 @@ export function FinalePage(_: unknown, ref: React.ForwardedRef<HTMLDivElement>) 
           <Link
             isExternal
             showAnchorIcon
-            color="secondary"
+            className="dark:text-secondary text-primary"
             href="https://docs.pwabuilder.com/#/builder/quick-start"
           >
             PWABuilder

@@ -52,9 +52,18 @@ const ExampleApps = (_: unknown, ref: React.ForwardedRef<HTMLDivElement>) => {
         </div>
         <p className="max-w-4xl">
           The numbers don&apos;t lie! Companies that have launched Progressive Web Apps have seen
-          impressive results. For example, Twitter saw a 65% increase in pages per session, 75% more
-          Tweets, and a 20% decrease in bounce rate, all while reducing the size of their app by
-          over 97%.
+          impressive results.
+          <br />
+          Check a&nbsp;
+          <Link
+            href="https://www.pwastats.com/"
+            isExternal
+            showAnchorIcon
+            className="text-primary dark:text-secondary"
+          >
+            community-driven list
+          </Link>
+          of stats and news related to progressive web apps.
         </p>
         <div className="flex w-full max-w-4xl flex-col items-center gap-5">
           <h2 className="text-3xl font-semibold">My side projects with PWA</h2>

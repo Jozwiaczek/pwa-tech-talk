@@ -195,12 +195,12 @@ export const SLIDES = [
     },
   },
   {
-    path: '/tips-tricks',
-    name: 'Tips & Tricks',
+    path: '/useful-tools',
+    name: 'Useful tools',
     seo: {
-      title: 'Tips and Tricks for Progressive Web Apps',
-      description: 'A list of tips, tricks, tools and libraries for building progressive web apps.',
-      keywords: ['pwa tips', 'pwa tricks', 'pwa tools', 'pwa libraries'],
+      title: 'Useful Tools for Progressive Web Apps',
+      description: 'A list of useful tools, libraries and resources for progressive web apps.',
+      keywords: ['pwa tools', 'pwa libraries', 'pwa resources'],
     },
   },
   {
