@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { SlideContainer } from '@/client/components/layout/SlideContainer';
-import { Divider, Input } from '@nextui-org/react';
+import { Divider, Input, Link, useDisclosure } from '@nextui-org/react';
 import { Button } from '@/client/components/Button';
-import { KeyIcon } from '@heroicons/react/24/outline';
+import { ExclamationTriangleIcon, KeyIcon, PlusIcon } from '@heroicons/react/24/outline';
 import { toast } from 'react-toastify';
-import { useNavigation } from '@/client/hooks/useNavigation';
 import { useAuth } from '@/client/hooks/auth/useAuth';
 import { SlideTitle } from '@/client/components/SlideTitle';
+import { ContentBox } from '@/client/components/ContentBox';
+import { WhatArePasskeysModal } from '@/client/components/modals/WhatArePasskeysModal';
 
 const LoginToExistingAccount = () => {
   const { localUsername, loginMutation } = useAuth();
@@ -21,19 +22,26 @@ const LoginToExistingAccount = () => {
   }
 
   return (
-    <Button
-      onClick={() => loginMutation.mutate({})}
-      color="primary"
-      fullWidth
-      endContent={<KeyIcon className="size-6" />}
-    >
-      Login as {localUsername}
-    </Button>
+    <>
+      <Divider className="my-6" />
+      <Button
+        onClick={() => loginMutation.mutate({})}
+        color="primary"
+        fullWidth
+        endContent={<KeyIcon className="size-5" />}
+      >
+        Login as {localUsername}
+      </Button>
+    </>
   );
 };
 
 const PasskeysPage = (_: unknown, ref: React.ForwardedRef<HTMLDivElement>) => {
-  const { nextSlide } = useNavigation();
+  const {
+    isOpen: isPasskeysInfoOpen,
+    onOpen: onPasskeysInfoOpen,
+    onOpenChange: onPasskeysInfoOpenChange,
+  } = useDisclosure();
   const { registerMutation, loginMutation } = useAuth();
 
   const handleRegister = (event: React.FormEvent<HTMLFormElement>) => {
@@ -56,38 +64,55 @@ const PasskeysPage = (_: unknown, ref: React.ForwardedRef<HTMLDivElement>) => {
     }
   };
 
-  const onSkipClick = async () => {
-    await nextSlide();
-  };
-
   return (
     <SlideContainer ref={ref} className="gap-12">
-      <SlideTitle>Passkeys</SlideTitle>
-      <p>This step enables showcase of PWA features like passkeys or push notifications.</p>
-      <form className="flex w-full max-w-xs flex-col gap-6 sm:max-w-sm" onSubmit={handleRegister}>
-        <Input name="username" placeholder="Username" />
-        <div className="flex flex-col gap-2">
-          <Button type="submit" fullWidth color="secondary" name="register" value="register">
-            Register passkey
-          </Button>
-          <p className="font-light">or</p>
-          <Button
-            type="submit"
-            fullWidth
-            color="primary"
-            variant="ghost"
-            value="login"
-            name="login"
-          >
-            Log in with passkey
-          </Button>
-          <Divider className="my-6" />
-          <LoginToExistingAccount />
-          <Button fullWidth color="warning" variant="ghost" onClick={onSkipClick}>
-            Skip login
-          </Button>
-        </div>
-      </form>
+      <ContentBox>
+        <SlideTitle>Passkeys</SlideTitle>
+        <Link
+          onPress={onPasskeysInfoOpen}
+          underline="always"
+          className="text-default-600 hover:cursor-help"
+        >
+          What are passkeys?
+        </Link>
+        <p>
+          With the Web Authentication API, users can sign up and log in to your PWA with facial
+          recognition or their fingerprint scanner using a cutting-edge technology called Passkeys.
+        </p>
+        <p className="text-warning flex flex-col items-center justify-center">
+          <ExclamationTriangleIcon className="size-5" />
+          There is bug with current implementation (on this site) when registering passkeys. Try to
+          register same passkey two times in a row and then login with it.{' '}
+        </p>
+        <form className="flex w-full flex-col gap-6" onSubmit={handleRegister}>
+          <Input name="username" placeholder="Username" />
+          <div className="flex flex-col gap-2">
+            <Button
+              type="submit"
+              fullWidth
+              color="secondary"
+              name="register"
+              value="register"
+              endContent={<PlusIcon className="size-5" />}
+            >
+              Register passkey
+            </Button>
+            <p className="font-thin">or</p>
+            <Button
+              type="submit"
+              fullWidth
+              color="primary"
+              value="login"
+              name="login"
+              endContent={<KeyIcon className="size-5" />}
+            >
+              Log in with passkey
+            </Button>
+            <LoginToExistingAccount />
+          </div>
+        </form>
+      </ContentBox>
+      <WhatArePasskeysModal isOpen={isPasskeysInfoOpen} onOpenChange={onPasskeysInfoOpenChange} />
     </SlideContainer>
   );
 };
