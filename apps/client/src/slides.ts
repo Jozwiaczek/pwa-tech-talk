@@ -21,7 +21,8 @@ export const SLIDES = [
     name: 'Intro',
     seo: {
       title: 'Introduction to Progressive Web Apps',
-      description: 'Learn about the benefits of Progressive Web Apps and how to build them.',
+      description:
+        'A live presentation about PWA, including the most usable or interesting functionalities. Real-world use cases with popular examples, tips and tricks 🚀',
       keywords: ['progressive web app', 'tech talk', 'pwa'],
     },
   },
@@ -36,12 +37,13 @@ export const SLIDES = [
     },
   },
   {
-    path: '/comparison',
-    name: 'Comparison',
+    path: '/what-is-pwa',
+    name: 'What is PWA?',
     seo: {
-      title: 'PWA vs Native App Comparison Table',
-      description: 'A comparison table between progressive web apps and native apps.',
-      keywords: ['pwa comparison', 'pwa vs native', 'pwa advantages', 'pwa disadvantages'],
+      title: 'What is Progressive Web App? Definition and Introduction',
+      description:
+        'An introduction to Progressive Web Apps (PWAs) and the three pillars that separate them from other web apps.',
+      keywords: ['what is pwa', 'pwa definition', 'pwa introduction'],
     },
   },
   {
@@ -60,6 +62,15 @@ export const SLIDES = [
       title: 'Offline Mode in Progressive Web Apps',
       description: 'Learn and experience how offline mode works in progressive web apps.',
       keywords: ['offline first', 'pwa offline', 'network state api'],
+    },
+  },
+  {
+    path: '/comparison',
+    name: 'Comparison',
+    seo: {
+      title: 'PWA vs Native App Comparison Table',
+      description: 'A comparison table between progressive web apps and native apps.',
+      keywords: ['pwa comparison', 'pwa vs native', 'pwa advantages', 'pwa disadvantages'],
     },
   },
   {
@@ -196,7 +207,7 @@ export const SLIDES = [
     path: '/finale',
     name: 'Finale',
     seo: {
-      title: 'Finale of Progressive Web Apps Tech Talk',
+      title: 'Finale and summary of Progressive Web Apps Tech Talk',
     },
   },
 ] as const satisfies ReadonlyArray<SlideSchema>;
