@@ -4,6 +4,7 @@ import { SlideTitle } from '@/client/components/SlideTitle';
 import { GitHubStarButton } from '@/client/components/GitHubStarButton';
 import { ContentBox } from '@/client/components/ContentBox';
 import { Divider } from '@nextui-org/react';
+import { BuyMeCoffeeButton } from '@/client/components/BuyMeCoffeeButton';
 
 export function FinalePage(_: unknown, ref: React.ForwardedRef<HTMLDivElement>) {
   return (
@@ -33,6 +34,7 @@ export function FinalePage(_: unknown, ref: React.ForwardedRef<HTMLDivElement>) 
         </h2>
 
         <GitHubStarButton />
+        <BuyMeCoffeeButton />
       </ContentBox>
     </SlideContainer>
   );

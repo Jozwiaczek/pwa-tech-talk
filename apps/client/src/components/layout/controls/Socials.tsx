@@ -1,6 +1,7 @@
 import { GitHubLogo, LinkedInLogo } from '@/client/assets/socials';
 import { Button, Link } from '@nextui-org/react';
 import { CodeBracketIcon } from '@heroicons/react/24/outline';
+import { BmcLogo } from '@/client/assets/logos';
 
 export const Socials = () => (
   <div className="pt-safe-offset-2 pl-safe-offset-4 fixed top-0 left-0 z-50">
@@ -34,6 +35,16 @@ export const Socials = () => (
         href="https://www.linkedin.com/in/jozwiakjakub/"
       >
         <LinkedInLogo className="size-6" />
+      </Button>
+      <Button
+        isIconOnly
+        variant="light"
+        as={Link}
+        isExternal
+        aria-label="Check out Jakub Jóźwiak Twitter profile"
+        href="https://www.buymeacoffee.com/jozwiaczek"
+      >
+        <BmcLogo className="size-6 text-default-900" />
       </Button>
     </div>
   </div>
