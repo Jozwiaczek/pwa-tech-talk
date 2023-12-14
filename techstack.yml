@@ -1,11 +1,11 @@
 repo_name: Jozwiaczek/pwa-tech-talk
-report_id: bf1eef61e50c84f3f820f0e832d208e6
+report_id: 1a7721fad76451ffae20ecf96a21103d
 repo_type: Public
-timestamp: '2023-11-14T01:15:39+00:00'
+timestamp: '2023-12-14T10:37:07+00:00'
 requested_by: Jozwiaczek
 provider: github
 branch: main
-detected_tools_count: 58
+detected_tools_count: 71
 tools:
 - name: CSS 3
   description: The latest evolution of the Cascading Style Sheets language
@@ -34,7 +34,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/2271/default_068d33483bba6b81ee13fbd4dc7aab9780896a54.png
-  detection_source: apps/api/prisma/migrations/20231113190754_user_is_verified/migration.sql
+  detection_source: apps/api/prisma/migrations/20231106235309_init/migration.sql
   last_updated_by: Jakub Jóźwiak
   last_updated_on: 2023-11-14 00:39:43.000000000 Z
 - name: TypeScript
@@ -68,7 +68,7 @@ tools:
   image_url: https://img.stackshare.io/service/7609/24939410.png
   detection_source: package.json
   last_updated_by: Jakub Jóźwiak
-  last_updated_on: 2023-11-14 00:39:43.000000000 Z
+  last_updated_on: 2023-11-15 03:09:38.000000000 Z
 - name: NestJS
   description: A progressive Node.js framework for building efficient and scalable
     server-side applications by @kammysliwiec.
@@ -80,7 +80,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Frameworks (Full Stack)
   image_url: https://img.stackshare.io/service/8747/4zsOyxko_400x400.jpg
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Jozwiaczek/pwa-tech-talk/blob/main/package.json
   detection_source: package.json
   last_updated_by: Jakub Jóźwiak
   last_updated_on: 2023-10-29 12:44:54.000000000 Z
@@ -93,7 +93,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Frameworks (Full Stack)
   image_url: https://img.stackshare.io/service/5936/nextjs.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Jozwiaczek/pwa-tech-talk/blob/main/package.json
   detection_source: package.json
   last_updated_by: Jakub Jóźwiak
   last_updated_on: 2023-10-29 12:44:54.000000000 Z
@@ -108,6 +108,18 @@ tools:
   image_url: https://img.stackshare.io/service/1011/n1JRsFeB_400x400.png
   detection_source: package.json
   last_updated_by: Jakub Jóźwiak
+  last_updated_on: 2023-11-14 02:20:57.000000000 Z
+- name: PostCSS
+  description: Transform CSS with JS plugins
+  website_url: https://github.com/postcss/postcss
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: CSS Pre-processors / Extensions
+  image_url: https://img.stackshare.io/service/3339/rlFcjEdI.png
+  detection_source: package.json
+  last_updated_by: Jakub Jóźwiak
   last_updated_on: 2023-10-29 12:44:54.000000000 Z
 - name: React
   description: A JavaScript library for building user interfaces
@@ -119,10 +131,22 @@ tools:
   category: Libraries
   sub_category: Javascript UI Libraries
   image_url: https://img.stackshare.io/service/1020/OYIaJ1KK.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Jozwiaczek/pwa-tech-talk/blob/main/package.json
   detection_source: package.json
   last_updated_by: Jakub Jóźwiak
-  last_updated_on: 2023-11-14 00:39:43.000000000 Z
+  last_updated_on: 2023-11-21 10:04:05.000000000 Z
+- name: Recharts
+  description: Redefined chart library built with React and D3
+  website_url: http://recharts.org/
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Charting Libraries
+  image_url: https://img.stackshare.io/service/5608/13690587.png
+  detection_source: package.json
+  last_updated_by: Jakub Jóźwiak
+  last_updated_on: 2023-11-17 21:51:04.000000000 Z
 - name: RxJS
   description: The Reactive Extensions for JavaScript
   website_url: http://reactivex.io/rxjs/
@@ -132,10 +156,22 @@ tools:
   category: Languages & Frameworks
   sub_category: Concurrency Frameworks
   image_url: https://img.stackshare.io/service/1796/984368.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Jozwiaczek/pwa-tech-talk/blob/main/package.json
   detection_source: package.json
   last_updated_by: Jakub Jóźwiak
   last_updated_on: 2023-10-29 12:44:54.000000000 Z
+- name: Tailwind CSS
+  description: A utility-first CSS framework for rapid UI development
+  website_url: https://tailwindcss.com
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Front-End Frameworks
+  image_url: https://img.stackshare.io/service/8158/default_660b7c41c3ba489cb581eec89c04655404258c19.png
+  detection_source: package.json
+  last_updated_by: Jakub Jóźwiak
+  last_updated_on: 2023-11-06 22:55:02.000000000 Z
 - name: Prisma
   description: Modern Database Access for TypeScript &amp; Node.js
   website_url: https://www.prisma.io/
@@ -146,7 +182,7 @@ tools:
   category: Data Stores
   sub_category: Object Relational Mapper (ORM)
   image_url: https://img.stackshare.io/service/8680/Logo_Symbol_White.jpg
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Jozwiaczek/pwa-tech-talk/blob/main/package.json
   detection_source: package.json
   last_updated_by: Jakub Jóźwiak
   last_updated_on: 2023-11-14 00:39:43.000000000 Z
@@ -159,10 +195,21 @@ tools:
   category: Application Hosting
   sub_category: Realtime Backend / API
   image_url: https://img.stackshare.io/service/1161/vI0ZZlhZ_400x400.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Jozwiaczek/pwa-tech-talk/blob/main/package.json
   detection_source: package.json
   last_updated_by: Jakub Jóźwiak
   last_updated_on: 2023-11-06 00:14:23.000000000 Z
+- name: pgvector
+  description: Open-source vector similarity search for Postgres
+  website_url: https://github.com/pgvector/pgvector/
+  open_source: false
+  hosted_saas: false
+  category: Data Stores
+  sub_category: Database Tools
+  image_url: https://img.stackshare.io/service/109221/default_b888cdf5617d936aa6aacf130911906955508639.png
+  detection_source: apps/client/public/screenshots/desktop/readme.txt
+  last_updated_by: Jakub Jóźwiak
+  last_updated_on: 2023-11-20 09:58:11.000000000 Z
 - name: Babel
   description: Use next generation JavaScript, today.
   website_url: http://babeljs.io/
@@ -187,6 +234,18 @@ tools:
   detection_source: package.json
   last_updated_by: Jakub Jóźwiak
   last_updated_on: 2023-10-29 12:44:54.000000000 Z
+- name: Esbuild
+  description: An extremely fast JavaScript bundler
+  website_url: https://esbuild.github.io/
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: JS Build Tools / JS Task Runners
+  image_url: https://img.stackshare.io/service/25166/default_2dcc9286a150737a14625d18f6f93747f72be430.png
+  detection_source: package.json
+  last_updated_by: Jakub Jóźwiak
+  last_updated_on: 2023-11-17 01:04:03.000000000 Z
 - name: Git
   description: Fast, scalable, distributed revision control system
   website_url: http://git-scm.com/
@@ -206,7 +265,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Javascript Testing Framework
   image_url: https://img.stackshare.io/service/830/jest.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Jozwiaczek/pwa-tech-talk/blob/main/package.json
   detection_source: package.json
   last_updated_by: Jakub Jóźwiak
   last_updated_on: 2023-10-29 12:44:54.000000000 Z
@@ -220,10 +279,22 @@ tools:
   category: Build, Test, Deploy
   sub_category: Code Review
   image_url: https://img.stackshare.io/service/7035/default_66f265943abed56bcdbfca1c866a4261b1fbb063.jpg
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Jozwiaczek/pwa-tech-talk/blob/main/package.json
   detection_source: package.json
   last_updated_by: Jakub Jóźwiak
   last_updated_on: 2023-11-04 22:33:46.000000000 Z
+- name: Puppeteer
+  description: Headless Chrome Node API
+  website_url: https://github.com/GoogleChrome/puppeteer
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Headless Browsers
+  image_url: https://img.stackshare.io/service/7553/puppeteer.png
+  detection_source: package.json
+  last_updated_by: Jakub Jóźwiak
+  last_updated_on: 2023-11-17 01:04:03.000000000 Z
 - name: Webpack
   description: A bundler for javascript and friends
   website_url: http://webpack.js.org
@@ -247,6 +318,38 @@ tools:
   detection_source: package.json
   last_updated_by: Jakub Jóźwiak
   last_updated_on: 2023-10-29 12:44:54.000000000 Z
+- name: HTML
+  description: Hypertext Markup Language for creating web pages.
+  website_url: http://
+  open_source: false
+  hosted_saas: false
+  image_url: https://img.stackshare.io/service/2270/no-img-open-source.png
+  detection_source: apps/client/public/google4458a799a04f2c9b.html
+  last_updated_by: Jakub Jóźwiak
+  last_updated_on: 2023-11-23 11:24:26.000000000 Z
+- name: LangChain
+  description: Build AI apps with LLMs through composability
+  website_url: https://github.com/hwchase17/langchain
+  open_source: true
+  hosted_saas: false
+  category: Communications
+  sub_category: Large Language Model Tools
+  image_url: https://img.stackshare.io/service/48790/default_5b6c6b73f1ff3775c85d2a1ba954cb87e30cbf13.jpg
+  detection_source: apps/client/public/screenshots/desktop/readme.txt
+  last_updated_by: Jakub Jóźwiak
+  last_updated_on: 2023-11-20 09:58:11.000000000 Z
+- name: Leaflet
+  description: JavaScript library for mobile-friendly interactive maps
+  website_url: http://leafletjs.com/
+  license: BSD-2-Clause
+  open_source: true
+  hosted_saas: false
+  category: Application Utilities
+  sub_category: Mapping APIs
+  image_url: https://img.stackshare.io/service/2392/leaflet_upic.png
+  detection_source: package.json
+  last_updated_by: Jakub Jóźwiak
+  last_updated_on: 2023-11-19 19:28:40.000000000 Z
 - name: Shell
   description: A shell is a text-based terminal, used for manipulating programs and
     files. Shell scripts typically manage program execution.
@@ -257,6 +360,20 @@ tools:
   sub_category: Languages
   image_url: https://img.stackshare.io/service/4631/default_c2062d40130562bdc836c13dbca02d318205a962.png
   detection_source: Repo Metadata
+- name: Vercel AI SDK
+  description: An interoperable, streaming-enabled, edge-ready software development
+    kit for AI apps
+  website_url: https://sdk.vercel.ai/docs
+  version: 1.1.1
+  open_source: true
+  hosted_saas: false
+  category: Communications
+  sub_category: Large Language Model Tools
+  image_url: https://img.stackshare.io/service/101756/default_4f2991cba3ec7fdd1cc87de69f4868157b0f2001.png
+  detection_source_url: https://github.com/Jozwiaczek/pwa-tech-talk/blob/main/package.json
+  detection_source: package.json
+  last_updated_by: Jakub Jóźwiak
+  last_updated_on: 2023-11-21 09:36:38.000000000 Z
 - name: Zod
   description: TypeScript-first schema validation
   website_url: https://zod.dev/
@@ -276,7 +393,7 @@ tools:
   category: Libraries
   sub_category: Javascript Utilities & Libraries
   image_url: https://img.stackshare.io/no-img-open-source.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Jozwiaczek/pwa-tech-talk/blob/main/package.json
   detection_source: package.json
   last_updated_by: Jakub Jóźwiak
   last_updated_on: 2023-10-29 13:30:16.000000000 Z
@@ -290,7 +407,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/16950/default_ebf16e0c8af5e95030933d9e01479224b6665289.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Jozwiaczek/pwa-tech-talk/blob/main/package.json
   detection_source: package.json
   last_updated_by: Jakub Jóźwiak
   last_updated_on: 2023-11-14 00:39:43.000000000 Z
@@ -304,7 +421,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/17223/default_48f040bdc5f6c639c70bf350f8b8158ede27286c.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Jozwiaczek/pwa-tech-talk/blob/main/package.json
   detection_source: package.json
   last_updated_by: Jakub Jóźwiak
   last_updated_on: 2023-11-14 00:39:43.000000000 Z
@@ -318,10 +435,10 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/17855/default_dc034f75f103514d23b4d1a7fe578415d63216ee.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Jozwiaczek/pwa-tech-talk/blob/main/package.json
   detection_source: package.json
   last_updated_by: Jakub Jóźwiak
-  last_updated_on: 2023-11-14 00:39:43.000000000 Z
+  last_updated_on: 2023-11-21 09:36:38.000000000 Z
 - name: "@testing-library/react"
   description: Simple and complete React DOM testing utilities that encourage good
     testing practices
@@ -333,10 +450,10 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/16549/default_d522554c6a41cb28d922d6d3ad32ad4afa0e3bb5.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Jozwiaczek/pwa-tech-talk/blob/main/package.json
   detection_source: package.json
   last_updated_by: Jakub Jóźwiak
-  last_updated_on: 2023-11-14 00:39:43.000000000 Z
+  last_updated_on: 2023-11-21 10:04:05.000000000 Z
 - name: "@types/jest"
   description: TypeScript definitions for Jest
   package_url: https://www.npmjs.com/@types/jest
@@ -347,10 +464,10 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/15840/default_004658cda9b38934f2871435e9dc15608c86e8be.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Jozwiaczek/pwa-tech-talk/blob/main/package.json
   detection_source: package.json
   last_updated_by: Jakub Jóźwiak
-  last_updated_on: 2023-11-14 00:39:43.000000000 Z
+  last_updated_on: 2023-11-21 09:36:38.000000000 Z
 - name: "@types/jsonwebtoken"
   description: TypeScript definitions for jsonwebtoken
   package_url: https://www.npmjs.com/@types/jsonwebtoken
@@ -361,10 +478,24 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/16959/default_caea01ce44a5fd1bb200d8fc0f8f2a1695b4e569.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Jozwiaczek/pwa-tech-talk/blob/main/package.json
   detection_source: package.json
   last_updated_by: Jakub Jóźwiak
-  last_updated_on: 2023-11-14 00:39:43.000000000 Z
+  last_updated_on: 2023-11-21 09:36:38.000000000 Z
+- name: "@types/leaflet"
+  description: TypeScript definitions for Leaflet.js
+  package_url: https://www.npmjs.com/@types/leaflet
+  version: 1.9.8
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/18718/default_417b40eb0d0e57406cf660ce53dd8dec69c7401d.png
+  detection_source_url: https://github.com/Jozwiaczek/pwa-tech-talk/blob/main/package.json
+  detection_source: package.json
+  last_updated_by: Jakub Jóźwiak
+  last_updated_on: 2023-11-21 09:36:38.000000000 Z
 - name: "@types/node"
   description: TypeScript definitions for Node.js
   package_url: https://www.npmjs.com/@types/node
@@ -375,10 +506,10 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/15809/default_5e5e8ac63beda29f31f1844df64d4b8247570a66.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Jozwiaczek/pwa-tech-talk/blob/main/package.json
   detection_source: package.json
   last_updated_by: Jakub Jóźwiak
-  last_updated_on: 2023-11-14 00:39:43.000000000 Z
+  last_updated_on: 2023-11-21 09:36:38.000000000 Z
 - name: "@types/react"
   description: TypeScript definitions for React
   package_url: https://www.npmjs.com/@types/react
@@ -389,10 +520,10 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/15894/default_1d65e37e65b7f80761374f0202776043277d505d.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Jozwiaczek/pwa-tech-talk/blob/main/package.json
   detection_source: package.json
   last_updated_by: Jakub Jóźwiak
-  last_updated_on: 2023-11-14 00:39:43.000000000 Z
+  last_updated_on: 2023-11-21 10:04:05.000000000 Z
 - name: "@types/react-dom"
   description: TypeScript definitions for React
   package_url: https://www.npmjs.com/@types/react-dom
@@ -403,10 +534,24 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/15946/default_54b691c123fc8979741e800e4dcd3936c0f3b246.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Jozwiaczek/pwa-tech-talk/blob/main/package.json
   detection_source: package.json
   last_updated_by: Jakub Jóźwiak
-  last_updated_on: 2023-11-14 00:39:43.000000000 Z
+  last_updated_on: 2023-11-21 10:04:05.000000000 Z
+- name: "@types/uuid"
+  description: TypeScript definitions for uuid
+  package_url: https://www.npmjs.com/@types/uuid
+  version: 9.0.7
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16257/default_ab17554b7e80af3d234b14168ed61e75d43f8eee.png
+  detection_source_url: https://github.com/Jozwiaczek/pwa-tech-talk/blob/main/package.json
+  detection_source: package.json
+  last_updated_by: Jakub Jóźwiak
+  last_updated_on: 2023-11-21 09:36:38.000000000 Z
 - name: "@typescript-eslint/eslint-plugin"
   description: TypeScript plugin for ESLint
   package_url: https://www.npmjs.com/@typescript-eslint/eslint-plugin
@@ -417,10 +562,10 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/15982/default_8b5680d4e916298d08363c291a0d6e34c07ceb15.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Jozwiaczek/pwa-tech-talk/blob/main/package.json
   detection_source: package.json
   last_updated_by: Jakub Jóźwiak
-  last_updated_on: 2023-11-14 00:39:43.000000000 Z
+  last_updated_on: 2023-11-21 09:36:38.000000000 Z
 - name: "@typescript-eslint/parser"
   description: An ESLint custom parser which leverages TypeScript ESTree
   package_url: https://www.npmjs.com/@typescript-eslint/parser
@@ -431,10 +576,23 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/15980/default_732016a20524708efe7a4c77497fe9bfeea19ba6.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Jozwiaczek/pwa-tech-talk/blob/main/package.json
   detection_source: package.json
   last_updated_by: Jakub Jóźwiak
-  last_updated_on: 2023-11-14 00:39:43.000000000 Z
+  last_updated_on: 2023-11-21 09:36:38.000000000 Z
+- name: "@vercel/analytics"
+  description: Gain real-time traffic insights with Vercel Web Analytics
+  package_url: https://www.npmjs.com/@vercel/analytics
+  version: 1.1.1
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Package Managers
+  image_url: https://img.stackshare.io/package/npm/image.png
+  detection_source_url: https://github.com/Jozwiaczek/pwa-tech-talk/blob/main/package.json
+  detection_source: package.json
+  last_updated_by: Jakub Jóźwiak
+  last_updated_on: 2023-11-21 09:36:38.000000000 Z
 - name: babel-jest
   description: Jest plugin to use babel for transformation
   package_url: https://www.npmjs.com/babel-jest
@@ -445,7 +603,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/15839/default_4479dbac220be99e50e724b2df6cf415241d71fd.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Jozwiaczek/pwa-tech-talk/blob/main/package.json
   detection_source: package.json
   last_updated_by: Jakub Jóźwiak
   last_updated_on: 2023-11-05 01:06:17.000000000 Z
@@ -459,7 +617,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/15800/default_4acafe585186b4157fa23322ae7ca89e24b5cdef.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Jozwiaczek/pwa-tech-talk/blob/main/package.json
   detection_source: package.json
   last_updated_by: Jakub Jóźwiak
   last_updated_on: 2023-11-05 01:06:17.000000000 Z
@@ -473,7 +631,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/18265/default_eca55303586c828b2de78eb927c79a3104586ca0.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Jozwiaczek/pwa-tech-talk/blob/main/package.json
   detection_source: package.json
   last_updated_by: Jakub Jóźwiak
   last_updated_on: 2023-11-14 00:39:43.000000000 Z
@@ -488,7 +646,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/17651/default_eb9caf7d7fb4d231f7e3b04a8c1fbef6fcd9fd73.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Jozwiaczek/pwa-tech-talk/blob/main/package.json
   detection_source: package.json
   last_updated_by: Jakub Jóźwiak
   last_updated_on: 2023-11-14 00:39:43.000000000 Z
@@ -503,7 +661,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/17583/default_661ab15cb9ea1663765f3e16ee70a1d2d50118d1.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Jozwiaczek/pwa-tech-talk/blob/main/package.json
   detection_source: package.json
   last_updated_by: Jakub Jóźwiak
   last_updated_on: 2023-11-14 00:39:43.000000000 Z
@@ -517,10 +675,10 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/15879/default_0b10af8ca19c215f781dc07442e75bdc831089d0.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Jozwiaczek/pwa-tech-talk/blob/main/package.json
   detection_source: package.json
   last_updated_by: Jakub Jóźwiak
-  last_updated_on: 2023-11-04 22:33:46.000000000 Z
+  last_updated_on: 2023-11-20 15:40:04.000000000 Z
 - name: eslint-plugin-import
   description: Import with sanity
   package_url: https://www.npmjs.com/eslint-plugin-import
@@ -531,7 +689,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/15806/default_98aa227f51aa9d787815ec3fd98d0ab2bfebbb91.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Jozwiaczek/pwa-tech-talk/blob/main/package.json
   detection_source: package.json
   last_updated_by: Jakub Jóźwiak
   last_updated_on: 2023-10-29 13:30:16.000000000 Z
@@ -545,7 +703,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/15845/default_6743ba96cf149a3c3c68a185199f9705d6eff80e.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Jozwiaczek/pwa-tech-talk/blob/main/package.json
   detection_source: package.json
   last_updated_by: Jakub Jóźwiak
   last_updated_on: 2023-10-29 13:30:16.000000000 Z
@@ -559,10 +717,10 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/15817/default_14fd11531839d935f920b6d55bd6f3528c890ad7.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Jozwiaczek/pwa-tech-talk/blob/main/package.json
   detection_source: package.json
   last_updated_by: Jakub Jóźwiak
-  last_updated_on: 2023-11-14 00:39:43.000000000 Z
+  last_updated_on: 2023-11-21 10:04:05.000000000 Z
 - name: eslint-plugin-react-hooks
   description: ESLint rules for React Hooks
   package_url: https://www.npmjs.com/eslint-plugin-react-hooks
@@ -573,10 +731,10 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/16149/default_1f3a2fc7d882e29a43394ecdf491b8989ea3f0fa.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Jozwiaczek/pwa-tech-talk/blob/main/package.json
   detection_source: package.json
   last_updated_by: Jakub Jóźwiak
-  last_updated_on: 2023-11-14 00:39:43.000000000 Z
+  last_updated_on: 2023-11-21 10:04:05.000000000 Z
 - name: jest-environment-jsdom
   description: Delightful JavaScript Testing
   package_url: https://www.npmjs.com/jest-environment-jsdom
@@ -587,7 +745,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/18413/default_867ef7396016341fd213fa568d6de11cc98fefff.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Jozwiaczek/pwa-tech-talk/blob/main/package.json
   detection_source: package.json
   last_updated_by: Jakub Jóźwiak
   last_updated_on: 2023-10-29 13:30:16.000000000 Z
@@ -601,7 +759,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/16155/default_77b54a203c743d16eddb6b6390cba17218454fa0.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Jozwiaczek/pwa-tech-talk/blob/main/package.json
   detection_source: package.json
   last_updated_by: Jakub Jóźwiak
   last_updated_on: 2023-11-14 00:39:43.000000000 Z
@@ -615,31 +773,10 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/16565/default_536789d2630ed352dc721a1c915ab456b7660201.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Jozwiaczek/pwa-tech-talk/blob/main/package.json
   detection_source: package.json
   last_updated_by: Jakub Jóźwiak
   last_updated_on: 2023-10-29 12:44:54.000000000 Z
-- name: postcss
-  description: Tool for transforming styles with JS plugins
-  package_url: https://www.npmjs.com/postcss
-  version: 8.4.21
-  license: MIT
-  open_source: true
-  hosted_saas: false
-  category: Libraries
-  sub_category: npm Packages
-  image_url: https://img.stackshare.io/package/16012/default_7a88bebb451873cc63bd99007de5bd3bb8ef85de.png
-  detection_source_url: package.json
-  detection_source: package.json
-  last_updated_by: Jakub Jóźwiak
-  last_updated_on: 2023-10-29 13:30:16.000000000 Z
-  vulnerabilities:
-  - name: PostCSS line return parsing error
-    cve_id: CVE-2023-44270
-    cve_url: https://github.com/advisories/GHSA-7fh5-64p2-3v2j
-    detected_date: Oct 4
-    severity: moderate
-    first_patched: 8.4.31
 - name: react-dom
   description: React package for working with the DOM
   package_url: https://www.npmjs.com/react-dom
@@ -650,10 +787,10 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/15808/default_14fd11531839d935f920b6d55bd6f3528c890ad7.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Jozwiaczek/pwa-tech-talk/blob/main/package.json
   detection_source: package.json
   last_updated_by: Jakub Jóźwiak
-  last_updated_on: 2023-11-14 00:39:43.000000000 Z
+  last_updated_on: 2023-11-21 10:04:05.000000000 Z
 - name: react-toastify
   description: React notification made easy
   package_url: https://www.npmjs.com/react-toastify
@@ -664,10 +801,10 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/18461/default_5ff724c0ff89bb42698aa80ef3403008cb0d8f72.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Jozwiaczek/pwa-tech-talk/blob/main/package.json
   detection_source: package.json
   last_updated_by: Jakub Jóźwiak
-  last_updated_on: 2023-11-14 00:39:43.000000000 Z
+  last_updated_on: 2023-11-21 10:04:05.000000000 Z
 - name: reflect-metadata
   description: Polyfill for Metadata Reflection API
   package_url: https://www.npmjs.com/reflect-metadata
@@ -678,10 +815,24 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/16019/default_7a88bebb451873cc63bd99007de5bd3bb8ef85de.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Jozwiaczek/pwa-tech-talk/blob/main/package.json
   detection_source: package.json
   last_updated_by: Jakub Jóźwiak
   last_updated_on: 2023-10-29 13:30:16.000000000 Z
+- name: sharp
+  description: High performance Node.js image processing
+  package_url: https://www.npmjs.com/sharp
+  version: 0.32.6
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16806/default_31a4e0e11d348225088320f3a5c5ea6fa49c27ad.png
+  detection_source_url: https://github.com/Jozwiaczek/pwa-tech-talk/blob/main/package.json
+  detection_source: package.json
+  last_updated_by: Jakub Jóźwiak
+  last_updated_on: 2023-11-21 16:09:15.000000000 Z
 - name: socket.io-client
   description: "[![Build Status]"
   package_url: https://www.npmjs.com/socket.io-client
@@ -692,7 +843,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/16164/default_ac04a744873b460c4ef30a7450ed0c83223640ab.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Jozwiaczek/pwa-tech-talk/blob/main/package.json
   detection_source: package.json
   last_updated_by: Jakub Jóźwiak
   last_updated_on: 2023-11-14 00:39:43.000000000 Z
@@ -706,7 +857,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/17398/default_2cd7ed1c123f2fca074a6f4b16c4e73d5bfe82be.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Jozwiaczek/pwa-tech-talk/blob/main/package.json
   detection_source: package.json
   last_updated_by: Jakub Jóźwiak
   last_updated_on: 2023-11-06 22:55:02.000000000 Z
@@ -721,7 +872,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/15864/default_6743ba96cf149a3c3c68a185199f9705d6eff80e.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Jozwiaczek/pwa-tech-talk/blob/main/package.json
   detection_source: package.json
   last_updated_by: Jakub Jóźwiak
   last_updated_on: 2023-10-29 13:30:16.000000000 Z
@@ -735,7 +886,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/15830/default_6743ba96cf149a3c3c68a185199f9705d6eff80e.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Jozwiaczek/pwa-tech-talk/blob/main/package.json
   detection_source: package.json
   last_updated_by: Jakub Jóźwiak
   last_updated_on: 2023-10-29 13:30:16.000000000 Z
@@ -749,7 +900,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/15853/default_97d4687bd07ff1bb963fd566c84e7cbf7c73bbee.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Jozwiaczek/pwa-tech-talk/blob/main/package.json
   detection_source: package.json
   last_updated_by: Jakub Jóźwiak
   last_updated_on: 2023-11-06 00:14:23.000000000 Z
@@ -763,7 +914,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/17510/default_e5adc22c59a44962e41dfaec51edeb42c083f2f4.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Jozwiaczek/pwa-tech-talk/blob/main/package.json
   detection_source: package.json
   last_updated_by: Jakub Jóźwiak
   last_updated_on: 2023-11-14 00:39:43.000000000 Z
@@ -777,7 +928,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/15916/default_e0a4fb1126d7400f419f0931cf1669947a5bc552.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/Jozwiaczek/pwa-tech-talk/blob/main/package.json
   detection_source: package.json
   last_updated_by: Jakub Jóźwiak
-  last_updated_on: 2023-11-14 00:39:43.000000000 Z
+  last_updated_on: 2023-11-15 23:23:58.000000000 Z
