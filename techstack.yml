@@ -2,7 +2,7 @@ repo_name: Jozwiaczek/pwa-tech-talk
 report_id: bf1eef61e50c84f3f820f0e832d208e6
 version: 0.1
 repo_type: Public
-timestamp: '2024-01-05T08:46:00+00:00'
+timestamp: '2024-02-29T18:43:34+00:00'
 requested_by: Jozwiaczek
 provider: github
 branch: main
@@ -92,7 +92,7 @@ tools:
   last_updated_by: Jakub Jóźwiak
   last_updated_on: 2023-10-29 12:44:54.000000000 Z
 - name: Next.js
-  description: 'A small framework for server-rendered universal JavaScript apps '
+  description: A small framework for server-rendered universal JavaScript apps
   website_url: https://nextjs.org/
   version: 13.4.1
   open_source: true
@@ -286,7 +286,7 @@ tools:
   last_updated_by: Jakub Jóźwiak
   last_updated_on: 2023-10-29 12:44:54.000000000 Z
 - name: Prettier
-  description: 'Prettier is an opinionated code formatter. '
+  description: Prettier is an opinionated code formatter.
   website_url: https://prettier.io/
   version: 3.0.3
   license: MIT
